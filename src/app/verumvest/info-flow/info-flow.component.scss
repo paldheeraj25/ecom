@@ -1,0 +1,154 @@
+.section.user-info{
+  // background: hsl(0, 0%, 86%);
+  // height: 100vh;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .section.user-info {
+    height: 100%;
+  }
+}
+.dot {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: x-large;
+    font-weight: 500;
+    padding: 1px;
+    margin: 0 4px;
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.inactive {
+  background-color: #222222;
+}
+
+.active {
+  background-color: #45d082; 
+}
+
+.step {
+  margin: 2%;
+}
+
+.step-1-elem{
+  cursor: pointer;
+}
+
+.step-1-col{
+  margin-bottom: 3%;
+}
+
+.step-1-ul {
+  padding: 15%;
+}
+.step-1-elem {
+  background: #a5c9ff;
+  height: 100%;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+
+}
+
+.step-1-col :hover{
+  background: #45d082;
+}
+
+li {
+  color: #fff;
+  font-size: larger;
+}
+
+.step-1-p-text {
+  font-weight: 500;
+}
+
+// text styles
+.white-text {
+  color: #ffffff;
+  font-weight: 500;
+  font-family: montserrat;
+}
+
+.theme-text {
+  color: #222222;
+}
+
+// step-2
+.step-2 {
+  background-color: #a5c9ff;
+  padding: 2%;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+// media query
+@media screen and (max-width: 600px) {
+  .step-2 .col-sm-12 {
+    padding-left: 10%;
+  }
+}
+
+.step-3 {
+  background-color: #a5c9ff;
+  padding: 2%;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.money-tree {
+  width: 50%;
+}
+.pig{
+  width: 50%;
+}
+
+.dot-step-3 {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: x-large;
+  font-weight: 500;
+  padding: 1px;
+  margin: 0 4px;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #222;
+  cursor: pointer;
+  padding-left: 12px;
+  background: #45d082;
+}
+
+.custom-range-input {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.input-col {
+  padding-left: 8%;
+}
+
+.money-display {
+  font-size: x-large;
+  color: #fff;
+  font-weight: 500;
+}
+
+.money-grid {
+  display: grid ;
+  grid-template-columns: 1fr 1fr;
+}
+.p-4rem {
+  padding-top: 0.4rem;
+}
+
+.chart-canvas {
+  height: 55vh;
+  width: 100%;;
+}

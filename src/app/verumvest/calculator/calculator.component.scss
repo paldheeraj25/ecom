@@ -1,10 +1,10 @@
 .section-flag-select {
-  background-image: url("/assets/img/flag-page-bg-2.jpg");
   height: 100vh;
 }
 
 .heading {
-  font-weight: bold  
+  font-weight: bold ;
+  font-family: montserrat, sans-serif;
 }
 .image-40-per{
   width: 40%
@@ -24,6 +24,10 @@
 
 .image-opacity{
   opacity: 0.8;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }
 
 .opacity{
@@ -41,8 +45,9 @@
 .fa-width {
   width: 30px ;
   font-size:20px;
-  color: #459037;
+  color: #45d082;
 }
-.fixed-bottom{
-  background: #dcdcdc;
+
+footer-text {
+  font-family: moteserrate, sans-serif;
 }
