@@ -14,12 +14,16 @@ export class InfoFlowComponent implements OnInit {
   step1elem1: string = "20-30";
   step1elem2: string = "30-40-1";
   step1elem3: string = "20-40-2";
+  next: string = "next";
+  back: string = "back";
 
   // step two var
   step2FamilyStand: string;
   ageRange: string;
   kids: string;
   investExperience: string;
+
+  // step-4 variable
 
   public monthlyHouseHoldIncome: number = 0;
   public monthlyExpenses: number = 0;
@@ -28,15 +32,17 @@ export class InfoFlowComponent implements OnInit {
   public assetIn10: number = 0;
 
   //graph for step-4
+  showGraph: string = "investmentsImmobilien";
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: false
   };
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels = ['2019', '2020', '2021', '2023', '2024', '2025', '2026', '2027', '2028', '2029'];
   public barChartType = 'line';
   public barChartLegend = true;
 
   public barChartData = [];
+  public chartColors: any[] = [];
 
   //step-5 variables
   public capitalEmployed: number = 0;
@@ -80,10 +86,58 @@ export class InfoFlowComponent implements OnInit {
   goToStep(step: number) {
     this.stepNumber = step;
     this.barChartData = [
-      { data: [this.assetAccumulation, 59, 80, 81, 56, 55, this.assetIn10], label: 'Sparen mit Zinsen' },
-      { data: [this.assetAccumulation, 48, 40, 19, 86, 27, this.assetIn10], label: 'Investments mit Aktien' },
-      { data: [this.assetAccumulation, 53, 84, 23, 47, 63, this.assetIn10], label: 'Investments mit Immobilie' }
+      { data: [this.assetAccumulation, 59, 80, 81, 56, 55, 25, 23, 42, this.assetIn10], label: 'Sparen mit Zinsen' },
     ];
+  }
+
+  showGraphType(graphType: string) {
+    if (graphType === 'sparenZinsen') {
+
+      this.chartColors = [
+        {
+          backgroundColor: ["#f5593d"],
+          borderColor: '#ffffff',
+          pointBorderColor: '#fff',
+        }];
+      this.barChartData = [
+        { data: [this.assetAccumulation, 59, 80, 81, 56, 55, 25, 23, 42, this.assetIn10], label: 'Sparen mit Zinsen' },
+      ];
+
+    } else if (graphType === 'investmentsAktien') {
+
+      this.chartColors = [
+        {
+          backgroundColor: ["#007bff"],
+          borderColor: '#ffffff',
+          pointBorderColor: '#fff',
+        }];
+      this.barChartData = [
+        { data: [this.assetAccumulation, 48, 40, 19, 86, 27, 34, 35, 54, this.assetIn10], label: 'Investments mit Aktien' },
+      ];
+
+    } else if (graphType === 'investmentsImmobilien') {
+      this.chartColors = [
+        {
+          backgroundColor: ["#ffc107"],
+          borderColor: '#ffffff',
+          pointBorderColor: '#fff',
+        }];
+
+      this.barChartData = [
+        { data: [this.assetAccumulation, 53, 84, 23, 47, 63, 45, 23, 45, this.assetIn10], label: 'Investments mit Immobilie' }
+      ];
+    }
+  }
+
+  nextNBack(step: string) {
+    console.log(this.stepNumber);
+    if (step == "next" && this.stepNumber < 6) {
+      this.stepNumber = this.stepNumber + 1;
+    }
+
+    if (step == "back" && this.stepNumber > 1) {
+      this.stepNumber = this.stepNumber - 1;
+    }
   }
 
 }
