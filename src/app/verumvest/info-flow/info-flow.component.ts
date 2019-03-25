@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CalculatService } from '../calculat.service';
 
+
 @Component({
   selector: 'app-info-flow',
   templateUrl: './info-flow.component.html',
@@ -22,6 +23,7 @@ export class InfoFlowComponent implements OnInit {
   ageRange: string;
   kids: string;
   investExperience: string;
+  risikobereitschaft: string;
 
   // step-4 variable
 
@@ -85,52 +87,28 @@ export class InfoFlowComponent implements OnInit {
 
   goToStep(step: number) {
     this.stepNumber = step;
-    this.barChartData = [
-      { data: [this.assetAccumulation, 59, 80, 81, 56, 55, 25, 23, 42, this.assetIn10], label: 'Sparen mit Zinsen' },
-    ];
+    this.prepareGraph();
   }
 
   showGraphType(graphType: string) {
     if (graphType === 'sparenZinsen') {
-
-      this.chartColors = [
-        {
-          backgroundColor: ["#f5593d"],
-          borderColor: '#ffffff',
-          pointBorderColor: '#fff',
-        }];
-      this.barChartData = [
-        { data: [this.assetAccumulation, 59, 80, 81, 56, 55, 25, 23, 42, this.assetIn10], label: 'Sparen mit Zinsen' },
-      ];
-
+      this.graphDataCalculator(-0.0002);
     } else if (graphType === 'investmentsAktien') {
-
-      this.chartColors = [
-        {
-          backgroundColor: ["#007bff"],
-          borderColor: '#ffffff',
-          pointBorderColor: '#fff',
-        }];
-      this.barChartData = [
-        { data: [this.assetAccumulation, 48, 40, 19, 86, 27, 34, 35, 54, this.assetIn10], label: 'Investments mit Aktien' },
-      ];
+      this.graphDataCalculator(0.0818);
 
     } else if (graphType === 'investmentsImmobilien') {
-      this.chartColors = [
-        {
-          backgroundColor: ["#ffc107"],
-          borderColor: '#ffffff',
-          pointBorderColor: '#fff',
-        }];
-
-      this.barChartData = [
-        { data: [this.assetAccumulation, 53, 84, 23, 47, 63, 45, 23, 45, this.assetIn10], label: 'Investments mit Immobilie' }
-      ];
+      console.log(this.calculatSerrvice.currency);
+      if (this.calculatSerrvice.currency == 'swiss') {
+        this.graphDataCalculator(0.0969);
+      } else {
+        this.graphDataCalculator(0.1256);
+      }
     }
   }
 
   nextNBack(step: string) {
-    console.log(this.stepNumber);
+    this.prepareGraph();
+
     if (step == "next" && this.stepNumber < 6) {
       this.stepNumber = this.stepNumber + 1;
     }
@@ -138,6 +116,32 @@ export class InfoFlowComponent implements OnInit {
     if (step == "back" && this.stepNumber > 1) {
       this.stepNumber = this.stepNumber - 1;
     }
+  }
+
+  prepareGraph() {
+    this.graphDataCalculator(-0.0002);
+  }
+
+  graphDataCalculator(intrestRate: number) {
+    this.assetAccumulation
+    let graphData = [];
+    // 0 to 10 years
+    graphData.push(this.assetAccumulation);
+    for (let i = 0; i < 10; i++) {
+      let yearlyPricipal = graphData[0] * intrestRate + graphData[i]
+      graphData.push(yearlyPricipal)
+    }
+    this.barChartData = [
+      {
+        data: graphData
+      },
+      { data: [this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10], label: '10 Jahren' },
+    ]
+  }
+
+  changeModel() {
+    this.maximumDebt = this.capitalEmployed * 9;
+    this.affordProperty = (this.maximumDebt + this.capitalEmployed) * 0.17
   }
 
 }

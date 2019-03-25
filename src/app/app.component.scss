@@ -1,0 +1,48 @@
+.site-logo {
+  width: 50%;
+  margin-left: -10%;
+}
+
+.site-right-logo{
+  color: #6cc47f;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: lora;
+}
+
+.site-right-logo-box {
+  padding-left: 25%; 
+}
+
+.right-logos {
+  padding-top: 1%;
+}
+
+.header-menu {
+  background-color: #28395e;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.menu-title{
+  cursor: pointer;
+  font-family: lora;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  color: #fff;
+}
+
+.menu-title:hover {
+  border-bottom: 3px solid #ffffff;
+}
+
+.selected-menu{
+  border-bottom: 3px solid #ffffff;
+}
+
+.right-logos {
+  color: #6cc47f;
+}
