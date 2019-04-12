@@ -1,5 +1,5 @@
 .site-logo {
-  width: 50%;
+  width: 50vh;
   margin-left: -10%;
 }
 
@@ -34,6 +34,17 @@
   transition: all 0.3s ease 0s;
   color: #fff;
 }
+.mobile-menu-tag {
+  cursor: pointer;
+  font-family: lora;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  color: #fff;
+  color: #fff; 
+  font-size: 22px;
+}
 
 .menu-title:hover {
   border-bottom: 3px solid #ffffff;
@@ -45,4 +56,15 @@
 
 .right-logos {
   color: #6cc47f;
+}
+.mobile-menu {
+  visibility: hidden;
+}
+@media screen and (max-width: 600px) {
+  .menu-title {
+    display: none;
+  }
+  .mobile-menu {
+    visibility: visible !important;
+  }
 }

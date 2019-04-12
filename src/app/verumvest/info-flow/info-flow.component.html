@@ -1,6 +1,9 @@
 <div class="section user-info">
   <div class="container">
     <div class="row">
+      <div class="col text-left">
+        <button type="button" class="btn btn-success btn-round" (click)=nextNBack(back)>Back</button>
+      </div>
       <div class="col text-center">
         <span class="dot" [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']" (click)=goToStep(1)>1</span>
         <span class="dot" [ngClass]="[stepNumber == 2 ? 'active' : 'inactive']" (click)=goToStep(2)>2</span>
@@ -8,6 +11,9 @@
         <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span>
         <span class="dot" [ngClass]="[stepNumber == 5 ? 'active' : 'inactive']" (click)=goToStep(5)>5</span>
         <!-- <span class="dot" [ngClass]="[stepNumber == 6 ? 'active' : 'inactive']" (click)=goToStep(6)>6</span> -->
+      </div>
+      <div class="col text-right">
+        <button type="button" class="btn btn-success btn-round" (click)=nextNBack(next)>Next</button>
       </div>
     </div>
     <div class="row step step-1" *ngIf="stepNumber == 0">
@@ -376,13 +382,13 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col text-left">
         <button type="button" class="btn btn-success btn-round" (click)=nextNBack(back)>Back</button>
       </div>
       <div class="col text-right">
         <button type="button" class="btn btn-success btn-round" (click)=nextNBack(next)>Next</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

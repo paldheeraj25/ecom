@@ -51,3 +51,9 @@
 footer-text {
   font-family: moteserrate, sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+  .fixed-bottom {
+    visibility: hidden;
+  }
+}
