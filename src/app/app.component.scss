@@ -8,6 +8,7 @@
   font-size: 18px;
   font-weight: 700;
   font-family: lora;
+  margin-left: 0.7em;
 }
 
 .site-right-logo-box {
@@ -16,6 +17,21 @@
 
 .right-logos {
   padding-top: 1%;
+}
+
+.header-para{
+  margin-left: 4.5em;
+  color: #606060;;
+  font-size: 14px;
+  font-family: lora;
+}
+
+.header-para-mobile{
+  margin-left: 1em;
+  font-size: 15px;
+  color: #606060;
+  line-height: 1.5em;
+  margin-bottom: 5px;
 }
 
 .header-menu {
@@ -57,8 +73,24 @@
 .right-logos {
   color: #6cc47f;
 }
+
+.right-logos1{
+  font-size: 25px ;
+  width: 50px;
+  height: 50px;
+  border-radius: 48%;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid #6cc47f;
+  vertical-align: middle;
+}
 .mobile-menu {
   visibility: hidden;
+}
+
+.site-logo-mobile {
+  width: 100%;
+  margin-left: 1%;
 }
 @media screen and (max-width: 600px) {
   .menu-title {
@@ -66,5 +98,16 @@
   }
   .mobile-menu {
     visibility: visible !important;
+  }
+  .desktop-header {
+    display: none;
+  }
+  .mobile-header {
+    display: block;
+  }
+}
+@media screen and (min-width: 600px) {
+  .mobile-header {
+    display: none !important;
   }
 }

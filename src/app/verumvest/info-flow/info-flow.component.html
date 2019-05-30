@@ -7,9 +7,9 @@
       <div class="col text-center">
         <span class="dot" [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']" (click)=goToStep(1)>1</span>
         <span class="dot" [ngClass]="[stepNumber == 2 ? 'active' : 'inactive']" (click)=goToStep(2)>2</span>
+        <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
+        <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span> -->
         <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
-        <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span>
-        <span class="dot" [ngClass]="[stepNumber == 5 ? 'active' : 'inactive']" (click)=goToStep(5)>5</span>
         <!-- <span class="dot" [ngClass]="[stepNumber == 6 ? 'active' : 'inactive']" (click)=goToStep(6)>6</span> -->
       </div>
       <div class="col text-right">
@@ -210,7 +210,7 @@
             <div class="bd-highlight">
               <div class="input-col">
                 <label for="customRange1" class="white-text">Meine Rücklagen heute</label>
-                <input type="range" min="1" max="10000" [(ngModel)]="reserveToday" class="custom-range custom-range-input"
+                <input type="range" min="1" max="1000000" [(ngModel)]="reserveToday" class="custom-range custom-range-input"
                   id="customRange1">
                 <div>
                   <div class="input-group mb-3">
@@ -229,7 +229,7 @@
             <div class="bd-highlight">
               <div class="input-col">
                 <label for="customRange1" class="white-text">Wie gross soll Dein Vermögen nach 10 Jahren sein?</label>
-                <input type="range" min="1" max="10000" [(ngModel)]="assetIn10" class="custom-range custom-range-input"
+                <input type="range" min="1" max="1000000" [(ngModel)]="assetIn10" class="custom-range custom-range-input"
                   id="customRange1">
                 <div>
                   <div class="input-group mb-3">
@@ -251,7 +251,7 @@
               <div class="">
                 <label for="customRange1" class="white-text">Was würdest Du heute für Dein Vermögensaufbau
                   investieren?</label>
-                <input type="range" min="1" max="10000" [(ngModel)]="assetAccumulation" class="custom-range custom-range-input"
+                <input type="range" min="1" max="1000000" [(ngModel)]="assetAccumulation" class="custom-range custom-range-input"
                   id="customRange1">
                 <div>
                   <div class="input-group mb-3">
@@ -268,7 +268,7 @@
         </div>
       </div>
     </div>
-    <div class="step-3 step" *ngIf="stepNumber == 3">
+    <!-- <div class="step-3 step" *ngIf="stepNumber == 3">
       <div class="row">
         <div class="col text-center">
           <h6 class="white-text">Warum solltest Du in Immobilien investieren?</h6>
@@ -290,23 +290,12 @@
             <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
               [chartType]="barChartType" class="chart-canvas" [colors]="chartColors"></canvas>
           </div>
-          <!-- <div class="chart-container" *ngIf="showGraph === 'sparenZinsen'">
-            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-              [chartType]="barChartType" class="chart-canvas" [colors]="chartColors"></canvas>
-          </div>
-          <div class="chart-container" *ngIf="showGraph === 'investmentsAktien'">
-            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-              [chartType]="barChartType" class="chart-canvas" [colors]="chartColors"></canvas>
-          </div>
-          <div class="chart-container" *ngIf="showGraph === 'investmentsImmobilien'">
-            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-              [chartType]="barChartType" class="chart-canvas" [colors]="chartColors"></canvas>
-          </div> -->
+          
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- step 5 -->
-    <div class="step-3 step" *ngIf="stepNumber == 4">
+    <!-- <div class="step-3 step" *ngIf="stepNumber == 4">
       <div class="row">
         <div class="col-md-6 col-sm-12">
           <div class="d-flex flex-column bd-highlight mb-3">
@@ -320,7 +309,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text fa fa-euro"></span>
                     </div>
-                    <input type="number" min="1" max="1000000" [(ngModel)]="capitalEmployed" class="form-control"
+                    <input type="number" min="1" max="100000000" [(ngModel)]="capitalEmployed" class="form-control"
                       aria-label="Amount (to the nearest dollar)" (change)="changeModel()">
                   </div>
                 </div>
@@ -381,6 +370,153 @@
           </div>
         </div>
       </div>
+    </div> -->
+    <div class="step-3 step" *ngIf="stepNumber == 3">
+      <div class="customerForm">
+
+        <div class="row">
+          <!-- <div class="col-md-12 col-sm-12">
+          <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="p-2 bd-highlight">
+              <div class="input-col">
+                equity: {{this.assetAccumulation}}
+              </div>
+              <div class="input-col">
+                Erwerbs Nebenkosten: {{(this.assetAccumulation / 0.27) * 0.07}}
+              </div>
+              <div class="input-col">
+                Eigenkapital zur Immobilie: {{(this.assetAccumulation / 0.27) * 0.2}}
+              </div>
+              <div class="input-col">
+                Finanzierung: {{(this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)}}
+              </div>
+              <div class="input-col">
+                Kaufpreis möglich: {{this.assetAccumulation / 0.27}}
+              </div>
+              <div class="input-col">
+                Wie viel m² Wohnfläche kann gekauft werden: {{(this.assetAccumulation / 0.27) / 2700}}
+              </div>
+              <div class="input-col">
+                Wie viele Wohnungen sind das?: {{((this.assetAccumulation / 0.27) / 2700) / 75}}
+              </div>
+              <div class="input-col">
+                Miete mtl. aus der Investition?: {{((this.assetAccumulation / 0.27) * 0.04) / 12}}
+              </div>
+              <div class="input-col">
+                Summe Einnahmen?: {{((this.assetAccumulation / 0.27) * 0.04) / 12}}
+              </div>
+              <div class="input-col">
+                Finanzierungszins: {{(((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12}}
+              </div>
+              <div class="input-col">
+                Finanzierungszins: {{(((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12}}
+              </div>
+              <div class="input-col">
+                Aufwand Verwaltung : {{(((this.assetAccumulation / 0.27) / 2700) / 75) * 36}}
+              </div>
+              <div class="input-col">
+                Steuerliche Belastung : {{(this.assetAccumulation / 0.27) * 0.002 / 12}}
+              </div>
+              <div class="input-col">
+                Summe Ausgaben: {{((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
+                * 0.002 / 12)}}
+              </div>
+              <div class="input-col">
+                Ergebnis Einnahmen - Ausgaben: {{(((this.assetAccumulation / 0.27) * 0.04) / 12) -
+                (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
+                * 0.002 / 12))}}
+              </div>
+              <div class="input-col">
+                Tilgung bei den Vorgaben nach 10 Jahren : // not sure
+              </div>
+              <div class="input-col">
+                Immobilienwert nach 10 Jahren bei : {{getPower * (this.assetAccumulation / 0.27)}}
+              </div>
+              <div class="input-col">
+                Guthabendelta nach 10 Jahren daraus : // not sure
+              </div>
+              <div class="input-col">
+                Aufwandsrechner innerhalb von 10 Jahren : {{this.assetAccumulation - ((((this.assetAccumulation /
+                0.27) * 0.04) / 12) -
+                (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+                0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation /
+                0.27)
+                * 0.002 / 12))) * 12 * 10}}
+              </div>
+            </div>
+          </div> -->
+          <div class="col-md-6 form-input-last">
+            <div class="d-flex flex-column bd-highlight mb-3">
+              <div class="bd-highlight">
+                <div class="input-col">
+                  <!-- <label for="customRange1" class="white-text">Name</label> -->
+                  <div class="input-group mb-3">
+                    <input type="text" placeholder="Name..." [(ngModel)]="user.name" class="form-control landing-page"
+                      aria-label="Amount (to the nearest dollar)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 form-input-last">
+            <div class="d-flex flex-column bd-highlight mb-3">
+              <div class="bd-highlight">
+                <div class="input-col">
+                  <!-- <label for="customRange1" class="white-text">Email</label> -->
+                  <div class="input-group mb-3">
+                    <input type="text" placeholder="Email..." [(ngModel)]="user.email" class="form-control landing-page"
+                      aria-label="Amount (to the nearest dollar)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 form-input-last">
+            <div class="d-flex flex-column bd-highlight mb-3">
+              <div class="bd-highlight">
+                <div class="input-col">
+                  <!-- <label for="customRange1" class="white-text">Phone number</label> -->
+                  <div class="input-group mb-3">
+                    <input type="text" placeholder="Phone Number..." [(ngModel)]="user.phone" class="form-control landing-page"
+                      aria-label="Amount (to the nearest dollar)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 form-input-last">
+            <div class="d-flex flex-column bd-highlight mb-3">
+              <div class="bd-highlight">
+                <div class="input-col">
+                  <!-- <label for="customRange1" class="white-text">Address</label> -->
+                  <div class="input-group mb-3">
+                    <input type="text" placeholder="Address..." [(ngModel)]="user.address" class="form-control landing-page"
+                      aria-label="Amount (to the nearest dollar)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button (click)="getPdf()" class="btn btn-primary pull-right">Send me Investment
+              details</button>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="form-success">
+        <span>pdf link</span>
+      </div> -->
     </div>
     <!-- <div class="row">
       <div class="col text-left">
