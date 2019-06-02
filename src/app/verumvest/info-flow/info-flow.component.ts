@@ -292,7 +292,7 @@ export class InfoFlowComponent implements OnInit {
   nextNBack(step: string) {
     this.prepareGraph();
 
-    if (step == "next" && this.stepNumber < 3) {
+    if (step == "next" && this.stepNumber < 4) {
       this.stepNumber = this.stepNumber + 1;
     }
 

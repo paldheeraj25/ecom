@@ -10,7 +10,7 @@
         <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
         <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span> -->
         <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
-        <!-- <span class="dot" [ngClass]="[stepNumber == 6 ? 'active' : 'inactive']" (click)=goToStep(6)>6</span> -->
+        <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span>
       </div>
       <div class="col text-right">
         <button type="button" class="btn btn-success btn-round" (click)=nextNBack(next)>Next</button>
@@ -82,126 +82,91 @@
       </div>
     </div>
     <div class="step-2 step shadow" *ngIf="stepNumber == 1">
+      <p class="form-title">Fragen zu Iher Person</p>
+      <form onsubmit="submitForm()" class="form-container">
+        <div class="row row-container">
+          <p class="form-group-title col-md-12 ml-2">Familienstand</p>
+          <label class="radio-inline col-md-2 mb-3">
+            <input type="radio" name="optradio" /> Ich bin Single
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> Ich lebe in einer Beziehung
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> Ich bin verheiratet
+          </label>
+        </div>
 
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <h6 class="white-text">Familienstand :</h6>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="step2FamilyStand" name="maritalStatus" id="inlineRadio1"
-            value="single">
-          <label class="form-check-label white-text" for="inlineRadio1">Ich bin Single</label></div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="step2FamilyStand" name="maritalStatus" id="inlineRadio2"
-            value="veziehung">
-          <label class="form-check-label white-text" for="inlineRadio2">Ich lebe in einer Beziehung</label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="step2FamilyStand" name="maritalStatus" id="inlineRadio3"
-            value="verheiratet">
-          <label class="form-check-label white-text" for="inlineRadio3">Ich bin verheiratet</label>
-        </div>
-        <div class="col-md-2">
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <h6 class="white-text">Altersgruppe :</h6>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="ageRange" name="ageRange" id="inlineRadio1" value="20-30">
-          <label class="form-check-label white-text" for="inlineRadio1">20-30</label></div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="ageRange" name="ageRange" id="inlineRadio2" value="30-40">
-          <label class="form-check-label white-text" for="inlineRadio2">30-40</label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="ageRange" name="ageRange" id="inlineRadio3" value="40-50">
-          <label class="form-check-label white-text" for="inlineRadio3">40-50</label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="ageRange" name="ageRange" id="inlineRadio3" value="50-60">
-          <label class="form-check-label white-text" for="inlineRadio3">50-60</label>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <h6 class="white-text">anzahlKinder :</h6>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="kids" name="kids" id="inlineRadio1" value="noKids">
-          <label class="form-check-label white-text" for="inlineRadio1">Ich habe keine Kinder</label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="kids" name="kids" id="inlineRadio2" value="1-2">
-          <label class="form-check-label white-text" for="inlineRadio2">Ich habe 1 - 2 Kinder</label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="kids" name="kids" id="inlineRadio3" value="2-4">
-          <label class="form-check-label white-text" for="inlineRadio3">Ich habe 2 - 4 Kinder
+        <div class="row row-container">
+          <p class="form-group-title col-md-12 ml-2">Alter</p>
+          <label class="radio-inline col-md-2 mb-3">
+            <input type="radio" name="optradio" /> 20-35 Jahre
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> 36-45 Jahre
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> 46-60 Jahre
           </label>
         </div>
-        <div class="col-md-2 col-sm-12">
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <h6 class="white-text">Erfahrung Immobilien Investitionen :</h6>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="investExperience" name="investExperience" id="inlineRadio1"
-            value="noExperience">
-          <label class="form-check-label white-text" for="inlineRadio1">Ich habe keine Erfahrung mit Immobilien
-            Investments
+
+        <div class="row row-container">
+          <p class="form-group-title col-md-12 ml-2">Kinder</p>
+          <label class="radio-inline col-md-2 mb-3">
+            <input type="radio" name="optradio" /> Kaine Kinder
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> 1-2 Kinder
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> 2-4 Kinder
           </label>
         </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="investExperience" name="investExperience" id="inlineRadio2"
-            value="1-2-year-experience">
-          <label class="form-check-label white-text" for="inlineRadio2">Ich habe bereits in 1 - 2 Immobilien investiert
+
+        <div class="row row-container">
+          <p class="form-group-title col-md-12 ml-2">
+            Erfahrung Immobilien Investitionem
+          </p>
+          <label class="radio-inline col-md-2 mb-3">
+            <input type="radio" name="optradio" /> Kaine Erfahrung
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> Bereits in 1-2 Immobilien
+            Investiert
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> Bereits in 3-4 Immobilien
+            Investiert
           </label>
         </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="investExperience" name="investExperience" id="inlineRadio3"
-            value="2-4-year-experience">
-          <label class="form-check-label white-text" for="inlineRadio3">Ich habe bereits in 2 - 4 Immobilien investiert
+
+        <div class="row row-container">
+          <p class="form-group-title col-md-12 ml-2">
+            Risikobereitschaft
+          </p>
+          <label class="radio-inline col-md-2 mb-3">
+            <input type="radio" name="optradio" /> Ungern Risiko
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> Ja. wenn Risiken transparent sind
+            Investiert
+          </label>
+          <label class="radio-inline col-md-4 mb-3">
+            <input type="radio" name="optradio" /> Ja. wenn dies die Rendite-Chance
+            erhoht
           </label>
         </div>
-        <div class="col-md-2 col-sm-12">
+
+        <div class="buttons-container">
+          <button type="button" class="large-btn btn-green">
+            Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+          </button>
+          <button type="submit" class="large-btn btn-green right-side">
+            Nachster Schritt
+            <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+          </button>
         </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <h6 class="white-text">Risikobereitschaft :</h6>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="risikobereitschaft" name="no-risk" id="inlineRadio1"
-            value="noExperience">
-          <label class="form-check-label white-text" for="inlineRadio1">Ich gehe ungern Investment Risiken ein
-          </label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="risikobereitschaft" name="transparent-risk" id="inlineRadio2"
-            value="1-2-year-experience">
-          <label class="form-check-label white-text" for="inlineRadio2"> Ich gehe Investment Risiken ein, wenn Sie
-            transparent sind
-          </label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <input class="form-check-input" type="radio" [(ngModel)]="risikobereitschaft" name="case-based-risk" id="inlineRadio3"
-            value="2-4-year-experience">
-          <label class="form-check-label white-text" for="inlineRadio3">Ich gehe Risiken ein, wenn dies die
-            Rendite-Chance erhöht
-          </label>
-        </div>
-        <div class="col-md-2 col-sm-12">
-        </div>
-      </div>
-      <br>
+      </form>
     </div>
     <div class="step-3 step" *ngIf="stepNumber == 2">
       <div class="row">
@@ -372,151 +337,103 @@
       </div>
     </div> -->
     <div class="step-3 step" *ngIf="stepNumber == 3">
-      <div class="customerForm">
+      <p class="form-title">Fragen zu Iher Person</p>
+      <p class="text-center pt-2">
+        Der Marktwert Ihrer Immobilie wird nun berechnet.
+      </p>
+      <p class="text-center pt-1">Wer soll die Auswertung erhalten?</p>
 
-        <div class="row">
-          <!-- <div class="col-md-12 col-sm-12">
-          <div class="d-flex flex-column bd-highlight mb-3">
-            <div class="p-2 bd-highlight">
-              <div class="input-col">
-                equity: {{this.assetAccumulation}}
-              </div>
-              <div class="input-col">
-                Erwerbs Nebenkosten: {{(this.assetAccumulation / 0.27) * 0.07}}
-              </div>
-              <div class="input-col">
-                Eigenkapital zur Immobilie: {{(this.assetAccumulation / 0.27) * 0.2}}
-              </div>
-              <div class="input-col">
-                Finanzierung: {{(this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)}}
-              </div>
-              <div class="input-col">
-                Kaufpreis möglich: {{this.assetAccumulation / 0.27}}
-              </div>
-              <div class="input-col">
-                Wie viel m² Wohnfläche kann gekauft werden: {{(this.assetAccumulation / 0.27) / 2700}}
-              </div>
-              <div class="input-col">
-                Wie viele Wohnungen sind das?: {{((this.assetAccumulation / 0.27) / 2700) / 75}}
-              </div>
-              <div class="input-col">
-                Miete mtl. aus der Investition?: {{((this.assetAccumulation / 0.27) * 0.04) / 12}}
-              </div>
-              <div class="input-col">
-                Summe Einnahmen?: {{((this.assetAccumulation / 0.27) * 0.04) / 12}}
-              </div>
-              <div class="input-col">
-                Finanzierungszins: {{(((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12}}
-              </div>
-              <div class="input-col">
-                Finanzierungszins: {{(((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12}}
-              </div>
-              <div class="input-col">
-                Aufwand Verwaltung : {{(((this.assetAccumulation / 0.27) / 2700) / 75) * 36}}
-              </div>
-              <div class="input-col">
-                Steuerliche Belastung : {{(this.assetAccumulation / 0.27) * 0.002 / 12}}
-              </div>
-              <div class="input-col">
-                Summe Ausgaben: {{((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
-                * 0.002 / 12)}}
-              </div>
-              <div class="input-col">
-                Ergebnis Einnahmen - Ausgaben: {{(((this.assetAccumulation / 0.27) * 0.04) / 12) -
-                (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
-                * 0.002 / 12))}}
-              </div>
-              <div class="input-col">
-                Tilgung bei den Vorgaben nach 10 Jahren : // not sure
-              </div>
-              <div class="input-col">
-                Immobilienwert nach 10 Jahren bei : {{getPower * (this.assetAccumulation / 0.27)}}
-              </div>
-              <div class="input-col">
-                Guthabendelta nach 10 Jahren daraus : // not sure
-              </div>
-              <div class="input-col">
-                Aufwandsrechner innerhalb von 10 Jahren : {{this.assetAccumulation - ((((this.assetAccumulation /
-                0.27) * 0.04) / 12) -
-                (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-                0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation /
-                0.27)
-                * 0.002 / 12))) * 12 * 10}}
-              </div>
-            </div>
-          </div> -->
-          <div class="col-md-6 form-input-last">
-            <div class="d-flex flex-column bd-highlight mb-3">
-              <div class="bd-highlight">
-                <div class="input-col">
-                  <!-- <label for="customRange1" class="white-text">Name</label> -->
-                  <div class="input-group mb-3">
-                    <input type="text" placeholder="Name..." [(ngModel)]="user.name" class="form-control landing-page"
-                      aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 form-input-last">
-            <div class="d-flex flex-column bd-highlight mb-3">
-              <div class="bd-highlight">
-                <div class="input-col">
-                  <!-- <label for="customRange1" class="white-text">Email</label> -->
-                  <div class="input-group mb-3">
-                    <input type="text" placeholder="Email..." [(ngModel)]="user.email" class="form-control landing-page"
-                      aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="text-center pt-4">
+        <label class="radio-inline mr-3">
+          <input type="radio" name="optradio" /> Frau
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" /> Herr
+        </label>
+      </div>
+
+      <div class="text-center pt-4 row">
+        <div class="col-md-2"></div>
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control" id="vorname" placeholder="Vorname*" />
         </div>
-        <div class="row">
-          <div class="col-md-6 form-input-last">
-            <div class="d-flex flex-column bd-highlight mb-3">
-              <div class="bd-highlight">
-                <div class="input-col">
-                  <!-- <label for="customRange1" class="white-text">Phone number</label> -->
-                  <div class="input-group mb-3">
-                    <input type="text" placeholder="Phone Number..." [(ngModel)]="user.phone" class="form-control landing-page"
-                      aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 form-input-last">
-            <div class="d-flex flex-column bd-highlight mb-3">
-              <div class="bd-highlight">
-                <div class="input-col">
-                  <!-- <label for="customRange1" class="white-text">Address</label> -->
-                  <div class="input-group mb-3">
-                    <input type="text" placeholder="Address..." [(ngModel)]="user.address" class="form-control landing-page"
-                      aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control" id="nachname" placeholder="Nachname*" />
         </div>
-        <div class="row">
-          <div class="col">
-            <button (click)="getPdf()" class="btn btn-primary pull-right">Send me Investment
-              details</button>
+      </div>
+
+      <div class="text-center row">
+        <div class="col-md-2"></div>
+        <div class="form-group col-md-8">
+          <input type="text" class="form-control" id="email" placeholder="E-Mail-Adresse*" />
+        </div>
+      </div>
+
+      <div class="text-center row">
+        <div class="col-md-2"></div>
+        <div class="form-group col-md-8">
+          <input type="text" class="form-control" id="teleNumber" placeholder="Telefonnummer*" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10" style="text-align: right; font-size: 12px; opacity: 0.5; margin-top: -12px">
+          Pflichtfeld
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="form-group col-md-8 checkbox">
+          <label>
+            <input type="checkbox" value="" />
+            <span class="pl-1 small-font">
+              Ich habe die Datenschutzerklarung gelesen und willige ein. class meine
+              personenbezogenen Daten zur Kontaktaufnahme und Zusendung von
+              Informationen verarbeitet werden. Ich kann diese Einwilligung jederzeit
+              mit einer E-Mail an info@verumvest.com widerrufen.
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <button type="submit" class="large-btn btn-green">
+          Absenden <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="step-3 step" *ngIf="stepNumber == 4">
+      <div class="row">
+        <div class="col text-center p-t-5">
+          <h6>Veilen DankFur lhre Angaben</h6>
+          <span>Hallo Max Mustermann,</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="text-center text-padding">
+            <span>
+              danke das Sie unseren Finanztest erfolgreich abgeschlossen haben. Wir freuen uns sehr daruber, dass Sie
+              sich fur Immobilieninvestments interessieren.
+            </span>
           </div>
         </div>
       </div>
-      <!-- <div class="form-success">
-        <span>pdf link</span>
-      </div> -->
+      <div class="row">
+        <div class="col text-center p-t-5">
+          <span>
+            Sie erhalten Ihre kostenfreie Investmentanalyse an folgende E-Mail-Adresse:
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center p-t-5">
+          <h6>
+            max.mustermann@muster.de
+          </h6>
+        </div>
+      </div>
     </div>
     <!-- <div class="row">
       <div class="col text-left">
