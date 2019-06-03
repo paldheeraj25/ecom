@@ -240,7 +240,7 @@
           </label>
         </div>
 
-        <div class="row row-container">
+        <div class="row row-container mb-4">
           <p class="form-group-title col-md-12 ml-2">
             Risikobereitschaft
           </p>
@@ -294,7 +294,7 @@
       </form>
     </div>
     <div class="step-3 step" *ngIf="stepNumber == 2">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-6">
           <div class="d-flex flex-column bd-highlight mb-3">
             <div class="bd-highlight">
@@ -394,6 +394,110 @@
             </div>
           </div>
         </div>
+      </div> -->
+
+      <p class="form-title">Finanzielle Angaben</p>
+
+      <div class="row">
+        <p class="form-group-title col-md-12">
+          Ihre Rucklagen heute
+        </p>
+        <div class="input-group col-md-3 mb-5 p-0 pl-1">
+          <input
+            type="text"
+            class="form-control no-right-border"
+            placeholder=""
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">€</span>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8 mb-4 p-0 pl-1">
+          <input
+            type="range"
+            min="1"
+            max="1000000"
+            [(ngModel)]="assetAccumulation"
+            class="custom-range custom-range-input"
+            id="customRange1"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <p class="form-group-title col-md-12">
+          Gewunschtes Vermogen nach 10 Jahren
+        </p>
+        <div class="input-group col-md-3 mb-5 p-0 pl-1">
+          <input
+            type="text"
+            class="form-control no-right-border"
+            placeholder=""
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">€</span>
+          </div>
+        </div>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-8 mb-4 p-0 pl-1">
+          <input
+            type="range"
+            min="1"
+            max="1000000"
+            [(ngModel)]="assetAccumulation"
+            class="custom-range custom-range-input"
+            id="customRange1"
+          />
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <p class="form-group-title col-md-12">
+          Wieviel wurden Sie heute fur Ihren Vermogensaufbau investieren?
+        </p>
+        <div class="input-group col-md-3 mb-5 p-0 pl-1">
+          <input
+            type="text"
+            class="form-control no-right-border"
+            placeholder=""
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">€</span>
+          </div>
+        </div>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-8 mb-4 p-0 pl-1">
+          <input
+            type="range"
+            min="1"
+            max="1000000"
+            [(ngModel)]="assetAccumulation"
+            class="custom-range custom-range-input"
+            id="customRange1"
+          />
+        </div>
+      </div>
+
+      <div class="row buttons-container">
+        <button
+          type="button"
+          class="col-md-3 btn-green large-btn"
+          (click)="nextNBack(back)"
+        >
+          Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+        </button>
+        <div class="col-md-6"></div>
+        <button
+          type="button"
+          class="col-md-3 btn-green large-btn"
+          (click)="nextNBack(next)"
+        >
+          Nachster Schritt
+          <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
     <!-- <div class="step-3 step" *ngIf="stepNumber == 3">
