@@ -1,4 +1,4 @@
-.section.user-info{
+.section.user-info {
   // background: hsl(0, 0%, 86%);
   // height: 100vh;
   padding: 10px;
@@ -13,17 +13,17 @@
   }
 }
 .dot {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    font-size: x-large;
-    font-weight: 500;
-    padding: 1px;
-    margin: 0 4px;
-    display: inline-block;
-    color: #fff;
-    border: 1px solid #222;
-    cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: x-large;
+  font-weight: 500;
+  padding: 1px;
+  margin: 0 4px;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #222;
+  cursor: pointer;
 }
 
 .inactive {
@@ -31,18 +31,18 @@
 }
 
 .active {
-  background-color: #45d082; 
+  background-color: #45d082;
 }
 
 .step {
   margin: 2%;
 }
 
-.step-1-elem{
+.step-1-elem {
   cursor: pointer;
 }
 
-.step-1-col{
+.step-1-col {
   margin-bottom: 3%;
 }
 
@@ -55,10 +55,9 @@
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
-
 }
 
-.step-1-col :hover{
+.step-1-col :hover {
   // background: #45d082;
 }
 
@@ -111,7 +110,7 @@ li {
 .money-tree {
   width: 50%;
 }
-.pig{
+.pig {
   width: 50%;
 }
 
@@ -146,7 +145,7 @@ li {
 }
 
 .money-grid {
-  display: grid ;
+  display: grid;
   grid-template-columns: 1fr 1fr;
 }
 .p-4rem {
@@ -155,16 +154,16 @@ li {
 
 .chart-canvas {
   height: 55vh;
-  width: 100%;;
+  width: 100%;
 }
 .form-input-last {
   padding-right: 7%;
   padding-top: 2%;
 }
 
-.landing-page::placeholder{
-  color: #66615b ;
-  font-style: italic; 
+.landing-page::placeholder {
+  color: #66615b;
+  font-style: italic;
 }
 
 .p-t-5 {
@@ -175,7 +174,7 @@ li {
   padding: 0 15% 0 15%;
 }
 
-// naresh 
+// naresh
 .form-title {
   text-align: center;
   margin-bottom: 0.5rem;
@@ -194,10 +193,6 @@ li {
   margin-bottom: 0.5rem;
 }
 
-.buttons-container {
-  display: flex;
-}
-
 .right-side {
   margin-left: auto;
 }
@@ -208,9 +203,8 @@ li {
 }
 
 .large-btn {
-  font-size: 25px;
+  font-size: 20px;
   height: 45px;
-  min-width: 250px;
 }
 
 .fa-chevron-right {
@@ -233,12 +227,6 @@ li {
 .btn-green {
   background-color: #00800ab0;
   color: white;
-}
-
-.large-btn {
-  font-size: 25px;
-  height: 45px;
-  min-width: 250px;
 }
 
 .small-font {

@@ -2,65 +2,105 @@
   <div class="container">
     <div class="row">
       <div class="col text-left">
-        <button type="button" class="btn btn-success btn-round" (click)=nextNBack(back)>Back</button>
+        <button
+          type="button"
+          class="btn btn-success btn-round"
+          (click)="nextNBack(back)"
+        >
+          Back
+        </button>
       </div>
       <div class="col text-center">
-        <span class="dot" [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']" (click)=goToStep(1)>1</span>
-        <span class="dot" [ngClass]="[stepNumber == 2 ? 'active' : 'inactive']" (click)=goToStep(2)>2</span>
+        <span
+          class="dot"
+          [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']"
+          (click)="goToStep(1)"
+          >1</span
+        >
+        <span
+          class="dot"
+          [ngClass]="[stepNumber == 2 ? 'active' : 'inactive']"
+          (click)="goToStep(2)"
+          >2</span
+        >
         <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
         <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span> -->
-        <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
-        <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span>
+        <span
+          class="dot"
+          [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']"
+          (click)="goToStep(3)"
+          >3</span
+        >
+        <span
+          class="dot"
+          [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']"
+          (click)="goToStep(4)"
+          >4</span
+        >
       </div>
       <div class="col text-right">
-        <button type="button" class="btn btn-success btn-round" (click)=nextNBack(next)>Next</button>
+        <button
+          type="button"
+          class="btn btn-success btn-round"
+          (click)="nextNBack(next)"
+        >
+          Next
+        </button>
       </div>
     </div>
     <div class="row step step-1" *ngIf="stepNumber == 0">
       <div class="col-md-4 col-sm-12 step-1-col">
-        <div class="step-1-elem" (click)=stepOneBlock(step1elem1)>
+        <div class="step-1-elem" (click)="stepOneBlock(step1elem1)">
           <ul class="step-1-ul">
             <li>
               <p class="step-1-p-text">Ich bin Single</p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich bin 20 - 30 Jahre alt </p>
+              <p class="step-1-p-text">Ich bin 20 - 30 Jahre alt</p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich habe keine Kinder </p>
+              <p class="step-1-p-text">Ich habe keine Kinder</p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich habe bisher nicht in Immobilien investiert </p>
+              <p class="step-1-p-text">
+                Ich habe bisher nicht in Immobilien investiert
+              </p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich gehe ungern Investment Risiken ein </p>
+              <p class="step-1-p-text">
+                Ich gehe ungern Investment Risiken ein
+              </p>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-md-4 col-sm-12 step-1-col">
-        <div class="step-1-elem" (click)=stepOneBlock(step1elem2)>
+        <div class="step-1-elem" (click)="stepOneBlock(step1elem2)">
           <ul class="step-1-ul">
             <li>
               <p class="step-1-p-text">Ich bin in einer Beziehung</p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich bin 30 - 40 Jahre alt </p>
+              <p class="step-1-p-text">Ich bin 30 - 40 Jahre alt</p>
             </li>
             <li>
               <p class="step-1-p-text">Ich habe 1 -2 Kinder</p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich habe bereits in 1 -2 Immobilien investiert</p>
+              <p class="step-1-p-text">
+                Ich habe bereits in 1 -2 Immobilien investiert
+              </p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich gehe Investment Risiken ein, wenn Sie transparent sind</p>
+              <p class="step-1-p-text">
+                Ich gehe Investment Risiken ein, wenn Sie transparent sind
+              </p>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-md-4 col-sm-12 step-1-col">
-        <div class="step-1-elem" (click)=stepOneBlock(step1elem3)>
+        <div class="step-1-elem" (click)="stepOneBlock(step1elem3)">
           <ul class="step-1-ul">
             <li>
               <p class="step-1-p-text">Ich bin verheiratet</p>
@@ -72,10 +112,15 @@
               <p class="step-1-p-text">Ich habe 1 -2 Kinder</p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich habe bereits in 1 -2 Immobilien investiert</p>
+              <p class="step-1-p-text">
+                Ich habe bereits in 1 -2 Immobilien investiert
+              </p>
             </li>
             <li>
-              <p class="step-1-p-text">Ich gehe Investment Risiken ein, wenn dies die Rendite-Chance erhöht</p>
+              <p class="step-1-p-text">
+                Ich gehe Investment Risiken ein, wenn dies die Rendite-Chance
+                erhöht
+              </p>
             </li>
           </ul>
         </div>
@@ -83,43 +128,82 @@
     </div>
     <div class="step-2 step shadow" *ngIf="stepNumber == 1">
       <p class="form-title">Fragen zu Iher Person</p>
-      <form onsubmit="submitForm()" class="form-container">
+      <form class="form-container">
         <div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">Familienstand</p>
           <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="optradio" /> Ich bin Single
+            <input
+              type="radio"
+              name="maritalStatus"
+              [(ngModel)]="maritalStatus"
+              value="single"
+            />
+            Ich bin Single
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> Ich lebe in einer Beziehung
+            <input
+              type="radio"
+              name="maritalStatus"
+              [(ngModel)]="maritalStatus"
+              value="inRelation"
+            />
+            Ich lebe in einer Beziehung
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> Ich bin verheiratet
+            <input
+              type="radio"
+              name="maritalStatus"
+              [(ngModel)]="maritalStatus"
+              value="married"
+            />
+            Ich bin verheiratet
           </label>
         </div>
 
         <div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">Alter</p>
           <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="optradio" /> 20-35 Jahre
+            <input type="radio" name="age" [(ngModel)]="age" value="20-35" />
+            20-35 Jahre
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> 36-45 Jahre
+            <input type="radio" name="age" [(ngModel)]="age" value="36-45" />
+            36-45 Jahre
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> 46-60 Jahre
+            <input type="radio" name="age" [(ngModel)]="age" value="46-60" />
+            46-60 Jahre
           </label>
         </div>
 
         <div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">Kinder</p>
           <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="optradio" /> Kaine Kinder
+            <input
+              type="radio"
+              name="children"
+              [(ngModel)]="children"
+              value="no"
+            />
+            Keine Kinder
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> 1-2 Kinder
+            <input
+              type="radio"
+              name="children"
+              [(ngModel)]="children"
+              value="1-2"
+            />
+            1-2 Kinder
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> 2-4 Kinder
+            <input
+              type="radio"
+              name="children"
+              [(ngModel)]="children"
+              value="3-4"
+            />
+            3-4 Kinder
           </label>
         </div>
 
@@ -128,15 +212,31 @@
             Erfahrung Immobilien Investitionem
           </p>
           <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="optradio" /> Kaine Erfahrung
+            <input
+              type="radio"
+              name="realEstateExp"
+              [(ngModel)]="realEstateExp"
+              value="no"
+            />
+            Keine Erfahrung
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> Bereits in 1-2 Immobilien
-            Investiert
+            <input
+              type="radio"
+              name="realEstateExp"
+              [(ngModel)]="realEstateExp"
+              value="1-2"
+            />
+            Bereits in 1-2 Immobilien Investiert
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> Bereits in 3-4 Immobilien
-            Investiert
+            <input
+              type="radio"
+              name="realEstateExp"
+              [(ngModel)]="realEstateExp"
+              value="3-4"
+            />
+            Bereits in 3-4 Immobilien Investiert
           </label>
         </div>
 
@@ -145,23 +245,48 @@
             Risikobereitschaft
           </p>
           <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="optradio" /> Ungern Risiko
+            <input
+              type="radio"
+              name="riskTaker"
+              [(ngModel)]="riskTaker"
+              value="no"
+            />
+            Ungern Risiko
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> Ja. wenn Risiken transparent sind
-            Investiert
+            <input
+              type="radio"
+              name="riskTaker"
+              [(ngModel)]="riskTaker"
+              value="transparent"
+            />
+            Ja. wenn Risiken transparent sind Investiert
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="optradio" /> Ja. wenn dies die Rendite-Chance
-            erhoht
+            <input
+              type="radio"
+              name="riskTaker"
+              [(ngModel)]="riskTaker"
+              value="returns"
+            />
+            Ja. wenn dies die Rendite-Chance erhoht
           </label>
         </div>
 
-        <div class="buttons-container">
-          <button type="button" class="large-btn btn-green">
+        <div class="row buttons-container">
+          <button
+            type="button"
+            class="col-md-3 btn-green large-btn"
+            (click)="nextNBack(back)"
+          >
             Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
-          <button type="submit" class="large-btn btn-green right-side">
+          <div class="col-md-6"></div>
+          <button
+            type="button"
+            class="col-md-3 btn-green large-btn"
+            (click)="nextNBack(next)"
+          >
             Nachster Schritt
             <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
@@ -174,15 +299,28 @@
           <div class="d-flex flex-column bd-highlight mb-3">
             <div class="bd-highlight">
               <div class="input-col">
-                <label for="customRange1" class="white-text">Meine Rücklagen heute</label>
-                <input type="range" min="1" max="1000000" [(ngModel)]="reserveToday" class="custom-range custom-range-input"
-                  id="customRange1">
+                <label for="customRange1" class="white-text"
+                  >Meine Rücklagen heute</label
+                >
+                <input
+                  type="range"
+                  min="1"
+                  max="1000000"
+                  [(ngModel)]="reserveToday"
+                  class="custom-range custom-range-input"
+                  id="customRange1"
+                />
                 <div>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text fa fa-euro"></span>
                     </div>
-                    <input type="number" [(ngModel)]="reserveToday" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input
+                      type="number"
+                      [(ngModel)]="reserveToday"
+                      class="form-control"
+                      aria-label="Amount (to the nearest dollar)"
+                    />
                   </div>
                 </div>
               </div>
@@ -193,15 +331,28 @@
           <div class="d-flex flex-column bd-highlight mb-3">
             <div class="bd-highlight">
               <div class="input-col">
-                <label for="customRange1" class="white-text">Wie gross soll Dein Vermögen nach 10 Jahren sein?</label>
-                <input type="range" min="1" max="1000000" [(ngModel)]="assetIn10" class="custom-range custom-range-input"
-                  id="customRange1">
+                <label for="customRange1" class="white-text"
+                  >Wie gross soll Dein Vermögen nach 10 Jahren sein?</label
+                >
+                <input
+                  type="range"
+                  min="1"
+                  max="1000000"
+                  [(ngModel)]="assetIn10"
+                  class="custom-range custom-range-input"
+                  id="customRange1"
+                />
                 <div>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text fa fa-euro"></span>
                     </div>
-                    <input type="number" [(ngModel)]="assetIn10" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input
+                      type="number"
+                      [(ngModel)]="assetIn10"
+                      class="form-control"
+                      aria-label="Amount (to the nearest dollar)"
+                    />
                   </div>
                 </div>
               </div>
@@ -214,19 +365,31 @@
           <div class="d-flex flex-column bd-highlight mb-3">
             <div class="bd-highlight">
               <div class="">
-                <label for="customRange1" class="white-text">Was würdest Du heute für Dein Vermögensaufbau
-                  investieren?</label>
-                <input type="range" min="1" max="1000000" [(ngModel)]="assetAccumulation" class="custom-range custom-range-input"
-                  id="customRange1">
+                <label for="customRange1" class="white-text"
+                  >Was würdest Du heute für Dein Vermögensaufbau
+                  investieren?</label
+                >
+                <input
+                  type="range"
+                  min="1"
+                  max="1000000"
+                  [(ngModel)]="assetAccumulation"
+                  class="custom-range custom-range-input"
+                  id="customRange1"
+                />
                 <div>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text fa fa-euro"></span>
                     </div>
-                    <input type="number" [(ngModel)]="assetAccumulation" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input
+                      type="number"
+                      [(ngModel)]="assetAccumulation"
+                      class="form-control"
+                      aria-label="Amount (to the nearest dollar)"
+                    />
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -337,7 +500,7 @@
       </div>
     </div> -->
     <div class="step-3 step" *ngIf="stepNumber == 3">
-      <p class="form-title">Fragen zu Iher Person</p>
+      <p class="form-title">Ihre Kontaktdaten</p>
       <p class="text-center pt-2">
         Der Marktwert Ihrer Immobilie wird nun berechnet.
       </p>
@@ -345,38 +508,77 @@
 
       <div class="text-center pt-4">
         <label class="radio-inline mr-3">
-          <input type="radio" name="optradio" /> Frau
+          <input
+            type="radio"
+            name="optradio"
+            [(ngModel)]="gender"
+            [value]="1"
+          />
+          Frau
         </label>
         <label class="radio-inline">
-          <input type="radio" name="optradio" /> Herr
+          <input
+            type="radio"
+            name="optradio"
+            [(ngModel)]="gender"
+            [value]="2"
+          />
+          Herr
         </label>
       </div>
 
       <div class="text-center pt-4 row">
         <div class="col-md-2"></div>
         <div class="form-group col-md-4">
-          <input type="text" class="form-control" id="vorname" placeholder="Vorname*" />
+          <input
+            type="text"
+            class="form-control"
+            id="vorname"
+            placeholder="Vorname*"
+            [(ngModel)]="firstName"
+          />
         </div>
         <div class="form-group col-md-4">
-          <input type="text" class="form-control" id="nachname" placeholder="Nachname*" />
+          <input
+            type="text"
+            class="form-control"
+            id="nachname"
+            placeholder="Nachname*"
+            [(ngModel)]="lastName"
+          />
         </div>
       </div>
 
       <div class="text-center row">
         <div class="col-md-2"></div>
         <div class="form-group col-md-8">
-          <input type="text" class="form-control" id="email" placeholder="E-Mail-Adresse*" />
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="email"
+            id="email"
+            placeholder="E-Mail-Adresse*"
+          />
         </div>
       </div>
 
       <div class="text-center row">
         <div class="col-md-2"></div>
         <div class="form-group col-md-8">
-          <input type="text" class="form-control" id="teleNumber" placeholder="Telefonnummer*" />
+          <input
+            type="text"
+            class="form-control"
+            id="teleNumber"
+            [(ngModel)]="teleNumber"
+            placeholder="Telefonnummer*"
+          />
         </div>
       </div>
       <div class="row">
-        <div class="col-md-10" style="text-align: right; font-size: 12px; opacity: 0.5; margin-top: -12px">
+        <div
+          class="col-md-10"
+          style="text-align: right; font-size: 12px; opacity: 0.5; margin-top: -12px"
+        >
           Pflichtfeld
         </div>
         <div class="col-md-2"></div>
@@ -386,12 +588,12 @@
         <div class="col-md-2"></div>
         <div class="form-group col-md-8 checkbox">
           <label>
-            <input type="checkbox" value="" />
+            <input type="checkbox" value="" [(ngModel)]="acceptCond" />
             <span class="pl-1 small-font">
-              Ich habe die Datenschutzerklarung gelesen und willige ein. class meine
-              personenbezogenen Daten zur Kontaktaufnahme und Zusendung von
-              Informationen verarbeitet werden. Ich kann diese Einwilligung jederzeit
-              mit einer E-Mail an info@verumvest.com widerrufen.
+              Ich habe die Datenschutzerklarung gelesen und willige ein. class
+              meine personenbezogenen Daten zur Kontaktaufnahme und Zusendung
+              von Informationen verarbeitet werden. Ich kann diese Einwilligung
+              jederzeit mit einer E-Mail an info@verumvest.com widerrufen.
             </span>
           </label>
         </div>
@@ -414,8 +616,9 @@
         <div class="col">
           <div class="text-center text-padding">
             <span>
-              danke das Sie unseren Finanztest erfolgreich abgeschlossen haben. Wir freuen uns sehr daruber, dass Sie
-              sich fur Immobilieninvestments interessieren.
+              danke das Sie unseren Finanztest erfolgreich abgeschlossen haben.
+              Wir freuen uns sehr daruber, dass Sie sich fur
+              Immobilieninvestments interessieren.
             </span>
           </div>
         </div>
@@ -423,7 +626,8 @@
       <div class="row">
         <div class="col text-center p-t-5">
           <span>
-            Sie erhalten Ihre kostenfreie Investmentanalyse an folgende E-Mail-Adresse:
+            Sie erhalten Ihre kostenfreie Investmentanalyse an folgende
+            E-Mail-Adresse:
           </span>
         </div>
       </div>
