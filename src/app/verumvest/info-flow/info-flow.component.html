@@ -135,7 +135,7 @@
             <input
               type="radio"
               name="maritalStatus"
-              [(ngModel)]="maritalStatus"
+              [(ngModel)]="formData.maritalStatus"
               value="single"
             />
             Ich bin Single
@@ -144,7 +144,7 @@
             <input
               type="radio"
               name="maritalStatus"
-              [(ngModel)]="maritalStatus"
+              [(ngModel)]="formData.maritalStatus"
               value="inRelation"
             />
             Ich lebe in einer Beziehung
@@ -153,7 +153,7 @@
             <input
               type="radio"
               name="maritalStatus"
-              [(ngModel)]="maritalStatus"
+              [(ngModel)]="formData.maritalStatus"
               value="married"
             />
             Ich bin verheiratet
@@ -163,15 +163,30 @@
         <div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">Alter</p>
           <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="age" [(ngModel)]="age" value="20-35" />
+            <input
+              type="radio"
+              name="age"
+              [(ngModel)]="formData.age"
+              value="20-35"
+            />
             20-35 Jahre
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="age" [(ngModel)]="age" value="36-45" />
+            <input
+              type="radio"
+              name="age"
+              [(ngModel)]="formData.age"
+              value="36-45"
+            />
             36-45 Jahre
           </label>
           <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="age" [(ngModel)]="age" value="46-60" />
+            <input
+              type="radio"
+              name="age"
+              [(ngModel)]="formData.age"
+              value="46-60"
+            />
             46-60 Jahre
           </label>
         </div>
@@ -182,7 +197,7 @@
             <input
               type="radio"
               name="children"
-              [(ngModel)]="children"
+              [(ngModel)]="formData.children"
               value="no"
             />
             Keine Kinder
@@ -191,7 +206,7 @@
             <input
               type="radio"
               name="children"
-              [(ngModel)]="children"
+              [(ngModel)]="formData.children"
               value="1-2"
             />
             1-2 Kinder
@@ -200,7 +215,7 @@
             <input
               type="radio"
               name="children"
-              [(ngModel)]="children"
+              [(ngModel)]="formData.children"
               value="3-4"
             />
             3-4 Kinder
@@ -215,7 +230,7 @@
             <input
               type="radio"
               name="realEstateExp"
-              [(ngModel)]="realEstateExp"
+              [(ngModel)]="formData.realEstateExp"
               value="no"
             />
             Keine Erfahrung
@@ -224,7 +239,7 @@
             <input
               type="radio"
               name="realEstateExp"
-              [(ngModel)]="realEstateExp"
+              [(ngModel)]="formData.realEstateExp"
               value="1-2"
             />
             Bereits in 1-2 Immobilien Investiert
@@ -233,7 +248,7 @@
             <input
               type="radio"
               name="realEstateExp"
-              [(ngModel)]="realEstateExp"
+              [(ngModel)]="formData.realEstateExp"
               value="3-4"
             />
             Bereits in 3-4 Immobilien Investiert
@@ -248,7 +263,7 @@
             <input
               type="radio"
               name="riskTaker"
-              [(ngModel)]="riskTaker"
+              [(ngModel)]="formData.riskTaker"
               value="no"
             />
             Ungern Risiko
@@ -257,7 +272,7 @@
             <input
               type="radio"
               name="riskTaker"
-              [(ngModel)]="riskTaker"
+              [(ngModel)]="formData.riskTaker"
               value="transparent"
             />
             Ja. wenn Risiken transparent sind Investiert
@@ -266,7 +281,7 @@
             <input
               type="radio"
               name="riskTaker"
-              [(ngModel)]="riskTaker"
+              [(ngModel)]="formData.riskTaker"
               value="returns"
             />
             Ja. wenn dies die Rendite-Chance erhoht
@@ -306,7 +321,7 @@
                   type="range"
                   min="1"
                   max="1000000"
-                  [(ngModel)]="reserveToday"
+                  [(ngModel)]="formData.reserveToday"
                   class="custom-range custom-range-input"
                   id="customRange1"
                 />
@@ -406,7 +421,7 @@
           <input
             type="text"
             class="form-control no-right-border"
-            placeholder=""
+            [(ngModel)]="formData.reservesToday"
           />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
@@ -418,9 +433,9 @@
             type="range"
             min="1"
             max="1000000"
-            [(ngModel)]="assetAccumulation"
+            [(ngModel)]="formData.reservesTodayRange"
             class="custom-range custom-range-input"
-            id="customRange1"
+            id="reservesTodayRange"
           />
         </div>
       </div>
@@ -433,7 +448,7 @@
           <input
             type="text"
             class="form-control no-right-border"
-            placeholder=""
+            [(ngModel)]="formData.desiredProperty"
           />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
@@ -446,9 +461,9 @@
             type="range"
             min="1"
             max="1000000"
-            [(ngModel)]="assetAccumulation"
+            [(ngModel)]="formData.desiredPropertyRange"
             class="custom-range custom-range-input"
-            id="customRange1"
+            id="desiredPropertyRange"
           />
         </div>
       </div>
@@ -461,7 +476,7 @@
           <input
             type="text"
             class="form-control no-right-border"
-            placeholder=""
+            [(ngModel)]="formData.spend"
           />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
@@ -474,9 +489,10 @@
             type="range"
             min="1"
             max="1000000"
-            [(ngModel)]="assetAccumulation"
+            [(ngModel)]="formData.assetAccumulation"
             class="custom-range custom-range-input"
-            id="customRange1"
+            [(ngModel)]="formData.spendRange"
+            id="spendRange"
           />
         </div>
       </div>
@@ -535,7 +551,7 @@
               <div class="input-col">
                 <label for="customRange1" class="white-text">Eingesetztes Kapital für Ihren Vermögensaufbau
                 </label>
-                <input type="range" [(ngModel)]="capitalEmployed" class="custom-range custom-range-input" id="customRange1">
+                <input type="range" [(ngModel)]="formData.capitalEmployed" class="custom-range custom-range-input" id="customRange1">
                 <div>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -615,7 +631,7 @@
           <input
             type="radio"
             name="optradio"
-            [(ngModel)]="gender"
+            [(ngModel)]="formData.gender"
             [value]="1"
           />
           Frau
@@ -624,7 +640,7 @@
           <input
             type="radio"
             name="optradio"
-            [(ngModel)]="gender"
+            [(ngModel)]="formData.gender"
             [value]="2"
           />
           Herr
@@ -639,7 +655,7 @@
             class="form-control"
             id="vorname"
             placeholder="Vorname*"
-            [(ngModel)]="firstName"
+            [(ngModel)]="formData.firstName"
           />
         </div>
         <div class="form-group col-md-4">
@@ -648,7 +664,7 @@
             class="form-control"
             id="nachname"
             placeholder="Nachname*"
-            [(ngModel)]="lastName"
+            [(ngModel)]="formData.lastName"
           />
         </div>
       </div>
@@ -659,7 +675,7 @@
           <input
             type="text"
             class="form-control"
-            [(ngModel)]="email"
+            [(ngModel)]="formData.email"
             id="email"
             placeholder="E-Mail-Adresse*"
           />
@@ -673,7 +689,7 @@
             type="text"
             class="form-control"
             id="teleNumber"
-            [(ngModel)]="teleNumber"
+            [(ngModel)]="formData.teleNumber"
             placeholder="Telefonnummer*"
           />
         </div>
@@ -692,7 +708,7 @@
         <div class="col-md-2"></div>
         <div class="form-group col-md-8 checkbox">
           <label>
-            <input type="checkbox" value="" [(ngModel)]="acceptCond" />
+            <input type="checkbox" value="" [(ngModel)]="formData.acceptCond" />
             <span class="pl-1 small-font">
               Ich habe die Datenschutzerklarung gelesen und willige ein. class
               meine personenbezogenen Daten zur Kontaktaufnahme und Zusendung

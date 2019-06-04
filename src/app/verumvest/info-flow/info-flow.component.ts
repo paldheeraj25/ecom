@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { CalculatService } from '../calculat.service';
-import { PdfService } from '../../pdf.service';
-
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { CalculatService } from "../calculat.service";
+import { PdfService } from "../../pdf.service";
 
 @Component({
-  selector: 'app-info-flow',
-  templateUrl: './info-flow.component.html',
-  styleUrls: ['./info-flow.component.scss']
+  selector: "app-info-flow",
+  templateUrl: "./info-flow.component.html",
+  styleUrls: ["./info-flow.component.scss"]
 })
 export class InfoFlowComponent implements OnInit {
-
   stepNumber: number = 1;
   // step one var
   step1elem1: string = "20-30";
@@ -40,8 +38,19 @@ export class InfoFlowComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: false
   };
-  public barChartLabels = ['2019', '2020', '2021', '2023', '2024', '2025', '2026', '2027', '2028', '2029'];
-  public barChartType = 'line';
+  public barChartLabels = [
+    "2019",
+    "2020",
+    "2021",
+    "2023",
+    "2024",
+    "2025",
+    "2026",
+    "2027",
+    "2028",
+    "2029"
+  ];
+  public barChartType = "line";
   public barChartLegend = true;
 
   public barChartData = [];
@@ -57,192 +66,193 @@ export class InfoFlowComponent implements OnInit {
 
   // pdf data
   public data: any = {
-
-    "userFirstName": {
-      "type": "string",
-      "value": "Maxi"
+    userFirstName: {
+      type: "string",
+      value: "Maxi"
     },
-    "userLastName": {
-      "type": "string",
-      "value": "Musterfrau"
+    userLastName: {
+      type: "string",
+      value: "Musterfrau"
     },
-    "userEmail": {
-      "type": "string",
-      "value": "maxi@muster.de"
+    userEmail: {
+      type: "string",
+      value: "maxi@muster.de"
     },
-    "userPhone": {
-      "type": "string",
-      "value": "0049 1234567891"
+    userPhone: {
+      type: "string",
+      value: "0049 1234567891"
     },
-    "userAge": {
-      "type": "number",
-      "value": 24
+    userAge: {
+      type: "number",
+      value: 24
     },
-    "userGender": {
-      "type": "string",
-      "value": "f"
+    userGender: {
+      type: "string",
+      value: "f"
     },
-    "family_status": {
-      "type": "string",
-      "value": "Single"
+    family_status: {
+      type: "string",
+      value: "Single"
     },
-    "children": {
-      "type": "number",
-      "value": 0
+    children: {
+      type: "number",
+      value: 0
     },
-    "house_count": {
-      "type": "number",
-      "value": 4
+    house_count: {
+      type: "number",
+      value: 4
     },
-    "risk": {
-      "type": "string",
-      "value": "Low"
+    risk: {
+      type: "string",
+      value: "Low"
     },
-    "inv_ang_neto": {
-      "type": "number",
-      "value": 1
+    inv_ang_neto: {
+      type: "number",
+      value: 1
     },
-    "inv_ang_inve": {
-      "type": "number",
-      "value": 2
+    inv_ang_inve: {
+      type: "number",
+      value: 2
     },
-    "inv_ang_wuns": {
-      "type": "number",
-      "value": 3
+    inv_ang_wuns: {
+      type: "number",
+      value: 3
     },
-    "diagram_tl": {
-      "type": "number",
-      "value": 420.54
+    diagram_tl: {
+      type: "number",
+      value: 420.54
     },
-    "diagram_immo": {
-      "type": "number",
-      "value": 410.54
+    diagram_immo: {
+      type: "number",
+      value: 410.54
     },
-    "diagram_aktien": {
-      "type": "number",
-      "value": 406.41
+    diagram_aktien: {
+      type: "number",
+      value: 406.41
     },
-    "diagram_zinsen": {
-      "type": "number",
-      "value": 394.54
+    diagram_zinsen: {
+      type: "number",
+      value: 394.54
     },
-    "wie_wohnflache": {
-      "type": "number",
-      "value": 11
+    wie_wohnflache: {
+      type: "number",
+      value: 11
     },
-    "wohnflache": {
-      "type": "number",
-      "value": 12
+    wohnflache: {
+      type: "number",
+      value: 12
     },
-    "house_type": {
-      "type": "string",
-      "value": "Dome"
+    house_type: {
+      type: "string",
+      value: "Dome"
     },
-    "equity": {
-      "type": "number",
-      "value": 13
+    equity: {
+      type: "number",
+      value: 13
     },
-    "er_neb": {
-      "type": "number",
-      "value": 14
+    er_neb: {
+      type: "number",
+      value: 14
     },
-    "ein_zur": {
-      "type": "number",
-      "value": 15
+    ein_zur: {
+      type: "number",
+      value: 15
     },
-    "finanzierung": {
-      "type": "number",
-      "value": 16
+    finanzierung: {
+      type: "number",
+      value: 16
     },
-    "ka_moglich": {
-      "type": "number",
-      "value": 17
+    ka_moglich: {
+      type: "number",
+      value: 17
     },
-    "kaufpreis_gesamt": {
-      "type": "number",
-      "value": 18
+    kaufpreis_gesamt: {
+      type: "number",
+      value: 18
     },
-    "finanz_1": {
-      "type": "number",
-      "value": 19
+    finanz_1: {
+      type: "number",
+      value: 19
     },
-    "finanz_2": {
-      "type": "number",
-      "value": 20
+    finanz_2: {
+      type: "number",
+      value: 20
     },
-    "bank": {
-      "type": "number",
-      "value": 21
+    bank: {
+      type: "number",
+      value: 21
     },
-    "nebenkosten": {
-      "type": "number",
-      "value": 22
+    nebenkosten: {
+      type: "number",
+      value: 22
     },
-    "ausgaben_1": {
-      "type": "number",
-      "value": 23
+    ausgaben_1: {
+      type: "number",
+      value: 23
     },
-    "tilgung": {
-      "type": "number",
-      "value": 24
+    tilgung: {
+      type: "number",
+      value: 24
     },
-    "ausgaben_je_monat": {
-      "type": "number",
-      "value": 25
+    ausgaben_je_monat: {
+      type: "number",
+      value: 25
     },
-    "investition": {
-      "type": "number",
-      "value": 26
+    investition: {
+      type: "number",
+      value: 26
     },
-    "steuervorteil": {
-      "type": "number",
-      "value": 27
+    steuervorteil: {
+      type: "number",
+      value: 27
     },
-    "einnahmen": {
-      "type": "number",
-      "value": 28
+    einnahmen: {
+      type: "number",
+      value: 28
     },
-    "ausgaben_2": {
-      "type": "number",
-      "value": 29
+    ausgaben_2: {
+      type: "number",
+      value: 29
     },
-    "aufwandsrechner": {
-      "type": "number",
-      "value": 30
+    aufwandsrechner: {
+      type: "number",
+      value: 30
     },
-    "tilgung_2": {
-      "type": "number",
-      "value": 31
+    tilgung_2: {
+      type: "number",
+      value: 31
     },
-    "tilgung_3": {
-      "type": "number",
-      "value": 32
+    tilgung_3: {
+      type: "number",
+      value: 32
     },
-    "tilgung_1": {
-      "type": "number",
-      "value": 33
+    tilgung_1: {
+      type: "number",
+      value: 33
     },
-    "userTown": {
-      "type": "string",
-      "value": "Berlin"
+    userTown: {
+      type: "string",
+      value: "Berlin"
     },
-    "userState": {
-      "type": "string",
-      "value": "Berling Brandenburg"
+    userState: {
+      type: "string",
+      value: "Berling Brandenburg"
     }
-  }
+  };
+  formData = {};
 
-
-  constructor(private router: Router, private calculatSerrvice: CalculatService, private pdfService: PdfService) { }
+  constructor(
+    private router: Router,
+    private calculatSerrvice: CalculatService,
+    private pdfService: PdfService
+  ) {}
 
   ngOnInit() {
     console.log(this.calculatSerrvice.currency);
     this.getPower = Math.pow(1.03, 10);
-
   }
 
   stepOneBlock(block: string) {
-
     switch (block) {
       case "20-30":
         this.step2FamilyStand = "single";
@@ -264,7 +274,6 @@ export class InfoFlowComponent implements OnInit {
         break;
     }
 
-
     this.stepNumber = 2;
   }
 
@@ -274,14 +283,13 @@ export class InfoFlowComponent implements OnInit {
   }
 
   showGraphType(graphType: string) {
-    if (graphType === 'sparenZinsen') {
+    if (graphType === "sparenZinsen") {
       this.graphDataCalculator(-0.0002);
-    } else if (graphType === 'investmentsAktien') {
+    } else if (graphType === "investmentsAktien") {
       this.graphDataCalculator(0.0818);
-
-    } else if (graphType === 'investmentsImmobilien') {
+    } else if (graphType === "investmentsImmobilien") {
       console.log(this.calculatSerrvice.currency);
-      if (this.calculatSerrvice.currency == 'swiss') {
+      if (this.calculatSerrvice.currency == "swiss") {
         this.graphDataCalculator(0.0969);
       } else {
         this.graphDataCalculator(0.1256);
@@ -306,29 +314,42 @@ export class InfoFlowComponent implements OnInit {
   }
 
   graphDataCalculator(intrestRate: number) {
-    this.assetAccumulation
+    this.assetAccumulation;
     let graphData = [];
     // 0 to 10 years
     graphData.push(this.assetAccumulation);
     for (let i = 0; i < 10; i++) {
-      let yearlyPricipal = graphData[0] * intrestRate + graphData[i]
-      graphData.push(yearlyPricipal)
+      let yearlyPricipal = graphData[0] * intrestRate + graphData[i];
+      graphData.push(yearlyPricipal);
     }
     this.barChartData = [
       {
         data: graphData
       },
-      { data: [this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10, this.assetIn10], label: '10 Jahren' },
-    ]
+      {
+        data: [
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10,
+          this.assetIn10
+        ],
+        label: "10 Jahren"
+      }
+    ];
   }
 
   changeModel() {
     this.maximumDebt = this.capitalEmployed * 9;
-    this.affordProperty = (this.maximumDebt + this.capitalEmployed) * 0.17
+    this.affordProperty = (this.maximumDebt + this.capitalEmployed) * 0.17;
   }
 
   getPdf() {
-
     // populating the data for the pdf generation
     this.data.userFirstName.value = this.user.name;
     this.data.userLastName = this.user.name;
@@ -369,11 +390,10 @@ export class InfoFlowComponent implements OnInit {
     this.data.tilgung_2 = this.user.email;
     this.data.tilgung_3 = this.user.email;
     this.data.tilgung_1 = this.user.email;
-    this.data.userTown.value = 'Berlin';
+    this.data.userTown.value = "Berlin";
     this.data.userState = this.user.email;
     ////////
     this.pdfService.getPdf(this.assetAccumulation, this.data);
     console.log("getPDF controller " + this.assetAccumulation);
   }
-
 }
