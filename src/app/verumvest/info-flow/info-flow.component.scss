@@ -278,9 +278,6 @@ li {
 .image-opacity{
   opacity: 0.8;
   cursor: pointer;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-  box-shadow: 0 10px 6px -6px #777;
 }
 
 .opacity{
@@ -314,6 +311,7 @@ footer-text {
   }
   .display-email  {
     width: 100%;
+    font-size: 0.7em;
   }
   .step{
     margin: 0rem;
