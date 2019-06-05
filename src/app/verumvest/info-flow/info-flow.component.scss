@@ -82,7 +82,6 @@ li {
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
-  padding: 3rem 1.5rem;
   margin: 2rem;
   border: 1px solid #49505752;
   font-family: "Montserrat";
@@ -96,6 +95,9 @@ li {
   .large-btn {
     width: 100% !important;
   }
+  .step{
+    padding: 3rem 1.5rem;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -103,6 +105,9 @@ li {
   .step {
     width: 85%;
     margin: 2rem auto;
+  }
+  .step{
+    padding: 3rem 3.5rem;
   }
 
 }
@@ -351,6 +356,8 @@ footer-text {
   height: 45px;
   width: 50%;
   margin-top: 5%;
+  font-weight: 600;
+  background: #00800ab0;
 }
 
 .flag-heading-swiss {
@@ -386,8 +393,8 @@ input[type="range"]::-webkit-slider-runnable-track {
   border: 0.2px solid #010101;
 }
 input[type="range"]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
+  box-shadow: 1px 1px 1px #ffffff, 0px 0px 1px #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 50%;
   background: green;
   cursor: pointer;
@@ -439,6 +446,9 @@ input[type="range"]::-ms-fill-upper {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
+.form-control {
+  border-radius: 0px;
+}
 .swiss-flag {
   margin-bottom: 5%;
 }
@@ -448,4 +458,8 @@ input[type="range"]::-ms-fill-upper {
 .country-name {
   font-weight: 500;
   font-family: montserrat, sans-serif;
+}
+
+input[type=radio   ]:not(old){
+  color: red;
 }
