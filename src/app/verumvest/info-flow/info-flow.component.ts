@@ -9,6 +9,10 @@ import { PdfService } from "../../pdf.service";
   styleUrls: ["./info-flow.component.scss"]
 })
 export class InfoFlowComponent implements OnInit {
+
+  //flag url
+  swissFlagUrl: string = "assets/img/swissfmap.jpg";
+  germanFlagUrl = "assets/img/germanyfmap.jpg"
   stepNumber: number = 1;
   // step one var
   step1elem1: string = "20-30";
@@ -395,5 +399,23 @@ export class InfoFlowComponent implements OnInit {
     ////////
     this.pdfService.getPdf(this.assetAccumulation, this.data);
     console.log("getPDF controller " + this.assetAccumulation);
+  }
+
+  swissFlag(flag) {
+    if (flag == 1) {
+      this.swissFlagUrl = "assets/img/swissfmap1.jpg"
+    } else {
+      this.swissFlagUrl = "assets/img/swissfmap.jpg";
+    }
+
+  }
+
+  germanFlag(flag) {
+    if (flag == 1) {
+      this.germanFlagUrl = "assets/img/germanyfmap1.jpg"
+    } else {
+      this.germanFlagUrl = "assets/img/germanyfmap.jpg";
+    }
+
   }
 }

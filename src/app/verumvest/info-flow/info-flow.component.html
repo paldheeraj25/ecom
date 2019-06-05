@@ -24,29 +24,34 @@
     </div>
     <div class="row step step-1" *ngIf="stepNumber == 1">
       <div class="col-md-12 text-center">
-        <h3>
-          <span class="heading">Aus welchem Land besuchst Du uns?</span>
-        </h3>
+        <span class="heading">Aus welchem Land besuchst Du uns?</span>
       </div>
 
       <div class="row flag-row">
-        <div class="col-md-6 text-center">
-          <a (click)="goToInfoFlow('swiss')">
-            <img src="assets/img/germanyfmap.jpg" alt="flag-a" (click)="nextNBack(next)" class="image-40-per image-opacity">
-          </a>
-          <h2 class="flag-heading-swiss">Schweiz</h2>
-          <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(back)">
-            Zurück <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
-          </button>
-        </div>
+
         <div class="col-md-6 text-center swiss-flag">
           <a (click)="goToInfoFlow('euro')">
-            <img src="assets/img/swissfmap.jpg" (click)="nextNBack(next)" alt="flag" class="image-64-per image-opacity">
+            <img src={{swissFlagUrl}} (mouseenter)="swissFlag(1)" (mouseleave)="swissFlag(2)" (click)="nextNBack(next)"
+              alt="flag" class="image-64-per image-opacity">
           </a>
-          <h2 class="flag-heading-germany">Deutschland</h2>
+          <!-- <h2 class="flag-heading-germany">Schweiz</h2> -->
+          <div class="swiss-flag-heading"><span class="country-name">Schweiz</span></div>
+
           <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
-            Nächster Schritt
+            Zurück
             <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="col-md-6 text-center">
+          <a (click)="goToInfoFlow('swiss')">
+            <img src={{germanFlagUrl}} (mouseenter)="germanFlag(1)" (mouseleave)="germanFlag(2)" alt="flag-a" (click)="nextNBack(back)"
+              class="image-40-per image-opacity">
+          </a>
+          <!-- <h2 class="flag-heading-swiss">Deutschland</h2> -->
+          <div><span class="country-name">Deutschland</span></div>
+
+          <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
+            Nächster Schritt <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -166,7 +171,7 @@
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-8 mb-4 p-0 pl-1">
-          <input type="range" min="1" max="1000000" [(ngModel)]="formData.reservesToday" class="custom-range custom-range-input"
+          <input type="range" min="1" max="1000000" [(ngModel)]="formData.reservesTodayRange" class="custom-range custom-range-input"
             id="reservesTodayRange" />
         </div>
       </div>
@@ -184,7 +189,7 @@
 
         <div class="col-md-1"></div>
         <div class="col-md-8 mb-4 p-0 pl-1">
-          <input type="range" min="1" max="1000000" [(ngModel)]="formData.desiredProperty" class="custom-range custom-range-input"
+          <input type="range" min="1" max="1000000" [(ngModel)]="formData.desiredPropertyRange" class="custom-range custom-range-input"
             id="desiredPropertyRange" />
         </div>
       </div>
@@ -202,7 +207,7 @@
 
         <div class="col-md-1"></div>
         <div class="col-md-8 mb-4 p-0 pl-1">
-          <input type="range" min="1" max="1000000" [(ngModel)]="formData.spend" class="custom-range custom-range-input"
+          <input type="range" min="1" max="1000000" [(ngModel)]="formData.assetAccumulation" class="custom-range custom-range-input"
             [(ngModel)]="formData.spendRange" id="spendRange" />
         </div>
       </div>

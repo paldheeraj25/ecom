@@ -82,7 +82,7 @@ li {
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
-  padding: 3rem 4.5rem;
+  padding: 3rem 2.5rem;
   margin: 2rem;
   border: 1px solid #49505752;
   font-family: "Montserrat";
@@ -186,10 +186,6 @@ li {
   margin-left: auto;
 }
 
-.large-btn {
-  font-size: 20px;
-  height: 45px;
-}
 
 .fa-chevron-right {
   font-size: 20px;
@@ -333,7 +329,7 @@ footer-text {
 }
 
 .large-btn {
-  font-size: 20px;
+  font-size: 1em;
   height: 45px;
   width: 50%;
   margin-top: 5%;
@@ -422,4 +418,15 @@ input[type="range"]::-ms-fill-upper {
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+.swiss-flag {
+  margin-bottom: 5%;
+}
+.swiss-flag-heading {
+  margin-top: 9%;
+}
+.country-name {
+  font-weight: 500;
+  font-family: montserrat, sans-serif;
 }
