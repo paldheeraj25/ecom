@@ -82,8 +82,10 @@ li {
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
-  padding: 3rem;
+  padding: 3rem 4.5rem;
   margin: 2rem;
+  border: 1px solid #49505752;
+  font-family: "Montserrat";
 }
 
 // media query
@@ -162,9 +164,10 @@ li {
 
 // steps - 1,2,3
 .form-title {
+  font-size: 18px;
   text-align: center;
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .form-group-title {
@@ -214,6 +217,8 @@ li {
 
 .input-group-text {
   background-color: white;
+  border: 2px solid !important;
+  border-left: none !important;
   border-radius: 0;
 }
 
@@ -223,8 +228,12 @@ li {
   box-shadow: none;
 }
 
+.form-control {
+  border: 2px solid;
+}
+
 .no-right-border {
-  border-right: none;
+  border-right: none !important;
   text-align: right;
 }
 
