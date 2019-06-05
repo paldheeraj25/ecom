@@ -86,9 +86,11 @@ footer-text {
 
 .large-btn {
   font-size: 20px;
+  font-weight: 600;
   height: 45px;
-  width: 50%;
+  width: 35%;
   margin-top: 5%;
+  background: #45d082;
 }
 
 .step {
@@ -104,5 +106,18 @@ footer-text {
 @media screen and (max-width: 600px) {
   .mobile-hide {
     display: none;
+  }
+  .large-btn {
+    width: 50%;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  .text-padding{
+    width: 44%;
+    text-align: center;
+    margin: 0 auto;
+    color: #000000;
   }
 }
