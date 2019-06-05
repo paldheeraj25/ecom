@@ -309,6 +309,15 @@ footer-text {
   .fixed-bottom {
     visibility: hidden;
   }
+  .mobile-hide {
+    display: none;
+  }
+  .display-email  {
+    width: 100%;
+  }
+  .step{
+    margin: 0rem;
+  }
 }
 
 
@@ -339,4 +348,8 @@ footer-text {
 
 .flag-heading-germany {
   margin-top: 25%
+}
+
+.facebook-logo{
+  width: 100%;
 }

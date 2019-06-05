@@ -23,30 +23,28 @@
       </div>
     </div>
     <div class="row step step-1" *ngIf="stepNumber == 1">
-      <div class="text-center">
-        <div class="typography-line">
-          <h3>
-            <span class="heading">Aus welchem Land besuchst Du uns?</span>
-          </h3>
-        </div>
+      <div class="col-md-12 text-center">
+        <h3>
+          <span class="heading">Aus welchem Land besuchst Du uns?</span>
+        </h3>
       </div>
 
       <div class="row flag-row">
-        <div class="col-6 text-center">
+        <div class="col-md-6 text-center">
           <a (click)="goToInfoFlow('swiss')">
-            <img src="assets/img/germanyfmap.jpg" alt="flag-a" class="image-40-per image-opacity">
+            <img src="assets/img/germanyfmap.jpg" alt="flag-a" (click)="nextNBack(back)" class="image-40-per image-opacity">
           </a>
           <h2 class="flag-heading-swiss">Schweiz</h2>
-          <button type="button" class="btn-green large-btn" (click)="nextNBack(back)">
+          <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(back)">
             Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
         </div>
-        <div class="col-6 text-center swiss-flag">
+        <div class="col-md-6 text-center swiss-flag">
           <a (click)="goToInfoFlow('euro')">
-            <img src="assets/img/swissfmap.jpg" alt="flag" class="image-64-per image-opacity">
+            <img src="assets/img/swissfmap.jpg" (click)="nextNBack(next)" alt="flag" class="image-64-per image-opacity">
           </a>
           <h2 class="flag-heading-germany">Deutchland</h2>
-          <button type="button" class="btn-green large-btn" (click)="nextNBack(next)">
+          <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
             Nachster Schritt
             <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
@@ -324,10 +322,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col">
-          <img src="assets/img/facebook-logo.jpg" alt="flag-a" class="">
+        <div class="col-md-6">
+          <img class="facebook-logo" src="assets/img/facebook-logo.jpg" alt="flag-a" width="100%">
         </div>
-        <div class="col newsletter-box">
+        <div class="col-md-6 newsletter-box">
           <div class="newsletter-box-subheading">
             <span>
               Unseren Newsletter abonnieren und keine News verpassen!
