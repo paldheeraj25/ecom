@@ -59,7 +59,7 @@ footer-text {
 }
 
 .swiss-flag {
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 
@@ -82,5 +82,20 @@ footer-text {
   height: 45px;
   width: 50%;
   margin-top: 5%;
-   
+}
+
+.step {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  padding: 3rem 4.5rem;
+  margin: 2rem;
+  border: 1px solid #49505752;
+  font-family: "Montserrat";
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-hide {
+    display: none;
+  }
 }

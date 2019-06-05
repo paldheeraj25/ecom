@@ -245,7 +245,7 @@ export class InfoFlowComponent implements OnInit {
     private router: Router,
     private calculatSerrvice: CalculatService,
     private pdfService: PdfService
-  ) {}
+  ) { }
 
   ngOnInit() {
     console.log(this.calculatSerrvice.currency);
@@ -300,7 +300,7 @@ export class InfoFlowComponent implements OnInit {
   nextNBack(step: string) {
     this.prepareGraph();
 
-    if (step == "next" && this.stepNumber < 4) {
+    if (step == "next" && this.stepNumber < 5) {
       this.stepNumber = this.stepNumber + 1;
     }
 

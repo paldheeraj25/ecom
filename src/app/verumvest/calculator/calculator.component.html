@@ -1,37 +1,43 @@
 <div class="section-flag-select">
   <div class="container">
-    <div class="row">
-      <div class="col-10 text-center">
-        <div class="typography-line">
-          <h3>
-            <span class="heading">Aus welchem Land besuchst Du uns?</span>
-          </h3>
+    <div class="step">
+      <div class="row">
+        <div class="col text-center p-2">
+          <h6>Kennen Sie unseren kostenfreien Finanztest?</h6>
         </div>
       </div>
-    </div>
-
-    <div class="row flag-row">
-      <div class="col-6 text-center">
-        <a (click)="goToInfoFlow('swiss')">
-          <img src="assets/img/germanyfmap.jpg" alt="flag-a" class="image-40-per image-opacity">
-        </a>
-        <h2>Schweiz</h2>
-        <button type="button" class="btn-green large-btn" (click)="goToInfoFlow('swiss')">
-          Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
-        </button>
+      <div class="row">
+        <div class="col">
+          <div class="text-center text-padding p-2">
+            <span>
+              Testen Sie sich und finden Sie sofort heraus, ob in Ihnen ein Immobilien Investor steckt.
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="col-6 text-center swiss-flag">
-        <a (click)="goToInfoFlow('euro')">
-          <img src="assets/img/swissfmap.jpg" alt="flag" class="image-64-per image-opacity">
-        </a>
-        <h2>Deutchland</h2>
-        <button type="button" class="btn-green large-btn" (click)="goToInfoFlow('euro')">
-          Nachster Schritt
-          <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
-        </button>
+      <div class="row">
+        <div class="col text-center p-2">
+          <span>
+            In drei einfachen Schritten erfahren Sie, wie sich ein Immobilieninvestment fur Sie finanziell rechnet.
+          </span>
+        </div>
       </div>
-    </div>
-    <!-- <div class="fixed-bottom">
+      <div class="row">
+        <div class="col text-center p-t-5">
+          <span>
+            Sie erhalten eine iIndividuelle, kostenfreie Investmentanalyse direkt als pdf zugesendet.
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button type="button" class="btn-green large-btn" (click)="goToInfoFlow('euro')">
+            <span class="mobile-hide">Test Starten</span>
+            <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <!-- <div class="fixed-bottom">
       <div class="row">
         <div class="col text-center">
           <h6>
@@ -51,5 +57,6 @@
         </div>
       </div>
     </div> -->
+    </div>
   </div>
 </div>

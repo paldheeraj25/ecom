@@ -249,3 +249,94 @@ li {
 .newsletter-box-subheading{
   padding: 5%;
 }
+
+// flag screen
+.section-flag-select {
+  height: 100vh;
+}
+
+.heading {
+  font-weight: bold ;
+  font-family: montserrat, sans-serif;
+}
+.image-40-per{
+  width: 40%
+}
+
+.image-40-per:hover{
+  opacity: 1;
+}
+
+.image-64-per {
+  width: 64%
+}
+
+.image-64-per:hover{
+  opacity: 1;
+}
+
+.image-opacity{
+  opacity: 0.8;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.opacity{
+  opacity: 1;
+}
+
+.flag-row {
+  padding-top: 10%;
+}
+
+.footer-text{
+  font-size: medium;
+}
+
+.fa-width {
+  width: 30px ;
+  font-size:20px;
+  color: #45d082;
+}
+
+footer-text {
+  font-family: moteserrate, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  .fixed-bottom {
+    visibility: hidden;
+  }
+}
+
+
+.buttons-container {
+  display: flex;
+}
+
+.btn-green {
+  background-color: #a29c9c;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background: #00800ab0;
+}
+
+.large-btn {
+  font-size: 20px;
+  height: 45px;
+  width: 50%;
+  margin-top: 5%;
+}
+
+.flag-heading-swiss {
+  margin-top: 15%
+}
+
+.flag-heading-germany {
+  margin-top: 25%
+}
