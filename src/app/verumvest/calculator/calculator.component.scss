@@ -57,3 +57,30 @@ footer-text {
     visibility: hidden;
   }
 }
+
+.swiss-flag {
+  padding-top: 3rem;
+}
+
+
+.buttons-container {
+  display: flex;
+}
+
+.btn-green {
+  background-color: #a29c9c;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background: #00800ab0;
+}
+
+.large-btn {
+  font-size: 20px;
+  height: 45px;
+  width: 50%;
+  margin-top: 5%;
+   
+}

@@ -13,18 +13,25 @@
     <div class="row flag-row">
       <div class="col-6 text-center">
         <a (click)="goToInfoFlow('swiss')">
-          <img src="assets/img/germanyvec12.jpg" alt="flag-a" class="image-40-per image-opacity">
+          <img src="assets/img/germanyfmap.jpg" alt="flag-a" class="image-40-per image-opacity">
         </a>
         <h2>Schweiz</h2>
+        <button type="button" class="btn-green large-btn" (click)="goToInfoFlow('swiss')">
+          Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+        </button>
       </div>
-      <div class="col-6 text-center">
+      <div class="col-6 text-center swiss-flag">
         <a (click)="goToInfoFlow('euro')">
-          <img src="assets/img/sv31.jpg" alt="flag" class="image-64-per image-opacity">
+          <img src="assets/img/swissfmap.jpg" alt="flag" class="image-64-per image-opacity">
         </a>
         <h2>Deutchland</h2>
+        <button type="button" class="btn-green large-btn" (click)="goToInfoFlow('euro')">
+          Nachster Schritt
+          <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
-    <div class="fixed-bottom">
+    <!-- <div class="fixed-bottom">
       <div class="row">
         <div class="col text-center">
           <h6>
@@ -43,6 +50,6 @@
           </h6>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
