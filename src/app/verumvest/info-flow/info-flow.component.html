@@ -44,7 +44,7 @@
         </div>
         <div class="col-md-6 text-center">
           <a (click)="goToInfoFlow('swiss')">
-            <img src={{germanFlagUrl}} (mouseenter)="germanFlag(1)" (mouseleave)="germanFlag(2)" alt="flag-a" (click)="nextNBack(back)"
+            <img src={{germanFlagUrl}} (mouseenter)="germanFlag(1)" (mouseleave)="germanFlag(2)" alt="flag-a" (click)="nextNBack(next)"
               class="image-40-per image-opacity">
           </a>
           <!-- <h2 class="flag-heading-swiss">Deutschland</h2> -->
@@ -144,11 +144,10 @@
         </div>
 
         <div class="row buttons-container">
-          <button type="button" class="col-md-3 btn-green large-btn" (click)="nextNBack(back)">
+          <button type="button" class="col col-md-6 col-sm-6 btn-green large-btn" (click)="nextNBack(back)">
             Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
-          <div class="col-md-6"></div>
-          <button type="button" class="col-md-3 btn-green large-btn" (click)="nextNBack(next)">
+          <button type="button" class="col col-md-6 col-sm-6 btn-green large-btn" (click)="nextNBack(next)">
             Nachster Schritt
             <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
@@ -213,11 +212,10 @@
       </div>
 
       <div class="row buttons-container">
-        <button type="button" class="col-md-3 btn-green large-btn" (click)="nextNBack(back)">
+        <button type="button" class="col col-md-6 col-sm-6 btn-green large-btn" (click)="nextNBack(back)">
           Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
         </button>
-        <div class="col-md-6"></div>
-        <button type="button" class="col-md-3 btn-green large-btn" (click)="nextNBack(next)">
+        <button type="button" class="col col-md-6 col-sm-6 btn-green large-btn" (click)="nextNBack(next)">
           Nachster Schritt
           <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
         </button>
