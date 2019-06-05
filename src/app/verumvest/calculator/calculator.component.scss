@@ -57,6 +57,13 @@ footer-text {
     visibility: hidden;
   }
 }
+@media screen and (min-width: 600px) {
+  .step {
+    width: 85%;
+    margin: 2rem auto;
+  }
+
+}
 
 .swiss-flag {
   padding-top: 2rem;
@@ -89,7 +96,7 @@ footer-text {
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
   padding: 3rem 1.5rem;
-  margin: 2rem;
+  margin: 2rem auto;
   border: 1px solid #49505752;
   font-family: "Montserrat";
 }

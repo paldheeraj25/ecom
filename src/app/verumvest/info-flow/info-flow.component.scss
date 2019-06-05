@@ -82,7 +82,7 @@ li {
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
-  padding: 3rem 2.5rem;
+  padding: 3rem 1.5rem;
   margin: 2rem;
   border: 1px solid #49505752;
   font-family: "Montserrat";
@@ -99,9 +99,7 @@ li {
 }
 
 @media screen and (min-width: 600px) {
-  .step-2 .col-sm-12 {
-    padding-left: 10%;
-  }
+  
   .step {
     width: 85%;
     margin: 2rem auto;
@@ -255,6 +253,9 @@ li {
 }
 .newsletter-box {
   background: #45d082;
+  width: 92%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 .newsletter-box-subheading {
   padding: 5%;
@@ -326,6 +327,9 @@ footer-text {
   .step {
     margin: 0rem;
   }
+  .text-padding {
+    padding: 0 0 0 0;
+  }
 }
 
 .buttons-container {
@@ -359,6 +363,7 @@ footer-text {
 
 .facebook-logo {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 // Range styles
