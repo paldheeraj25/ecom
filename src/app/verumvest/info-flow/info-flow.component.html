@@ -378,16 +378,12 @@
 
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="form-group col-md-8 checkbox">
-          <label>
-            <input type="checkbox" value="" [(ngModel)]="formData.acceptCond" />
-            <span class="pl-1 small-font">
-              Ich habe die Datenschutzerklarung gelesen und willige ein. class
-              meine personenbezogenen Daten zur Kontaktaufnahme und Zusendung
-              von Informationen verarbeitet werden. Ich kann diese Einwilligung
-              jederzeit mit einer E-Mail an info@verumvest.com widerrufen.
-            </span>
-          </label>
+        <div class="form-group col-md-8 checkbox-container">
+            <input type="checkbox" value="" [(ngModel)]="formData.acceptCond" id="acceptCond" />
+            <label for="acceptCond" class="small-font">Ich habe die Datenschutzerklarung gelesen und willige ein. class
+                meine personenbezogenen Daten zur Kontaktaufnahme und Zusendung
+                von Informationen verarbeitet werden. Ich kann diese Einwilligung
+                jederzeit mit einer E-Mail an info@verumvest.com widerrufen.</label>
         </div>
       </div>
 
