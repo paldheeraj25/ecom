@@ -390,11 +390,13 @@ footer-text {
     padding: 1rem;
   }
   .form-group-title {
-    height: auto;
+    height: auto !important;
+    padding: 1rem;
+    margin-bottom: 2rem;
     word-wrap: break-word;
   }
   .radio-inline {
-    height: auto;
+    height: auto !important;
     margin-bottom: 3rem;
   }
 }
