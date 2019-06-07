@@ -95,21 +95,19 @@ li {
   .large-btn {
     width: 100% !important;
   }
-  .step{
+  .step {
     padding: 3rem 1.5rem;
   }
 }
 
 @media screen and (min-width: 600px) {
-  
   .step {
     width: 85%;
     margin: 2rem auto;
   }
-  .step{
+  .step {
     padding: 3rem 3.5rem;
   }
-
 }
 
 .money-tree {
@@ -202,7 +200,6 @@ li {
 .right-side {
   margin-left: auto;
 }
-
 
 .fa-chevron-right {
   font-size: 20px;
@@ -371,6 +368,15 @@ footer-text {
 .facebook-logo {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.diff-view {
+  .form-group-title {
+    height: 85px;
+  }
+  .radio-inline {
+    height: 50px;
+  }
 }
 
 // Range styles

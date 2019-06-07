@@ -59,7 +59,105 @@
     <div class="step-2 step shadow" *ngIf="stepNumber == 2">
       <p class="form-title">Fragen zu Iher Person</p>
       <form class="form-container">
-        <div class="row row-container">
+
+        <!-- From Here -->
+        <div class="row">
+          <div class="col-md-2 row-container diff-view pl-3">
+            <div class="row">
+              <p class="form-group-title col-md-12">Familienstand</p>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="single" />
+                Ich bin Single
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="inRelation" />
+                Ich lebe in einer Beziehung
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="married" />
+                Ich bin verheiratet
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-2 diff-view pl-3">
+            <div class="row">
+              <p class="form-group-title col-md-12">Alter</p>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="age" [(ngModel)]="formData.age" value="20-35" />
+                20-35 Jahre
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="age" [(ngModel)]="formData.age" value="36-45" />
+                36-45 Jahre
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="age" [(ngModel)]="formData.age" value="46-60" />
+                46-60 Jahre
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-2 row-container diff-view pl-3">
+            <div class="row">
+              <p class="form-group-title col-md-12">Kinder</p>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="children" [(ngModel)]="formData.children" value="no" />
+                Keine Kinder
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="children" [(ngModel)]="formData.children" value="1-2" />
+                1-2 Kinder
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="children" [(ngModel)]="formData.children" value="3-4" />
+                3-4 Kinder
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-3 diff-view pl-3">
+            <div class="row">
+              <p class="form-group-title col-md-12">
+                Erfahrung Immobilien Investitionem
+              </p>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="no" />
+                Keine Erfahrung
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="1-2" />
+                Bereits in 1-2 Immobilien Investiert
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="3-4" />
+                Bereits in 3-4 Immobilien Investiert
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-3 row-container diff-view pl-3">
+            <div class="row">
+              <p class="form-group-title col-md-12">Risikobereitschaft</p>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="riskTaker" [(ngModel)]="formData.riskTaker" value="no" />
+                Ungern Risiko
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="riskTaker" [(ngModel)]="formData.riskTaker" value="transparent" />
+                Ja. wenn Risiken transparent sind Investiert
+              </label>
+              <label class="radio-inline col-md-12">
+                <input type="radio" name="riskTaker" [(ngModel)]="formData.riskTaker" value="returns" />
+                Ja. wenn dies die Rendite-Chance erhoht
+              </label>
+            </div>
+          </div>
+
+        </div>
+        <!-- Upto Here -->
+
+        <!-- <div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">Familienstand</p>
           <label class="radio-inline col-md-2 mb-3">
             <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="single" />
@@ -73,9 +171,9 @@
             <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="married" />
             Ich bin verheiratet
           </label>
-        </div>
+        </div> -->
 
-        <div class="row row-container">
+        <!--<div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">Alter</p>
           <label class="radio-inline col-md-2 mb-3">
             <input type="radio" name="age" [(ngModel)]="formData.age" value="20-35" />
@@ -89,9 +187,9 @@
             <input type="radio" name="age" [(ngModel)]="formData.age" value="46-60" />
             46-60 Jahre
           </label>
-        </div>
+        </div> -->
 
-        <div class="row row-container">
+        <!-- <div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">Kinder</p>
           <label class="radio-inline col-md-2 mb-3">
             <input type="radio" name="children" [(ngModel)]="formData.children" value="no" />
@@ -105,9 +203,9 @@
             <input type="radio" name="children" [(ngModel)]="formData.children" value="3-4" />
             3-4 Kinder
           </label>
-        </div>
+        </div> -->
 
-        <div class="row row-container">
+        <!-- <div class="row row-container">
           <p class="form-group-title col-md-12 ml-2">
             Erfahrung Immobilien Investitionem
           </p>
@@ -123,9 +221,9 @@
             <input type="radio" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="3-4" />
             Bereits in 3-4 Immobilien Investiert
           </label>
-        </div>
+        </div> -->
 
-        <div class="row row-container mb-4">
+        <!-- <div class="row row-container mb-4">
           <p class="form-group-title col-md-12 ml-2">
             Risikobereitschaft
           </p>
@@ -141,7 +239,7 @@
             <input type="radio" name="riskTaker" [(ngModel)]="formData.riskTaker" value="returns" />
             Ja. wenn dies die Rendite-Chance erhoht
           </label>
-        </div>
+        </div> -->
 
         <div class="row buttons-container">
           <div class="col col col-md-6 col-sm-6 text-center">
