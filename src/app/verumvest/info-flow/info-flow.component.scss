@@ -233,6 +233,7 @@ li {
   border: 2px solid !important;
   border-left: none !important;
   border-radius: 0;
+
 }
 
 .form-control:focus {
@@ -242,7 +243,7 @@ li {
 }
 
 .form-control {
-  border: 2px solid;
+  border: 2px solid #28395e;
 }
 
 .no-right-border {
@@ -446,6 +447,7 @@ input[type="range"]::-ms-fill-upper {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
+
 .form-control {
   border-radius: 0px;
 }
@@ -458,4 +460,8 @@ input[type="range"]::-ms-fill-upper {
 .country-name {
   font-weight: 500;
   font-family: montserrat, sans-serif;
+}
+
+.genereic-text {
+  color: #28395e;
 }
