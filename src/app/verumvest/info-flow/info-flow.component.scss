@@ -193,8 +193,6 @@ li {
 
 .row-container {
   background-color: #adb5bd6e;
-  padding: 0.3rem;
-  margin-bottom: 0.5rem;
 }
 
 .right-side {
@@ -372,10 +370,32 @@ footer-text {
 
 .diff-view {
   .form-group-title {
-    height: 85px;
+    height: 100px;
+    word-wrap: break-word;
   }
   .radio-inline {
     height: 50px;
+    margin-bottom: 3rem;
+  }
+}
+
+// @media screen and (min-width: 600px) {
+//   .step-2 {
+//     padding: 1rem;
+//   }
+// }
+
+@media screen and (max-width: 800px) {
+  .step-2 {
+    padding: 1rem;
+  }
+  .form-group-title {
+    height: auto;
+    word-wrap: break-word;
+  }
+  .radio-inline {
+    height: auto;
+    margin-bottom: 3rem;
   }
 }
 
