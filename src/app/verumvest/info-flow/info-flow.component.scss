@@ -2,6 +2,7 @@
   // background: hsl(0, 0%, 86%);
   // height: 100vh;
   padding: 10px;
+  color: #28395e;
 }
 
 @media screen and (max-width: 1200px) {
@@ -582,4 +583,18 @@ input[type="range"]::-ms-fill-upper {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+// Placeholder styles
+::-webkit-input-placeholder {
+  color: black;
+}
+::-moz-placeholder {
+  color: black;
+}
+:-ms-input-placeholder {
+  color: black;
+}
+:-moz-placeholder {
+  color: black;
 }

@@ -9,10 +9,9 @@ import { PdfService } from "../../pdf.service";
   styleUrls: ["./info-flow.component.scss"]
 })
 export class InfoFlowComponent implements OnInit {
-
   //flag url
   swissFlagUrl: string = "assets/img/swissfmap.jpg";
-  germanFlagUrl = "assets/img/germanyfmap.jpg"
+  germanFlagUrl = "assets/img/germanyfmap.jpg";
   stepNumber: number = 1;
   // step one var
   step1elem1: string = "20-30";
@@ -243,17 +242,32 @@ export class InfoFlowComponent implements OnInit {
       value: "Berling Brandenburg"
     }
   };
-  formData = {};
+  formData: any = {};
 
   constructor(
     private router: Router,
     private calculatSerrvice: CalculatService,
     private pdfService: PdfService
-  ) { }
+  ) {}
 
   ngOnInit() {
-    console.log(this.calculatSerrvice.currency);
     this.getPower = Math.pow(1.03, 10);
+    this.formData = {
+      maritalStatus: "single",
+      age: "20-35",
+      children: "no",
+      realEstateExp: "no",
+      riskTaker: "no",
+      reservesToday: 0,
+      desiredProperty: 0,
+      spend: 0,
+      gender: 1,
+      firstName: "",
+      lastName: "",
+      email: "",
+      teleNumber: "",
+      acceptCond: false
+    };
   }
 
   stepOneBlock(block: string) {
@@ -403,19 +417,17 @@ export class InfoFlowComponent implements OnInit {
 
   swissFlag(flag) {
     if (flag == 1) {
-      this.swissFlagUrl = "assets/img/swissfmap1.jpg"
+      this.swissFlagUrl = "assets/img/swissfmap1.jpg";
     } else {
       this.swissFlagUrl = "assets/img/swissfmap.jpg";
     }
-
   }
 
   germanFlag(flag) {
     if (flag == 1) {
-      this.germanFlagUrl = "assets/img/germanyfmap1.jpg"
+      this.germanFlagUrl = "assets/img/germanyfmap1.jpg";
     } else {
       this.germanFlagUrl = "assets/img/germanyfmap.jpg";
     }
-
   }
 }
