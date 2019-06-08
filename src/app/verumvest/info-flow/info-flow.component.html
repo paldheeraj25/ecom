@@ -7,13 +7,13 @@
         </button>
       </div>
       <div class="col text-center">
-        <span class="dot" [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']" (click)="goToStep(1)">1</span>
-        <span class="dot" [ngClass]="[stepNumber == 2 ? 'active' : 'inactive']" (click)="goToStep(2)">2</span>
+        <!-- <span class="dot" [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']" (click)="goToStep(1)">1</span>
+        <span class="dot" [ngClass]="[stepNumber == 2 ? 'active' : 'inactive']" (click)="goToStep(2)">2</span> -->
         <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
         <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span> -->
-        <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)="goToStep(3)">3</span>
+        <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)="goToStep(3)">3</span>
         <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)="goToStep(4)">4</span>
-        <span class="dot" [ngClass]="[stepNumber == 5 ? 'active' : 'inactive']" (click)="goToStep(5)">5</span>
+        <span class="dot" [ngClass]="[stepNumber == 5 ? 'active' : 'inactive']" (click)="goToStep(5)">5</span> -->
 
       </div>
       <div class="col text-right">
@@ -315,7 +315,7 @@
       <div class="row">
         <div class="col text-center p-t-5">
           <h6>Veilen DankFur lhre Angaben</h6>
-          <span class="genereic-text">Hallo Max Mustermann,</span>
+          <span class="genereic-text">Hallo {{formData.firstName}} {{formData.lastName}},</span>
         </div>
       </div>
       <div class="row">

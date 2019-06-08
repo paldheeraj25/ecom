@@ -382,6 +382,7 @@ export class InfoFlowComponent implements OnInit {
     this.data.userTown.value = "Berlin";
     ////////
     this.pdfService.getPdf(this.formData.reservesToday, this.formData);
+    this.nextNBack("next");
     console.log("getPDF controller " + this.assetAccumulation);
   }
 
