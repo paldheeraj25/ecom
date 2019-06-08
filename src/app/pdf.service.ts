@@ -12,261 +12,185 @@ export class PdfService {
   public assetAccumulation: number;
   public pdfObject1: any;
   public pdfObject: any = {
-    equity: {
-      label: "Was würdest Du heute für Deinen Vermögensaufbau investieren",
-      value: 100,
-      type: "number"
-    },
-    er_neb: {
-      label: "Erwerbs Nebenkosten",
-      value: 100,
-      type: "number"
-    },
-    ein: {
-      label: "Eigenkapital zur Immobilie",
-      value: 100,
-      type: "number"
-    },
-    finanzierung: {
-      label: "Finanzierung",
-      value: 100,
-      type: "number"
-    },
-    ka_moglich: {
-      label: "Kaufpreis möglich",
-      value: 100,
-      type: "number"
-    },
-    wohnflache: {
-      label: "Wie viel m² Wohnfläche kann gekauft werden",
-      value: 100,
-      type: "number"
-    },
-    wie_wohnflache: {
-      label: "Wie viele Wohnungen sind das?",
-      value: 100,
-      type: "number"
-    },
-    investition: {
-      label: "Miete mtl. aus der Investition?",
-      value: 100,
-      type: "number"
-    },
-    einnahmen: {
-      label: "Summe Einnahmen?",
-      value: 100,
-      type: "number"
-    },
-    finanz_1: {
-      label: "Finanzierungszins",
-      value: 100,
-      type: "number"
-    },
-    finanz_2: {
-      label: "Finanzierungstilgung",
-      value: 100,
-      type: "number"
-    },
-    aufwand: {
-      label: "Aufwand Verwaltung",
-      value: 100,
-      type: "number"
-    },
-    belastung: {
-      label: "Steuerliche Belastung",
-      value: 100,
-      type: "number"
-    },
-    ausgaben_1: {
-      label: "Summe Ausgaben",
-      value: 100,
-      type: "number"
-    },
-    ausgaben_2: {
-      label: "Ergebnis Einnahmen - Ausgaben",
-      value: 100,
-      type: "number"
-    },
-    tilgung_1: {
-      label: "Tilgung bei den Vorgaben nach 10 Jahren",
-      value: 100,
-      type: "number"
-    },
-    tilgung_2: {
-      label: "Immobilienwert nach 10 Jahren bei",
-      value: 100,
-      type: "number"
-    },
-    tilgung_3: {
-      label: "Guthabendelta nach 10 Jahren daraus",
-      value: 100,
-      type: "number"
-    },
-    aufwandsrechner: {
-      label: "Aufwandsrechner innerhalb von 10 Jahren",
-      value: 100,
-      type: "number"
-    },
-    investment_angaben: {
-      label: "Investment Angaben",
-      value: 100,
-      type: "number"
 
+    "userFirstName": {
+      "type": "string",
+      "value": "Maxi"
     },
-    vergleich_verschiedener: {
-      label: "vergleich verschiedener",
-      value: 100,
-      type: "number"
-
+    "userLastName": {
+      "type": "string",
+      "value": "Musterfrau"
     },
-    kaufpreis_gesamt: {
-      label: "Kaufpreis Gesamt",
-      value: 100,
-      type: "number"
-
+    "userEmail": {
+      "type": "string",
+      "value": "maxi@muster.de"
     },
-    bank: {
-      label: "Bank",
-      value: 100,
-      type: "number"
-
+    "userPhone": {
+      "type": "string",
+      "value": "0049 1234567891"
     },
-    nebenkosten: {
-      label: "Nebenkosten",
-      value: 100,
-      type: "number"
-
+    "userAge": {
+      "type": "number",
+      "value": 24
     },
-    tilgung: {
-      label: "Tilgung",
-      value: 100,
-      type: "number"
-
+    "userGender": {
+      "type": "string",
+      "value": "f"
     },
-    ausgaben_je_monat: {
-      label: "Ausgaben je Monat",
-      value: 100,
-      type: "number"
-
+    "family_status": {
+      "type": "string",
+      "value": "Single"
     },
-    steuervorteil: {
-      label: "Steuervorteil",
-      value: 100,
-      type: "number"
-
+    "children": {
+      "type": "number",
+      "value": 0
     },
-    inv_ang_neto: {
-      label: "inv_ang_neto",
-      value: 100,
-      type: "number"
-
+    "house_count": {
+      "type": "number",
+      "value": 4
     },
-    inv_ang_inve: {
-      label: "inv_ang_inve",
-      value: 100,
-      type: "number"
-
+    "risk": {
+      "type": "string",
+      "value": "Low"
     },
-    inv_ang_wuns: {
-      label: "inv_ang_wuns",
-      value: 100,
-      type: "number"
-
+    "inv_ang_neto": {
+      "type": "number",
+      "value": 1
     },
-    diagram_tl: {
-      label: "diagram_tl",
-      value: 100,
-      type: "number"
-
+    "inv_ang_inve": {
+      "type": "number",
+      "value": 2
     },
-    diagram_immo: {
-      label: "diagram_immo",
-      value: 100,
-      type: "number"
-
+    "inv_ang_wuns": {
+      "type": "number",
+      "value": 3
     },
-    diagram_aktien: {
-      label: "diagram_aktien",
-      value: 100,
-      type: "number"
-
+    "diagram_tl": {
+      "type": "number",
+      "value": 420.54
     },
-    diagram_zinsen: {
-      label: "diagram_zinsen",
-      value: 100,
-      type: "number"
-
+    "diagram_immo": {
+      "type": "number",
+      "value": 410.54
     },
-    userTown: {
-      label: "User Town",
-      value: "some address",
-      type: "string"
+    "diagram_aktien": {
+      "type": "number",
+      "value": 406.41
     },
-    userState: {
-      label: "User State",
-      value: "some address",
-      type: "string"
+    "diagram_zinsen": {
+      "type": "number",
+      "value": 394.54
     },
-    userFirstName: {
-      label: "Name",
-      value: "",
-      type: "string"
+    "wie_wohnflache": {
+      "type": "number",
+      "value": 11
     },
-    userLastName: {
-      label: "Name",
-      value: "",
-      type: "string"
+    "wohnflache": {
+      "type": "number",
+      "value": 12
     },
-    userEmail: {
-      label: "Email",
-      value: "",
-      type: "string"
+    "house_type": {
+      "type": "string",
+      "value": "Dome"
     },
-    userPhone: {
-      label: "Phone",
-      value: "",
-      type: "string"
+    "equity": {
+      "type": "number",
+      "value": 13
     },
-    userAge: {
-      label: "Age",
-      value: 28,
-      type: "number"
+    "er_neb": {
+      "type": "number",
+      "value": 14
     },
-    userGender: {
-      label: "Gender",
-      value: "",
-      type: "string"
+    "ein_zur": {
+      "type": "number",
+      "value": 15
     },
-    family_status: {
-      label: "Family Status",
-      value: "",
-      type: "string"
+    "finanzierung": {
+      "type": "number",
+      "value": 16
     },
-    children: {
-      label: "Children",
-      value: 0,
-      type: "number"
+    "ka_moglich": {
+      "type": "number",
+      "value": 17
     },
-    risk: {
-      label: "Risk",
-      value: "",
-      type: "string"
+    "kaufpreis_gesamt": {
+      "type": "number",
+      "value": 18
     },
-    house_type: {
-      label: "House Type",
-      value: "",
-      type: "string"
+    "finanz_1": {
+      "type": "number",
+      "value": 19
     },
-    house_count: {
-      label: "House Count",
-      value: "",
-      type: "string"
+    "finanz_2": {
+      "type": "number",
+      "value": 20
+    },
+    "bank": {
+      "type": "number",
+      "value": 21
+    },
+    "nebenkosten": {
+      "type": "number",
+      "value": 22
+    },
+    "ausgaben_1": {
+      "type": "number",
+      "value": 23
+    },
+    "tilgung": {
+      "type": "number",
+      "value": 24
+    },
+    "ausgaben_je_monat": {
+      "type": "number",
+      "value": 25
+    },
+    "investition": {
+      "type": "number",
+      "value": 26
+    },
+    "steuervorteil": {
+      "type": "number",
+      "value": 27
+    },
+    "einnahmen": {
+      "type": "number",
+      "value": 28
+    },
+    "ausgaben_2": {
+      "type": "number",
+      "value": 29
+    },
+    "aufwandsrechner": {
+      "type": "number",
+      "value": 30
+    },
+    "tilgung_2": {
+      "type": "number",
+      "value": 31
+    },
+    "tilgung_3": {
+      "type": "number",
+      "value": 32
+    },
+    "tilgung_1": {
+      "type": "number",
+      "value": 33
+    },
+    "userTown": {
+      "type": "string",
+      "value": "Berlin"
+    },
+    "userState": {
+      "type": "string",
+      "value": "Berling Brandenburg"
     }
   }
 
+
   generateCalculation() {
     this.pdfObject.er_neb.value = (this.assetAccumulation / 0.27) * 0.07;
-    this.pdfObject.ein.value = (this.assetAccumulation / 0.27) * 0.2;
+    this.pdfObject.ein_zur.value = (this.assetAccumulation / 0.27) * 0.2;
     this.pdfObject.finanzierung.value = (this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2);
     this.pdfObject.ka_moglich.value = this.assetAccumulation / 0.27;
     this.pdfObject.wohnflache.value = (this.assetAccumulation / 0.27) / 2700;
@@ -279,8 +203,8 @@ export class PdfService {
     this.pdfObject.finanz_2.value = (((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
       0.02) / 12;
 
-    this.pdfObject.aufwand.value = (((this.assetAccumulation / 0.27) / 2700) / 75) * 36;
-    this.pdfObject.belastung.value = (this.assetAccumulation / 0.27) * 0.002 / 12;
+    // this.pdfObject.aufwand.value = (((this.assetAccumulation / 0.27) / 2700) / 75) * 36;
+    // this.pdfObject.belastung.value = (this.assetAccumulation / 0.27) * 0.002 / 12;
     this.pdfObject.ausgaben_1.value = ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
       0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
         0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
@@ -310,144 +234,39 @@ export class PdfService {
     this.assetAccumulation = equity;
     this.generateCalculation();
     // user details
-    this.pdfObject.userFirstName.value = user.name;
-    this.pdfObject.userLastName.value = user.name;
+    this.pdfObject.userFirstName.value = user.firstName;
+    this.pdfObject.userLastName.value = user.lastName;
     this.pdfObject.userEmail.value = user.email;
-    this.pdfObject.userPhone.value = user.phone;
-    this.pdfObject.userTown.value = user.address;
-    this.pdfObject1 = {
+    this.pdfObject.userPhone.value = user.teleNumber;
+    this.pdfObject.userTown.value = user.email;
 
-      "userFirstName": {
-        "type": "string",
-        "value": "Maxi"
-      },
-      "userLastName": {
-        "type": "string",
-        "value": "Musterfrau"
-      },
-      "userEmail": {
-        "type": "string",
-        "value": "maxi@muster.de"
-      },
-      "userPhone": {
-        "type": "string",
-        "value": "0049 1234567891"
-      },
-      "userAge": {
-        "type": "number",
-        "value": 24
-      },
-      "userGender": {
-        "type": "string",
-        "value": "f"
-      },
-      "family_status": {
-        "type": "string",
-        "value": "Single"
-      },
-      "children": {
-        "type": "number",
-        "value": 0
-      },
-      "house_count": {
-        "type": "number",
-        "value": 4
-      },
-      "risk": {
-        "type": "string",
-        "value": "Low"
-      },
-      "inv_ang_neto": {
-        "type": "number",
-        "value": 1
-      },
-      "inv_ang_inve": {
-        "type": "number",
-        "value": 2
-      },
-      "inv_ang_wuns": {
-        "type": "number",
-        "value": 3
-      },
-      "diagram_tl": {
-        "type": "number",
-        "value": 420.54
-      },
-      "diagram_immo": {
-        "type": "number",
-        "value": 410.54
-      },
-      "diagram_aktien": {
-        "type": "number",
-        "value": 406.41
-      },
-      "diagram_zinsen": {
-        "type": "number",
-        "value": 394.54
-      },
-      "house_type": {
-        "type": "string",
-        "value": "Dome"
-      },
-      "kaufpreis_gesamt": {
-        "type": "number",
-        "value": 18
-      },
-      "bank": {
-        "type": "number",
-        "value": 21
-      },
-      "nebenkosten": {
-        "type": "number",
-        "value": 22
-      },
-      "tilgung": {
-        "type": "number",
-        "value": 24
-      },
-      "ausgaben_je_monat": {
-        "type": "number",
-        "value": 25
-      },
-      "steuervorteil": {
-        "type": "number",
-        "value": 27
-      },
-      "userTown": {
-        "type": "string",
-        "value": "Berlin"
-      },
-      "userState": {
-        "type": "string",
-        "value": "Berling Brandenburg"
-      },
-      "ein_zur": {
-        "type": "number",
-        "value": 15
-      }
-    }
 
 
     // fulfilling the pdfObject
-    this.pdfObject1.equity = this.pdfObject.equity;
-    this.pdfObject1.aufwandsrechner = this.pdfObject.aufwandsrechner;
-    this.pdfObject1.ausgaben_1 = this.pdfObject.ausgaben_1;
-    this.pdfObject1.ausgaben_2 = this.pdfObject.ausgaben_2;
-    this.pdfObject1.wie_wohnflache = this.pdfObject.wie_wohnflache;
-    this.pdfObject1.wohnflache = this.pdfObject.wohnflache;
-    this.pdfObject1.equity = this.pdfObject1.equity
-    this.pdfObject1.finanzierung = this.pdfObject.finanzierung;
-    this.pdfObject1.er_neb = this.pdfObject.er_neb;
-    this.pdfObject1.ka_moglich = this.pdfObject.ka_moglich;
-    this.pdfObject1.finanz_1 = this.pdfObject.finanz_1;
-    this.pdfObject1.finanz_2 = this.pdfObject.finanz_2;
-    this.pdfObject1.tilgung_1 = this.pdfObject.tilgung_1;
-    this.pdfObject1.tilgung_2 = this.pdfObject.tilgung_2;
-    this.pdfObject1.tilgung_3 = this.pdfObject.tilgung_3;
-    this.pdfObject1.investition = this.pdfObject.investition;
-    this.pdfObject1.einnahmen = this.pdfObject.einnahmen;
+    // this.pdfObject1.equity = this.pdfObject.equity;
+    // this.pdfObject1.aufwandsrechner = this.pdfObject.aufwandsrechner;
+    // this.pdfObject1.ausgaben_1 = this.pdfObject.ausgaben_1;
+    // this.pdfObject1.ausgaben_2 = this.pdfObject.ausgaben_2;
+    // this.pdfObject1.wie_wohnflache = this.pdfObject.wie_wohnflache;
+    // this.pdfObject1.wohnflache = this.pdfObject.wohnflache;
+    // this.pdfObject1.equity = this.pdfObject1.equity
+    // this.pdfObject1.finanzierung = this.pdfObject.finanzierung;
+    // this.pdfObject1.er_neb = this.pdfObject.er_neb;
+    // this.pdfObject1.ka_moglich = this.pdfObject.ka_moglich;
+    // this.pdfObject1.finanz_1 = this.pdfObject.finanz_1;
+    // this.pdfObject1.finanz_2 = this.pdfObject.finanz_2;
+    // this.pdfObject1.tilgung_1 = this.pdfObject.tilgung_1;
+    // this.pdfObject1.tilgung_2 = this.pdfObject.tilgung_2;
+    // this.pdfObject1.tilgung_3 = this.pdfObject.tilgung_3;
+    // this.pdfObject1.investition = this.pdfObject.investition;
+    // this.pdfObject1.einnahmen = this.pdfObject.einnahmen;
+    this.pdfObject.risk.value = user.riskTaker;
+    this.pdfObject.inv_ang_neto.value = 1;//"3rd screen 1st field";
+    this.pdfObject.inv_ang_inve.value = 1;// "3rd screen third field";
+    this.pdfObject.inv_ang_wuns.value = 1;//"3rd screen first field";
+
     console.log("pdf service " + equity);
-    this.httpClient.post(this.pdfUrl, { key: "Xgz3oNOYLkfHUs1sDxtpcqRhiVfKWOOqTd1MUZe", data: this.pdfObject1 }).subscribe((res) => {
+    this.httpClient.post(this.pdfUrl, { key: "Xgz3oNOYLkfHUs1sDxtpcqRhiVfKWOOqTd1MUZe", data: this.pdfObject }).subscribe((res) => {
       console.log(res);
     });
   }

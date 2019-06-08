@@ -248,7 +248,7 @@ export class InfoFlowComponent implements OnInit {
     private router: Router,
     private calculatSerrvice: CalculatService,
     private pdfService: PdfService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getPower = Math.pow(1.03, 10);
@@ -369,49 +369,19 @@ export class InfoFlowComponent implements OnInit {
 
   getPdf() {
     // populating the data for the pdf generation
-    this.data.userFirstName.value = this.user.name;
-    this.data.userLastName = this.user.name;
-    this.data.userEmail = this.user.email;
-    this.data.userPhone = this.user.phone;
+    this.data.userFirstName.value = "user Name";
+    this.data.userLastName = "user Name";
+    this.data.userEmail = "user Name";
+    this.data.userPhone = 192131239812;
     this.data.userAge = "age";
     this.data.userGender = "gender";
     this.data.family_status = "family_status";
     this.data.children = "children";
     this.data.house_count = "house_count";
     this.data.risk = "risk";
-    this.data.inv_ang_neto = this.user.email;
-    this.data.inv_ang_inve = this.user.email;
-    this.data.inv_ang_wuns = this.user.email;
-    this.data.diagram_tl = this.user.email;
-    this.data.diagram_immo = this.user.email;
-    this.data.diagram_aktien = this.user.email;
-    this.data.diagram_zinsen = this.user.email;
-    this.data.wie_wohnflache = this.user.email;
-    this.data.wohnflache = this.user.email;
-    this.data.house_type = this.user.email;
-    this.data.equity = this.user.email;
-    this.data.er_neb = this.user.email;
-    this.data.ein_zur = this.user.email;
-    this.data.finanzierung = this.user.email;
-    this.data.ka_moglich = this.user.email;
-    this.data.kaufpreis_gesamt = this.user.email;
-    this.data.finanz_1 = this.user.email;
-    this.data.finanz_2 = this.user.email;
-    this.data.ausgaben_1 = this.user.email;
-    this.data.tilgung = this.user.email;
-    this.data.ausgaben_je_monat = this.user.email;
-    this.data.investition = this.user.email;
-    this.data.steuervorteil = this.user.email;
-    this.data.einnahmen = this.user.email;
-    this.data.ausgaben_2 = this.user.email;
-    this.data.aufwandsrechner = this.user.email;
-    this.data.tilgung_2 = this.user.email;
-    this.data.tilgung_3 = this.user.email;
-    this.data.tilgung_1 = this.user.email;
     this.data.userTown.value = "Berlin";
-    this.data.userState = this.user.email;
     ////////
-    this.pdfService.getPdf(this.assetAccumulation, this.data);
+    this.pdfService.getPdf(this.formData.reservesToday, this.formData);
     console.log("getPDF controller " + this.assetAccumulation);
   }
 
