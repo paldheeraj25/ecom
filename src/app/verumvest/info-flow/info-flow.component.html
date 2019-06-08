@@ -156,90 +156,7 @@
 
         </div>
         <!-- Upto Here -->
-
-        <!-- <div class="row row-container">
-          <p class="form-group-title col-md-12 ml-2">Familienstand</p>
-          <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="single" />
-            Ich bin Single
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="inRelation" />
-            Ich lebe in einer Beziehung
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="married" />
-            Ich bin verheiratet
-          </label>
-        </div> -->
-
-        <!--<div class="row row-container">
-          <p class="form-group-title col-md-12 ml-2">Alter</p>
-          <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="age" [(ngModel)]="formData.age" value="20-35" />
-            20-35 Jahre
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="age" [(ngModel)]="formData.age" value="36-45" />
-            36-45 Jahre
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="age" [(ngModel)]="formData.age" value="46-60" />
-            46-60 Jahre
-          </label>
-        </div> -->
-
-        <!-- <div class="row row-container">
-          <p class="form-group-title col-md-12 ml-2">Kinder</p>
-          <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="children" [(ngModel)]="formData.children" value="no" />
-            Keine Kinder
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="children" [(ngModel)]="formData.children" value="1-2" />
-            1-2 Kinder
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="children" [(ngModel)]="formData.children" value="3-4" />
-            3-4 Kinder
-          </label>
-        </div> -->
-
-        <!-- <div class="row row-container">
-          <p class="form-group-title col-md-12 ml-2">
-            Erfahrung Immobilien Investitionem
-          </p>
-          <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="no" />
-            Keine Erfahrung
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="1-2" />
-            Bereits in 1-2 Immobilien Investiert
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="3-4" />
-            Bereits in 3-4 Immobilien Investiert
-          </label>
-        </div> -->
-
-        <!-- <div class="row row-container mb-4">
-          <p class="form-group-title col-md-12 ml-2">
-            Risikobereitschaft
-          </p>
-          <label class="radio-inline col-md-2 mb-3">
-            <input type="radio" name="riskTaker" [(ngModel)]="formData.riskTaker" value="no" />
-            Ungern Risiko
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="riskTaker" [(ngModel)]="formData.riskTaker" value="transparent" />
-            Ja. wenn Risiken transparent sind Investiert
-          </label>
-          <label class="radio-inline col-md-4 mb-3">
-            <input type="radio" name="riskTaker" [(ngModel)]="formData.riskTaker" value="returns" />
-            Ja. wenn dies die Rendite-Chance erhoht
-          </label>
-        </div> -->
+        
 
         <div class="row buttons-container">
           <div class="col col col-md-6 col-sm-6 text-center">
@@ -265,15 +182,15 @@
           Ihre Rucklagen heute
         </p>
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
-          <input type="text" class="form-control no-right-border" [(ngModel)]="formData.reservesToday" />
+          <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.reservesToday" />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
           </div>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-8 mb-4 p-0 pl-1">
-          <input type="range" min="1" max="1000000" [(ngModel)]="formData.reservesTodayRange" class="custom-range custom-range-input"
-            id="reservesTodayRange" />
+          <input type="range" min="1" max="1000000" [(ngModel)]="formData.reservesToday" class="custom-range custom-range-input"
+            id="reservesToday" />
         </div>
       </div>
 
@@ -282,7 +199,7 @@
           Gewunschtes Vermogen nach 10 Jahren
         </p>
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
-          <input type="text" class="form-control no-right-border" [(ngModel)]="formData.desiredProperty" />
+          <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.desiredProperty" />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
           </div>
@@ -290,8 +207,8 @@
 
         <div class="col-md-1"></div>
         <div class="col-md-8 mb-4 p-0 pl-1">
-          <input type="range" min="1" max="1000000" [(ngModel)]="formData.desiredPropertyRange" class="custom-range custom-range-input"
-            id="desiredPropertyRange" />
+          <input type="range" min="1" max="1000000" [(ngModel)]="formData.desiredProperty" class="custom-range custom-range-input"
+            id="desiredProperty" />
         </div>
       </div>
 
@@ -300,7 +217,7 @@
           Wieviel wurden Sie heute fur Ihren Vermogensaufbau investieren?
         </p>
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
-          <input type="text" class="form-control no-right-border" [(ngModel)]="formData.spend" />
+          <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.spend" />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
           </div>
@@ -308,8 +225,8 @@
 
         <div class="col-md-1"></div>
         <div class="col-md-8 mb-4 p-0 pl-1">
-          <input type="range" min="1" max="1000000" [(ngModel)]="formData.assetAccumulation" class="custom-range custom-range-input"
-            [(ngModel)]="formData.spendRange" id="spendRange" />
+          <input type="range" min="1" max="1000000" class="custom-range custom-range-input"
+            [(ngModel)]="formData.spend" id="spend" value="1" />
         </div>
       </div>
 
@@ -444,13 +361,5 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col text-left">
-        <button type="button" class="btn btn-success btn-round" (click)=nextNBack(back)>Back</button>
-      </div>
-      <div class="col text-right">
-        <button type="button" class="btn btn-success btn-round" (click)=nextNBack(next)>Next</button>
-      </div>
-    </div> -->
   </div>
 </div>
