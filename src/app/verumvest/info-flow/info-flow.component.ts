@@ -113,7 +113,7 @@ export class InfoFlowComponent implements OnInit {
       type: "number",
       value: 1
     },
-    inv_ang_inve: {
+    inv_ang_inve: { // investment third slider
       type: "number",
       value: 2
     },
@@ -302,15 +302,15 @@ export class InfoFlowComponent implements OnInit {
 
   showGraphType(graphType: string) {
     if (graphType === "sparenZinsen") {
-      this.graphDataCalculator(-0.0002);
+      this.graphDataCalculator(-0.02);
     } else if (graphType === "investmentsAktien") {
-      this.graphDataCalculator(0.0818);
+      this.graphDataCalculator(7.8);
     } else if (graphType === "investmentsImmobilien") {
       console.log(this.calculatSerrvice.currency);
       if (this.calculatSerrvice.currency == "swiss") {
-        this.graphDataCalculator(0.0969);
+        this.graphDataCalculator(9.69);
       } else {
-        this.graphDataCalculator(0.1256);
+        this.graphDataCalculator(12.56);
       }
     }
   }
@@ -369,17 +369,40 @@ export class InfoFlowComponent implements OnInit {
 
   getPdf() {
     // populating the data for the pdf generation
-    this.data.userFirstName.value = "user Name";
-    this.data.userLastName = "user Name";
-    this.data.userEmail = "user Name";
-    this.data.userPhone = 192131239812;
-    this.data.userAge = "age";
-    this.data.userGender = "gender";
-    this.data.family_status = "family_status";
-    this.data.children = "children";
-    this.data.house_count = "house_count";
-    this.data.risk = "risk";
-    this.data.userTown.value = "Berlin";
+    // this.data.userFirstName.value = "user Name";
+    // this.data.userLastName = "user Name";
+    // this.data.userEmail = "user Name";
+    // this.data.userPhone = 192131239812;
+    // this.data.userAge = "age";
+    // this.data.userGender = "gender";
+    // this.data.family_status = "family_status";
+    // this.data.children = "children";
+    // this.data.house_count = "house_count";
+    // this.data.risk = "risk";
+    // this.data.userTown.value = "Berlin";
+    if (this.formData.gender == 1) {
+      this.formData.gender = "Herr";
+    } else {
+      this.formData.gender = "Frau";
+    }
+    // generating graph data
+    let diagram_aktien = 0;
+    for (let i = 0; i < 10; i++) {
+      diagram_aktien = this.assetAccumulation * (-0.02) + this.assetAccumulation;
+    }
+
+    let diagram_zinsen = 0;
+    for (let i = 0; i < 10; i++) {
+      diagram_zinsen = this.assetAccumulation * (7.8) + this.assetAccumulation;
+    }
+
+    let diagram_immo = 0;
+    for (let i = 0; i < 10; i++) {
+      diagram_immo = this.assetAccumulation * (9.69) + this.assetAccumulation;
+    }
+    this.formData.diagram_zinsen = diagram_zinsen;
+    this.formData.diagram_aktien = diagram_aktien;
+    this.formData.diagram_immo = diagram_immo;
     ////////
     this.pdfService.getPdf(this.formData.reservesToday, this.formData);
     this.nextNBack("next");

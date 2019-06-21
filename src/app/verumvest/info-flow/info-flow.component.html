@@ -1,27 +1,27 @@
 <div class="section user-info">
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col text-left">
         <button type="button" class="btn btn-success btn-round" (click)="nextNBack(back)">
           Back
         </button>
       </div>
-      <div class="col text-center">
-        <!-- <span class="dot" [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']" (click)="goToStep(1)">1</span>
+      <div class="col text-center"> -->
+    <!-- <span class="dot" [ngClass]="[stepNumber == 1 ? 'active' : 'inactive']" (click)="goToStep(1)">1</span>
         <span class="dot" [ngClass]="[stepNumber == 2 ? 'active' : 'inactive']" (click)="goToStep(2)">2</span> -->
-        <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
+    <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)=goToStep(3)>3</span>
         <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)=goToStep(4)>4</span> -->
-        <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)="goToStep(3)">3</span>
+    <!-- <span class="dot" [ngClass]="[stepNumber == 3 ? 'active' : 'inactive']" (click)="goToStep(3)">3</span>
         <span class="dot" [ngClass]="[stepNumber == 4 ? 'active' : 'inactive']" (click)="goToStep(4)">4</span>
         <span class="dot" [ngClass]="[stepNumber == 5 ? 'active' : 'inactive']" (click)="goToStep(5)">5</span> -->
 
-      </div>
+    <!-- </div>
       <div class="col text-right">
         <button type="button" class="btn btn-success btn-round" (click)="nextNBack(next)">
           Next
         </button>
       </div>
-    </div>
+    </div> -->
     <div class="row step step-1" *ngIf="stepNumber == 1">
       <div class="col-md-12 text-center">
         <span class="heading">Aus welchem Land besuchst Du uns?</span>
@@ -39,7 +39,7 @@
 
           <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
             Zurück
-            <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+            <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i>
           </button>
         </div>
         <div class="col-md-6 text-center">
@@ -161,7 +161,7 @@
         <div class="row buttons-container">
           <div class="col col col-md-6 col-sm-6 text-center">
             <button type="button" class=" btn-green large-btn" (click)="nextNBack(back)">
-              Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+              Zuruck <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i>
             </button>
           </div>
           <div class="col col col-md-6 col-sm-6 text-center">
@@ -233,7 +233,7 @@
       <div class="row buttons-container">
         <div class="col col col-md-6 col-sm-6 text-center">
           <button type="button" class=" btn-green large-btn" (click)="nextNBack(back)">
-            Zuruck <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+            Zuruck <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i>
           </button>
         </div>
         <div class="col col col-md-6 col-sm-6 text-center">
@@ -314,7 +314,7 @@
     <div class="step-3 step" *ngIf="stepNumber == 5">
       <div class="row">
         <div class="col text-center p-t-5">
-          <h6>Veilen DankFur lhre Angaben</h6>
+          <h6>Vielen Dank für lhre Angaben</h6>
           <span class="genereic-text">Hallo {{formData.firstName}} {{formData.lastName}},</span>
         </div>
       </div>

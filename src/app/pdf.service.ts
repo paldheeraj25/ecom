@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,11 @@ export class PdfService {
   constructor(private httpClient: HttpClient) { }
 
   public pdfUrl: string = "https://verumvest-api.guwa-design.com/pdf/123/create";
+  private nLtter: string = "https://api.newsletter2go.com/oauth/v2/token";
+  private nLettterSend: string = "https://api.newsletter2go.com/newsletters/wuazzq83/sendtest";
+  private recipientUrl: string = "https://api.newsletter2go.com/recipients";
+  private newsTk: string;
+
   public assetAccumulation: number;
   public pdfObject1: any;
   public pdfObject: any = {
@@ -30,7 +36,7 @@ export class PdfService {
       "value": "0049 1234567891"
     },
     "userAge": {
-      "type": "number",
+      "type": "number", // its a string
       "value": 24
     },
     "userGender": {
@@ -42,7 +48,7 @@ export class PdfService {
       "value": "Single"
     },
     "children": {
-      "type": "number",
+      "type": "number", // its a string
       "value": 0
     },
     "house_count": {
@@ -53,31 +59,31 @@ export class PdfService {
       "type": "string",
       "value": "Low"
     },
-    "inv_ang_neto": {
+    "inv_ang_neto": { // field number 1 in the doc .. Done
       "type": "number",
       "value": 1
     },
-    "inv_ang_inve": {
+    "inv_ang_inve": { // field number two .. Done
       "type": "number",
       "value": 2
     },
-    "inv_ang_wuns": {
+    "inv_ang_wuns": { // field number and green number in the box .. Done
       "type": "number",
       "value": 3
     },
-    "diagram_tl": {
+    "diagram_tl": { // same as field number three slider .. Done
       "type": "number",
       "value": 420.54
     },
-    "diagram_immo": {
+    "diagram_immo": { // 3rd
       "type": "number",
       "value": 410.54
     },
-    "diagram_aktien": {
+    "diagram_aktien": { // 2nd graph
       "type": "number",
       "value": 406.41
     },
-    "diagram_zinsen": {
+    "diagram_zinsen": { // 1 graph
       "type": "number",
       "value": 394.54
     },
@@ -187,50 +193,129 @@ export class PdfService {
     }
   }
 
+  roundNumber(number: number) {
+    return Math.round(number * 100) / 100;
+  }
 
   generateCalculation() {
-    this.pdfObject.er_neb.value = (this.assetAccumulation / 0.27) * 0.07;
-    this.pdfObject.ein_zur.value = (this.assetAccumulation / 0.27) * 0.2;
-    this.pdfObject.finanzierung.value = (this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2);
-    this.pdfObject.ka_moglich.value = this.assetAccumulation / 0.27;
-    this.pdfObject.wohnflache.value = (this.assetAccumulation / 0.27) / 2700;
-    this.pdfObject.wie_wohnflache.value = ((this.assetAccumulation / 0.27) / 2700) / 75;
-    this.pdfObject.investition.value = ((this.assetAccumulation / 0.27) * 0.04) / 12;
-    this.pdfObject.einnahmen.value = ((this.assetAccumulation / 0.27) * 0.04) / 12;
-    this.pdfObject.finanz_1.value = (((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-      0.02) / 12;
+    this.pdfObject.er_neb.value = this.roundNumber((this.assetAccumulation / 0.27) * 0.07);
+    this.pdfObject.ein_zur.value = this.roundNumber((this.assetAccumulation / 0.27) * 0.2);
+    this.pdfObject.finanzierung.value = this.roundNumber((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2));
+    this.pdfObject.ka_moglich.value = this.roundNumber(this.assetAccumulation / 0.27);
+    this.pdfObject.wohnflache.value = this.roundNumber((this.assetAccumulation / 0.27) / 2700);
+    this.pdfObject.wie_wohnflache.value = this.roundNumber(((this.assetAccumulation / 0.27) / 2700) / 75);
+    this.pdfObject.investition.value = this.roundNumber(((this.assetAccumulation / 0.27) * 0.04) / 12);
+    this.pdfObject.finanz_1.value = this.roundNumber((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+      0.02) / 12);
 
-    this.pdfObject.finanz_2.value = (((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-      0.02) / 12;
+    this.pdfObject.finanz_2.value = this.roundNumber((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+      0.02) / 12);
+    // bank
+    this.pdfObject.bank.value = this.roundNumber(this.pdfObject.finanz_1.value);
+    // kaufpreis_gesamt
+    this.pdfObject.kaufpreis_gesamt.value = this.roundNumber(this.assetAccumulation / 0.27);
 
+    //steuervorteil
+    this.pdfObject.steuervorteil.value = this.roundNumber((this.pdfObject.kaufpreis_gesamt.value * 0.002) / 12);
+    this.pdfObject.einnahmen.value = this.pdfObject.investition.value - this.pdfObject.steuervorteil.value;
     // this.pdfObject.aufwand.value = (((this.assetAccumulation / 0.27) / 2700) / 75) * 36;
     // this.pdfObject.belastung.value = (this.assetAccumulation / 0.27) * 0.002 / 12;
-    this.pdfObject.ausgaben_1.value = ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-      0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-        0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
-          * 0.002 / 12);
+    // this.pdfObject.ausgaben_1.value = this.roundNumber(((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+    //   0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+    //     0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
+    //       * 0.002 / 12));
 
-    this.pdfObject.ausgaben_2.value = (((this.assetAccumulation / 0.27) * 0.04) / 12) -
-      (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-        0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-          0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
-            * 0.002 / 12));
-
-    this.pdfObject.tilgung_1.value = 99999999999999999;
-    this.pdfObject.tilgung_2.value = Math.pow(1.03, 10) * (this.assetAccumulation / 0.27);
-    this.pdfObject.tilgung_3.value = 99999999999999999;
-    this.pdfObject.aufwandsrechner.value = this.assetAccumulation - ((((this.assetAccumulation /
-      0.27) * 0.04) / 12) -
-      (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-        0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
-          0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation /
-            0.27)
-            * 0.002 / 12))) * 12 * 10;
+    // this.pdfObject.ausgaben_2.value = this.roundNumber((((this.assetAccumulation / 0.27) * 0.04) / 12) -
+    //   (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+    //     0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+    //       0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation / 0.27)
+    //         * 0.002 / 12)));
+    this.pdfObject.ausgaben_1.value = this.roundNumber(this.pdfObject.finanz_1.value + (((this.pdfObject.ka_moglich.value / 2700) / 75) * 36));
+    //ausgaben_je_monat
+    this.pdfObject.ausgaben_je_monat.value = this.roundNumber(this.pdfObject.finanz_1.value + this.pdfObject.finanz_2.value + (((this.pdfObject.ka_moglich.value / 2700) / 75) * 36));
+    this.pdfObject.ausgaben_2.value = this.pdfObject.einnahmen.value;
+    //nebenkosten
+    this.pdfObject.nebenkosten.value = this.roundNumber(((this.pdfObject.ka_moglich.value / 2700) / 75) * 36);
+    this.pdfObject.tilgung.value = this.pdfObject.finanz_2.value;
+    this.pdfObject.tilgung_1.value = 99;
+    this.pdfObject.tilgung_2.value = this.roundNumber(Math.pow(1.03, 10) * (this.assetAccumulation / 0.27));
+    this.pdfObject.tilgung_3.value = 99;
+    // this.pdfObject.aufwandsrechner.value = this.roundNumber(this.assetAccumulation - ((((this.assetAccumulation /
+    //   0.27) * 0.04) / 12) -
+    //   (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+    //     0.02) / 12) + ((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
+    //       0.02) / 12) + ((((this.assetAccumulation / 0.27) / 2700) / 75) * 36) + ((this.assetAccumulation /
+    //         0.27)
+    //         * 0.002 / 12))) * 12 * 10);
+    this.pdfObject.aufwandsrechner.value = this.pdfObject.ka_moglich.value;
 
 
   }
 
+  // login service
+  newsletter(email) {
+    // http headers 
+    let httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Basic M2xkNW1leXJfWHpKN0gwX3RmS1Y2Ql9tZ2lNaEQ1al9INGVDcTNKVUhIOmw4cG01Z3R2' });
+    let options = { headers: httpHeaders };
+    let nletterBody = {
+      "username": "office@verumvest.com",
+      "password": "dH44=Y<G",
+      "grant_type": "https://nl2go.com/jwt"
+    }
+    // getting token
+    this.httpClient.post(this.nLtter, nletterBody, options).subscribe((res) => {
+
+      let auth = "Bearer " + res['access_token'];
+      let httpHeadersEmail = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': auth });
+      let optionsemail = { headers: httpHeadersEmail };
+      console.log(email);
+      // creating recipient
+      let recipientObject = {
+        "list_id": "5ghti2nb",
+        "email": email,
+        "phone": "+49123456789",
+        "gender": "m",
+        "first_name": "Dheeraj",
+        "last_name": "Pal",
+        "is_unsubscribed": false,
+        "is_blacklisted": false,
+        "pdf_link": "this is yes link"
+      }
+      // saving the recipient
+
+      this.httpClient.post(this.recipientUrl, recipientObject, optionsemail).subscribe((resSave) => {
+        console.log(resSave);
+        let nletterEmailBody = {
+          "contexts": [
+            {
+              "recipient": {
+                "email": email
+              }
+            }
+          ]
+        }
+        // send email
+        this.httpClient.post(this.nLettterSend, nletterEmailBody, optionsemail).subscribe((resEmail) => {
+          console.log(resEmail);
+        });
+      });
+      // this.newsTk = res['access_token'];
+      // let auth = "Bearer " + this.newsTk;
+      // let httpHeadersEmail = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': auth });
+      // let optionsemail = { headers: httpHeadersEmail };
+
+
+    });
+  }
+
+
+
   getPdf(equity: number, user: any) {
+
+    //console.log(roundTo(1.234, 2));
+    console.log(user);
+    // newsletter data
+
     this.assetAccumulation = equity;
     this.generateCalculation();
     // user details
@@ -239,6 +324,8 @@ export class PdfService {
     this.pdfObject.userEmail.value = user.email;
     this.pdfObject.userPhone.value = user.teleNumber;
     this.pdfObject.userTown.value = user.email;
+    this.pdfObject.userGender.value = user.gender;
+    this.pdfObject.family_status.value = user.maritalStatus;
 
 
 
@@ -261,13 +348,22 @@ export class PdfService {
     // this.pdfObject1.investition = this.pdfObject.investition;
     // this.pdfObject1.einnahmen = this.pdfObject.einnahmen;
     this.pdfObject.risk.value = user.riskTaker;
-    this.pdfObject.inv_ang_neto.value = 1;//"3rd screen 1st field";
-    this.pdfObject.inv_ang_inve.value = 1;// "3rd screen third field";
-    this.pdfObject.inv_ang_wuns.value = 1;//"3rd screen first field";
+    this.pdfObject.inv_ang_neto.value = equity;//"3rd screen 1st field";
+    this.pdfObject.inv_ang_inve.value = user.desiredProperty;// "3rd screen third field";
+    this.pdfObject.inv_ang_wuns.value = user.desiredProperty;//"3rd screen first field";
+    this.pdfObject.diagram_tl.value = user.desiredProperty; // third screen
+    this.pdfObject.equity.value = equity;
+
+    //graph
+    this.pdfObject.diagram_zinsen.value = user.diagram_zinsen;
+    this.pdfObject.diagram_aktien.value = user.diagram_aktien;
+    this.pdfObject.diagram_immo.value = user.diagram_immo;
 
     console.log("pdf service " + equity);
+    console.log(this.pdfObject);
     this.httpClient.post(this.pdfUrl, { key: "Xgz3oNOYLkfHUs1sDxtpcqRhiVfKWOOqTd1MUZe", data: this.pdfObject }).subscribe((res) => {
       console.log(res);
+      this.newsletter(user.email);
     });
   }
 
