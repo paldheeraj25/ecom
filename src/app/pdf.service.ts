@@ -237,9 +237,9 @@ export class PdfService {
     //nebenkosten
     this.pdfObject.nebenkosten.value = this.roundNumber(((this.pdfObject.ka_moglich.value / 2700) / 75) * 36);
     this.pdfObject.tilgung.value = this.pdfObject.finanz_2.value;
-    this.pdfObject.tilgung_1.value = 99;
+
     this.pdfObject.tilgung_2.value = this.roundNumber(Math.pow(1.03, 10) * (this.assetAccumulation / 0.27));
-    this.pdfObject.tilgung_3.value = 99;
+    //this.pdfObject.tilgung_3.value = 99;
     // this.pdfObject.aufwandsrechner.value = this.roundNumber(this.assetAccumulation - ((((this.assetAccumulation /
     //   0.27) * 0.04) / 12) -
     //   (((((this.assetAccumulation / 0.27) - ((this.assetAccumulation / 0.27) * 0.2)) *
@@ -248,6 +248,46 @@ export class PdfService {
     //         0.27)
     //         * 0.002 / 12))) * 12 * 10);
     this.pdfObject.aufwandsrechner.value = this.pdfObject.ka_moglich.value;
+
+    // for bel_pro_monat = (0.02 + 0.02) * finanzierung / 12
+    var bel_pro_monat = this.roundNumber((0.02 + 0.02) * this.pdfObject.finanzierung.value / 12);
+    var initialMonth = this.roundNumber(this.pdfObject.finanzierung.value);
+    var zins = this.roundNumber(initialMonth * 0.02 / 12);
+    var til = bel_pro_monat - zins;
+
+    for (let i = 0; i < 120; i++) {
+      initialMonth = this.roundNumber(initialMonth - til);
+      zins = this.roundNumber(initialMonth * 0.02 / 12);
+      til = this.roundNumber(bel_pro_monat - zins);
+    }
+    console.log(bel_pro_monat);
+    console.log(initialMonth);
+    console.log(zins);
+    console.log(til);
+
+    // til_1
+    this.pdfObject.tilgung_1.value = this.roundNumber((this.pdfObject.ka_moglich.value * Math.pow(1.03, 10)) - initialMonth);
+    //this.pdfObject.tilgung_3.value = 99;
+
+    // this.pdfObject.tilgung_3.value = this.pdfObject.inv_ang_neto.value //b9
+    //   - ((this.pdfObject.ka_moglich.value * 0.04 / 12) - //
+    //     (this.pdfObject.finanz_1.value + this.pdfObject.finanz_2.value +
+    //       // adding after finanz_2
+    //       (36 * ((this.pdfObject.ka_moglich.value / 2700) / 75))) +
+    //     // next number
+    //     (this.pdfObject.ka_moglich.value * 0.002 / 12)
+    //   )
+
+    var b24 = (this.pdfObject.ka_moglich.value * 0.04) / 12;
+    var b29 = this.pdfObject.finanz_1.value + this.pdfObject.finanz_2.value +
+      (36 * ((this.pdfObject.ka_moglich.value / 2700) / 75)) +
+      (this.pdfObject.ka_moglich.value * 0.002 / 12);
+    console.log('b24 - b29');
+
+    var b31 = this.roundNumber(b24 - b29);
+    console.log(b31);
+    console.log(this.pdfObject.inv_ang_neto.value);
+    this.pdfObject.tilgung_3.value = (this.assetAccumulation) - (b31 * 12 * 10);
 
 
   }
