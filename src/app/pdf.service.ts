@@ -285,10 +285,24 @@ export class PdfService {
     console.log('b24 - b29');
 
     var b31 = this.roundNumber(b24 - b29);
-    console.log(b31);
-    console.log(this.pdfObject.inv_ang_neto.value);
+    // console.log(b31);
+    // console.log(this.pdfObject.inv_ang_neto.value);
     this.pdfObject.tilgung_3.value = (this.assetAccumulation) - (b31 * 12 * 10);
 
+    // graphs 
+    //diagram_zinsen
+
+    for (let i = 0; i < 10; i++) {
+      this.pdfObject.diagram_zinsen.value = this.assetAccumulation - this.assetAccumulation * (0.02);
+    }
+
+    for (let i = 0; i < 10; i++) {
+      this.pdfObject.diagram_aktien.value = this.assetAccumulation + this.assetAccumulation * (7.8);
+    }
+
+    for (let i = 0; i < 10; i++) {
+      this.pdfObject.diagram_immo.value = this.assetAccumulation + this.assetAccumulation * (9.69);
+    }
 
   }
 
@@ -395,9 +409,9 @@ export class PdfService {
     this.pdfObject.equity.value = equity;
 
     //graph
-    this.pdfObject.diagram_zinsen.value = user.diagram_zinsen;
-    this.pdfObject.diagram_aktien.value = user.diagram_aktien;
-    this.pdfObject.diagram_immo.value = user.diagram_immo;
+    // this.pdfObject.diagram_zinsen.value = user.diagram_zinsen;
+    // this.pdfObject.diagram_aktien.value = user.diagram_aktien;
+    // this.pdfObject.diagram_immo.value = user.diagram_immo;
 
     console.log("pdf service " + equity);
     console.log(this.pdfObject);
