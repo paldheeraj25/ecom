@@ -12,6 +12,9 @@
   .dot {
     display: none !important;
   }
+  .country-name {
+    display: none;
+  }
 }
 .dot {
   height: 40px;
@@ -99,6 +102,7 @@ li {
   .step {
     padding: 3rem 1.5rem;
   }
+  
 }
 
 @media screen and (min-width: 600px) {
@@ -108,6 +112,10 @@ li {
   }
   .step {
     padding: 3rem 3.5rem;
+  }
+
+  .country-name {
+    display: none;
   }
 }
 
@@ -322,6 +330,10 @@ footer-text {
   .mobile-hide {
     display: none;
   }
+
+  .country-name {
+    display: block;
+  }
   .display-email {
     width: 100%;
     font-size: 0.7em;
@@ -425,6 +437,7 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   z-index: -100;
+  padding: 0.6em;
 }
 input[type="range"]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -605,4 +618,9 @@ input[type="range"]::-ms-fill-upper {
 }
 :-moz-placeholder {
   color: #66615b;
+}
+
+// arrows
+.fa-chevron-left {
+  font-size: 1.5em;
 }

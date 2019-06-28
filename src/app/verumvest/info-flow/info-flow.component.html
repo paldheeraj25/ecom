@@ -38,8 +38,7 @@
           <div class="swiss-flag-heading"><span class="country-name">Schweiz</span></div>
 
           <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
-            Zurück
-            <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i>
+            Schweiz
           </button>
         </div>
         <div class="col-md-6 text-center">
@@ -51,13 +50,13 @@
           <div><span class="country-name">Deutschland</span></div>
 
           <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
-            Nächster Schritt <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
+            Deutschland
           </button>
         </div>
       </div>
     </div>
     <div class="step-2 step shadow" *ngIf="stepNumber == 2">
-      <p class="form-title">Fragen zu Iher Person</p>
+      <p class="form-title">Fragen zu Ihrer Person</p>
       <form class="form-container">
 
         <!-- From Here -->
@@ -67,15 +66,15 @@
               <p class="form-group-title col-md-12">Familienstand</p>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="single" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="single" />
-                <label for="single">Ich bin Single</label>
+                <label for="single">Single</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="inRelation" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="inRelation" />
-                <label for="inRelation">Ich lebe in einer Beziehung</label>
+                <label for="inRelation">Beziehung</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="married" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="married" />
-                <label for="married">Ich bin verheiratet</label>
+                <label for="married">Verheiratet</label>
               </span>
             </div>
           </div>
@@ -103,15 +102,15 @@
               <p class="form-group-title col-md-12">Kinder</p>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="noChild" name="children" [(ngModel)]="formData.children" value="no" />
-                <label for="noChild">Keine Kinder</label>
+                <label for="noChild">1 -2 </label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="lessChildren" name="children" [(ngModel)]="formData.children" value="1-2" />
-                <label for="lessChildren">1-2 Kinder</label>
+                <label for="lessChildren">3 - 4</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="moreChildren" name="children" [(ngModel)]="formData.children" value="3-4" />
-                <label for="moreChildren">3-4 Kinder</label>
+                <label for="moreChildren">4 oder mehr</label>
               </span>
             </div>
           </div>
@@ -119,19 +118,19 @@
           <div class="col-md-3 diff-view pl-3">
             <div class="row">
               <p class="form-group-title col-md-12">
-                Erfahrung Immobilien Investitionem
+                Immobilienerfahrung
               </p>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="noExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="no" />
-                <label for="noExp">Keine Erfahrung</label>
+                <label for="noExp">keine</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="lessExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="1-2" />
-                <label for="lessExp">Bereits in 1-2 Immobilien Investiert</label>
+                <label for="lessExp">1 -2 Immobilien</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="moreExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="3-4" />
-                <label for="moreExp">Bereits in 3-4 Immobilien Investiert</label>
+                <label for="moreExp">3 oder mehr </label>
               </span>
             </div>
           </div>
@@ -141,15 +140,15 @@
               <p class="form-group-title col-md-12">Risikobereitschaft</p>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="noRisk" name="riskTaker" [(ngModel)]="formData.riskTaker" value="no" />
-                <label for="noRisk">Ungern Risiko</label>
+                <label for="noRisk">Nein</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="transparent" name="riskTaker" [(ngModel)]="formData.riskTaker" value="transparent" />
-                <label for="transparent">Ja. wenn Risiken transparent sind Investiert</label>
+                <label for="transparent">kalkulierbares Risiko</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="returns" name="riskTaker" [(ngModel)]="formData.riskTaker" value="returns" />
-                <label for="returns">Ja. wenn dies die Rendite-Chance erhoht</label>
+                <label for="returns">Ja</label>
               </span>
             </div>
           </div>
@@ -159,12 +158,12 @@
 
 
         <div class="row buttons-container">
-          <div class="col col col-md-6 col-sm-6 text-center">
+          <div class="col col-md-6 col-sm-6 text-center">
             <button type="button" class=" btn-green large-btn" (click)="nextNBack(back)">
               Zuruck <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i>
             </button>
           </div>
-          <div class="col col col-md-6 col-sm-6 text-center">
+          <div class="col col-md-6 col-sm-6 text-center">
             <button type="button" class=" btn-green large-btn" (click)="nextNBack(next)">
               Nachster Schritt
               <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
@@ -177,7 +176,7 @@
 
       <p class="form-title">Finanzielle Angaben</p>
 
-      <div class="row">
+      <!-- <div class="row">
         <p class="form-group-title col-md-12">
           Ihre Rucklagen heute
         </p>
@@ -192,11 +191,11 @@
           <input type="range" min="1" max="1000000" [(ngModel)]="formData.reservesToday" class="custom-range custom-range-input"
             id="reservesToday" />
         </div>
-      </div>
+      </div> -->
 
       <div class="row">
         <p class="form-group-title col-md-12">
-          Gewunschtes Vermogen nach 10 Jahren
+          Gewünschter Vermögenszuwachs nach 10 Jahren
         </p>
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
           <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.desiredProperty" />
@@ -214,10 +213,10 @@
 
       <div class="row mb-4">
         <p class="form-group-title col-md-12">
-          Wieviel wurden Sie heute fur Ihren Vermogensaufbau investieren?
+          Potentieller Investmentbetrag
         </p>
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
-          <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.spend" />
+          <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.reservesToday" />
           <div class="input-group-append">
             <span class="input-group-text">€</span>
           </div>
@@ -225,7 +224,7 @@
 
         <div class="col-md-1"></div>
         <div class="col-md-8 mb-4 p-0 pl-1">
-          <input type="range" min="1" max="1000000" class="custom-range custom-range-input" [(ngModel)]="formData.spend"
+          <input type="range" min="1" max="1000000" class="custom-range custom-range-input" [(ngModel)]="formData.reservesToday"
             id="spend" value="1" />
         </div>
       </div>
@@ -248,7 +247,7 @@
     <div class="step-3 step" *ngIf="stepNumber == 4">
       <p class="form-title">Ihre Kontaktdaten</p>
       <p class="text-center pt-2">
-        Der Marktwert Ihrer Immobilie wird nun berechnet.
+        Ihre Investmentanalyse wird erstellt.
       </p>
       <p class="text-center pt-1">Wer soll die Auswertung erhalten?</p>
 
@@ -288,7 +287,7 @@
       </div>
       <div class="row">
         <div class="col-md-10" style="text-align: right; font-size: 12px; opacity: 0.5; margin-top: -12px">
-          Pflichtfeld
+          * Pflichtfeld
         </div>
         <div class="col-md-2"></div>
       </div>
@@ -297,11 +296,10 @@
         <div class="col-md-2"></div>
         <div class="form-group col-md-8 checkbox-container">
           <input type="checkbox" value="" [(ngModel)]="formData.acceptCond" id="acceptCond" />
-          <label for="acceptCond" class="small-font genereic-text">Ich habe die Datenschutzerklarung gelesen und
-            willige ein. class
-            meine personenbezogenen Daten zur Kontaktaufnahme und Zusendung
-            von Informationen verarbeitet werden. Ich kann diese Einwilligung
-            jederzeit mit einer E-Mail an info@verumvest.com widerrufen.</label>
+          <label for="acceptCond" class="small-font genereic-text">Ich habe die Datenschutzerklärung gelesen und
+            willige ein, dass meine personenbezogenen Daten zur Kontaktaufnahme und Zusendung von Informationen
+            verarbeitet werden. Ich kann diese Einwilligung jederzeit mit einer E-Mail an info@verumvest.com
+            widerrufen.</label>
         </div>
       </div>
 
@@ -322,9 +320,9 @@
         <div class="col">
           <div class="text-center text-padding">
             <span class="genereic-text">
-              danke das Sie unseren Finanztest erfolgreich abgeschlossen haben.
-              Wir freuen uns sehr daruber, dass Sie sich fur
-              Immobilieninvestments interessieren.
+              Hallo {{formData.firstName}} {{formData.lastName}}, schön dass Sie den Renditerechner genutzt haben. Wir
+              freuen uns sehr über Ihr
+              Interesse an Immobilieninvestments.
             </span>
           </div>
         </div>
@@ -332,8 +330,7 @@
       <div class="row">
         <div class="col text-center p-t-5">
           <span class="genereic-text">
-            Sie erhalten Ihre kostenfreie Investmentanalyse an folgende
-            E-Mail-Adresse:
+            Ihre kostenfreie Investmentanalyse senden wir Ihnen an folgende E-Mail Adresse:
           </span>
         </div>
       </div>

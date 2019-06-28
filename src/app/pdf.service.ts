@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as cloneDeep from 'lodash/cloneDeep';
 
 
 @Injectable({
@@ -266,7 +267,7 @@ export class PdfService {
     console.log(til);
 
     // til_1
-    this.pdfObject.tilgung_1.value = this.roundNumber((this.pdfObject.ka_moglich.value * Math.pow(1.03, 10)) - initialMonth);
+    this.pdfObject.tilgung_1.value = initialMonth;//
     //this.pdfObject.tilgung_3.value = 99;
 
     // this.pdfObject.tilgung_3.value = this.pdfObject.inv_ang_neto.value //b9
@@ -287,22 +288,28 @@ export class PdfService {
     var b31 = this.roundNumber(b24 - b29);
     // console.log(b31);
     // console.log(this.pdfObject.inv_ang_neto.value);
-    this.pdfObject.tilgung_3.value = (this.assetAccumulation) - (b31 * 12 * 10);
+    this.pdfObject.tilgung_3.value = this.roundNumber((this.pdfObject.ka_moglich.value * Math.pow(1.03, 10)) - initialMonth);//(this.assetAccumulation) - (b31 * 12 * 10);
 
     // graphs 
     //diagram_zinsen
-
+    var zinsenAmount = cloneDeep(this.assetAccumulation);
+    var aktien = cloneDeep(this.assetAccumulation);
+    var immo = cloneDeep(this.assetAccumulation);
     for (let i = 0; i < 10; i++) {
-      this.pdfObject.diagram_zinsen.value = this.assetAccumulation - this.assetAccumulation * (0.02);
+      zinsenAmount = zinsenAmount - zinsenAmount * (0.0002);
     }
-
+    this.pdfObject.diagram_zinsen.value = zinsenAmount;
+    console.log('zinsen ' + zinsenAmount);
     for (let i = 0; i < 10; i++) {
-      this.pdfObject.diagram_aktien.value = this.assetAccumulation + this.assetAccumulation * (7.8);
+      aktien = aktien + aktien * (0.078);
     }
-
+    this.pdfObject.diagram_aktien.value = aktien;
+    console.log(aktien);
     for (let i = 0; i < 10; i++) {
-      this.pdfObject.diagram_immo.value = this.assetAccumulation + this.assetAccumulation * (9.69);
+      immo = immo + immo * (0.0969);
     }
+    this.pdfObject.diagram_immo.value = immo;
+    console.log(immo);
 
   }
 
