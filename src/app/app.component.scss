@@ -1,8 +1,19 @@
 .site-logo {
-  width: 50vh;
-  margin-left: -10%;
+  width: 60%;;
+  margin-left: -37%;
+  margin-top: 24px;
 }
-
+.site-logo-mobile-left {
+  width: 30%;
+  margin-right: 30%;
+}
+.fa {
+  margin-right: 0%;
+}
+.icon-menu-bar {
+  border: 2px solid #fff;
+  padding: 2px;
+}
 .site-right-logo{
   color: #6cc47f;
   font-size: 18px;
@@ -17,6 +28,10 @@
 
 .right-logos {
   padding-top: 1%;
+}
+.desktop-header {
+  background-image: url(https://verumvest.com/wp-content/uploads/2018/03/1.png);
+  padding-bottom: 10%;
 }
 
 .header-para{
@@ -35,12 +50,14 @@
 }
 
 .header-menu {
-  background-color: #28395e;
   color: #ffffff;
   border-radius: 10px;
   padding: 2%;
 }
 
+.cal-menu {
+  padding: 0 5% 0 6%;
+}
 .menu-title{
   cursor: pointer;
   font-family: lora;
@@ -48,7 +65,7 @@
   font-weight: 400;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
-  color: #fff;
+  color: #ffffff;
 }
 .mobile-menu-tag {
   cursor: pointer;
@@ -58,7 +75,6 @@
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   color: #fff;
-  color: #fff; 
   font-size: 22px;
 }
 
@@ -98,6 +114,8 @@
   }
   .mobile-menu {
     visibility: visible !important;
+    background-image: url(https://verumvest.com/wp-content/uploads/2018/03/1.png);
+    padding-bottom: 9%;
   }
   .desktop-header {
     display: none;
@@ -111,3 +129,29 @@
     display: none !important;
   }
 }
+
+.bread-box {
+  margin-top: 4%;
+}
+.breadcrumb1 {
+  color: #fff;
+}
+
+a.breadcrumb1 {
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-family: montesserat;
+}
+
+.breadcrmb-title {
+  font-weight: 900;
+  font-family: Montesserat;
+}
+
+p {
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-family: montesserat;
+}
+

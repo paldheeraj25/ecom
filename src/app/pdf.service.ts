@@ -10,7 +10,7 @@ export class PdfService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public pdfUrl: string = "https://verumvest-api.guwa-design.com/pdf/123/create";
+  public pdfUrl: string = "http://api.verumvest.com/pdf/82/create";//"https://verumvest-api.guwa-design.com/pdf/123/create";
   private nLtter: string = "https://api.newsletter2go.com/oauth/v2/token";
   private nLettterSend: string = "https://api.newsletter2go.com/newsletters/wuazzq83/sendtest";
   private recipientUrl: string = "https://api.newsletter2go.com/recipients";
@@ -37,8 +37,8 @@ export class PdfService {
       "value": "0049 1234567891"
     },
     "userAge": {
-      "type": "number", // its a string
-      "value": 24
+      "type": "string", // its a string
+      "value": '24'
     },
     "userGender": {
       "type": "string",
@@ -49,8 +49,8 @@ export class PdfService {
       "value": "Single"
     },
     "children": {
-      "type": "number", // its a string
-      "value": 0
+      "type": "string", // its a string
+      "value": "1-2"
     },
     "house_count": {
       "type": "number",
@@ -98,7 +98,7 @@ export class PdfService {
     },
     "house_type": {
       "type": "string",
-      "value": "Dome"
+      "value": "Mehrfamilienhaus"
     },
     "equity": {
       "type": "number",
@@ -186,11 +186,11 @@ export class PdfService {
     },
     "userTown": {
       "type": "string",
-      "value": "Berlin"
+      "value": "Baden"
     },
     "userState": {
       "type": "string",
-      "value": "Berling Brandenburg"
+      "value": "Württemberg"
     }
   }
 
@@ -288,7 +288,8 @@ export class PdfService {
     var b31 = this.roundNumber(b24 - b29);
     // console.log(b31);
     // console.log(this.pdfObject.inv_ang_neto.value);
-    this.pdfObject.tilgung_3.value = this.roundNumber((this.pdfObject.ka_moglich.value * Math.pow(1.03, 10)) - initialMonth);//(this.assetAccumulation) - (b31 * 12 * 10);
+    /* interchanged */
+    this.pdfObject.diagram_immo.value = this.roundNumber((this.pdfObject.ka_moglich.value * Math.pow(1.03, 10)) - initialMonth);//(this.assetAccumulation) - (b31 * 12 * 10);
 
     // graphs 
     //diagram_zinsen
@@ -308,7 +309,9 @@ export class PdfService {
     for (let i = 0; i < 10; i++) {
       immo = immo + immo * (0.0969);
     }
-    this.pdfObject.diagram_immo.value = immo;
+
+    /* interchanged */
+    this.pdfObject.tilgung_3.value = immo;
     console.log(immo);
 
   }
@@ -384,9 +387,13 @@ export class PdfService {
     this.pdfObject.userLastName.value = user.lastName;
     this.pdfObject.userEmail.value = user.email;
     this.pdfObject.userPhone.value = user.teleNumber;
-    this.pdfObject.userTown.value = user.email;
+    this.pdfObject.userTown.value = "Baden";
     this.pdfObject.userGender.value = user.gender;
     this.pdfObject.family_status.value = user.maritalStatus;
+    this.pdfObject.userAge.value = user.age;
+    this.pdfObject.children.value = user.children;
+    //this.pdfObject.gender.value = user.gender;
+    //this.pdfObject.house_count.value = user.realEstateExp;
 
 
 

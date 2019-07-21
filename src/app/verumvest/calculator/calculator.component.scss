@@ -115,7 +115,7 @@ footer-text {
 
 @media screen and (min-width: 600px) {
   .text-padding{
-    width: 70%;
+    width: 90%;
     text-align: center;
     margin: 0 auto;
     color: #000000;
@@ -124,6 +124,9 @@ footer-text {
 
 .welcome-list {
   list-style: none;
+  text-align: left;
+  
+  display: inline-flex;
 }
 
 .welcome-list-li {

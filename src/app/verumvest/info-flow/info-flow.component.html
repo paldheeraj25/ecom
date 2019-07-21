@@ -24,32 +24,32 @@
     </div> -->
     <div class="row step step-1" *ngIf="stepNumber == 1">
       <div class="col-md-12 text-center">
-        <span class="heading">Aus welchem Land besuchst Du uns?</span>
+        <span class="heading">Aus welchem Land kommen Sie?</span>
       </div>
 
       <div class="row flag-row">
 
         <div class="col-md-6 text-center swiss-flag">
           <a (click)="goToInfoFlow('euro')">
-            <img src={{swissFlagUrl}} (mouseenter)="swissFlag(1)" (mouseleave)="swissFlag(2)" (click)="nextNBack(next)"
+            <img src={{swissFlagUrl}} (mouseenter)="swissFlag(1)" (mouseleave)="swissFlag(2)" (click)="chooseCountry('CHf')"
               alt="flag" class="image-64-per image-opacity">
           </a>
           <!-- <h2 class="flag-heading-germany">Schweiz</h2> -->
           <div class="swiss-flag-heading"><span class="country-name">Schweiz</span></div>
 
-          <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
+          <button type="button" class="btn-green large-btn mobile-hide" (click)="chooseCountry('CHf')">
             Schweiz
           </button>
         </div>
         <div class="col-md-6 text-center">
           <a (click)="goToInfoFlow('swiss')">
-            <img src={{germanFlagUrl}} (mouseenter)="germanFlag(1)" (mouseleave)="germanFlag(2)" alt="flag-a" (click)="nextNBack(next)"
+            <img src={{germanFlagUrl}} (mouseenter)="germanFlag(1)" (mouseleave)="germanFlag(2)" alt="flag-a" (click)="chooseCountry('€')"
               class="image-40-per image-opacity">
           </a>
           <!-- <h2 class="flag-heading-swiss">Deutschland</h2> -->
           <div><span class="country-name">Deutschland</span></div>
 
-          <button type="button" class="btn-green large-btn mobile-hide" (click)="nextNBack(next)">
+          <button type="button" class="btn-green large-btn mobile-hide" (click)="chooseCountry('€')">
             Deutschland
           </button>
         </div>
@@ -101,16 +101,16 @@
             <div class="row">
               <p class="form-group-title col-md-12">Kinder</p>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="noChild" name="children" [(ngModel)]="formData.children" value="no" />
-                <label for="noChild">1 -2 </label>
+                <input type="radio" id="noChild" name="children" [(ngModel)]="formData.children" value="keine" />
+                <label for="noChild">0 </label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="lessChildren" name="children" [(ngModel)]="formData.children" value="1-2" />
-                <label for="lessChildren">3 - 4</label>
+                <input type="radio" id="lessChildren" name="children" [(ngModel)]="formData.children" value="1-3" />
+                <label for="lessChildren">1 - 2</label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="moreChildren" name="children" [(ngModel)]="formData.children" value="3-4" />
-                <label for="moreChildren">4 oder mehr</label>
+                <input type="radio" id="moreChildren" name="children" [(ngModel)]="formData.children" value="4+" />
+                <label for="moreChildren">2+</label>
               </span>
             </div>
           </div>
@@ -121,16 +121,16 @@
                 Immobilienerfahrung
               </p>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="noExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="no" />
-                <label for="noExp">keine</label>
+                <input type="radio" id="noExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="Nein" />
+                <label for="noExp">0</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="lessExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="1-2" />
-                <label for="lessExp">1 -2 Immobilien</label>
+                <label for="lessExp">1 - 2</label>
               </span>
               <span class="radio-inline col-md-12">
                 <input type="radio" id="moreExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="3-4" />
-                <label for="moreExp">3 oder mehr </label>
+                <label for="moreExp">2+</label>
               </span>
             </div>
           </div>
@@ -139,16 +139,16 @@
             <div class="row">
               <p class="form-group-title col-md-12">Risikobereitschaft</p>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="noRisk" name="riskTaker" [(ngModel)]="formData.riskTaker" value="no" />
-                <label for="noRisk">Nein</label>
+                <input type="radio" id="noRisk" name="riskTaker" [(ngModel)]="formData.riskTaker" value="Nein" />
+                <label for="noRisk">nein</label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="transparent" name="riskTaker" [(ngModel)]="formData.riskTaker" value="transparent" />
-                <label for="transparent">kalkulierbares Risiko</label>
+                <input type="radio" id="transparent" name="riskTaker" [(ngModel)]="formData.riskTaker" value="kalkulierbares-Risiko" />
+                <label for="transparent">gelegentlich</label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="returns" name="riskTaker" [(ngModel)]="formData.riskTaker" value="returns" />
-                <label for="returns">Ja</label>
+                <input type="radio" id="returns" name="riskTaker" [(ngModel)]="formData.riskTaker" value="ja" />
+                <label for="returns">ja</label>
               </span>
             </div>
           </div>
@@ -160,12 +160,12 @@
         <div class="row buttons-container">
           <div class="col col-md-6 col-sm-6 text-center">
             <button type="button" class=" btn-green large-btn" (click)="nextNBack(back)">
-              Zuruck <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i>
+              <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i> &nbsp; &nbsp; Zurück
             </button>
           </div>
           <div class="col col-md-6 col-sm-6 text-center">
             <button type="button" class=" btn-green large-btn" (click)="nextNBack(next)">
-              Nachster Schritt
+              Nächster Schritt
               <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
             </button>
           </div>
@@ -200,7 +200,8 @@
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
           <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.desiredProperty" />
           <div class="input-group-append">
-            <span class="input-group-text">€</span>
+            <!-- <span class="input-group-text">€</span> -->
+            <span class="input-group-text">{{currency}}</span>
           </div>
         </div>
 
@@ -218,7 +219,7 @@
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
           <input type="number" min="1" max="1000000" class="form-control no-right-border" [(ngModel)]="formData.reservesToday" />
           <div class="input-group-append">
-            <span class="input-group-text">€</span>
+            <span class="input-group-text">{{currency}}</span>
           </div>
         </div>
 
@@ -232,12 +233,12 @@
       <div class="row buttons-container">
         <div class="col col col-md-6 col-sm-6 text-center">
           <button type="button" class=" btn-green large-btn" (click)="nextNBack(back)">
-            Zuruck <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i>
+            <i class="fa fa-chevron-left pl-2" aria-hidden="true"></i> &nbsp; &nbsp; Zurück
           </button>
         </div>
         <div class="col col col-md-6 col-sm-6 text-center">
           <button type="button" class=" btn-green large-btn" (click)="nextNBack(next)">
-            Nachster Schritt
+            Nächster Schritt
             <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
           </button>
         </div>
@@ -304,7 +305,7 @@
       </div>
 
       <div class="text-center pt-4">
-        <button type="submit" class="large-btn btn-green" (click)="getPdf()">
+        <button type="submit" class="large-btn btn-green" (click)="getPdf()" [disabled]="formData.email == ''">
           Absenden <i class="fa fa-chevron-right pl-2" aria-hidden="true"></i>
         </button>
       </div>
@@ -312,7 +313,7 @@
     <div class="step-3 step" *ngIf="stepNumber == 5">
       <div class="row">
         <div class="col text-center p-t-5">
-          <h6>Vielen Dank für lhre Angaben</h6>
+          <h6>Vielen Dank für ihre Angaben</h6>
           <span class="genereic-text">Hallo {{formData.firstName}} {{formData.lastName}},</span>
         </div>
       </div>
@@ -320,7 +321,7 @@
         <div class="col">
           <div class="text-center text-padding">
             <span class="genereic-text">
-              Hallo {{formData.firstName}} {{formData.lastName}}, schön dass Sie den Renditerechner genutzt haben. Wir
+              schön dass Sie den Renditerechner genutzt haben. Wir
               freuen uns sehr über Ihr
               Interesse an Immobilieninvestments.
             </span>

@@ -19,6 +19,7 @@ export class InfoFlowComponent implements OnInit {
   step1elem3: string = "20-40-2";
   next: string = "next";
   back: string = "back";
+  currency: string = "";
 
   // step two var
   step2FamilyStand: string;
@@ -255,9 +256,9 @@ export class InfoFlowComponent implements OnInit {
     this.formData = {
       maritalStatus: "single",
       age: "20-35",
-      children: "no",
-      realEstateExp: "no",
-      riskTaker: "no",
+      children: "keine",
+      realEstateExp: "Nein",
+      riskTaker: "Nein",
       reservesToday: 0,
       desiredProperty: 0,
       spend: 0,
@@ -316,7 +317,7 @@ export class InfoFlowComponent implements OnInit {
   }
 
   nextNBack(step: string) {
-    this.prepareGraph();
+    // this.prepareGraph();
 
     if (step == "next" && this.stepNumber < 5) {
       this.stepNumber = this.stepNumber + 1;
@@ -381,9 +382,9 @@ export class InfoFlowComponent implements OnInit {
     // this.data.risk = "risk";
     // this.data.userTown.value = "Berlin";
     if (this.formData.gender == 1) {
-      this.formData.gender = "Herr";
+      this.formData.gender = "f";
     } else {
-      this.formData.gender = "Frau";
+      this.formData.gender = "m";
     }
     // generating graph data
     let diagram_aktien = 0;
@@ -423,5 +424,10 @@ export class InfoFlowComponent implements OnInit {
     } else {
       this.germanFlagUrl = "assets/img/germanyfmap.jpg";
     }
+  }
+
+  chooseCountry(currency: string) {
+    this.currency = currency;
+    this.nextNBack('next');
   }
 }
