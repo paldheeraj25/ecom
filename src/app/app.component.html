@@ -81,19 +81,55 @@
     </div>
   </div>
   <div class=" row mobile-menu" style="margin-left: 0px; margin-right: 0px;">
-    <div class="col text-center">
+    <div class="col">
       <div class="p-2 mobile-menu">
-        <a class="mobile-menu-tag" href="http://verumvest.com/">
-          <a href="http://verumvest.com/" title="Verumvest" rel="home">
-            <img
-              class="site-logo-mobile-left"
-              src="http://verumvest.com/wp-content/uploads/2019/07/vv_logo_w.png"
-              alt="Verumvest"
-            />
-          </a>
-          &nbsp;<span class="icon-menu-bar"><i class="fa fa-bars"></i></span
-        ></a>
+        <a
+          href="http://verumvest.com/"
+          title="Verumvest"
+          rel="home"
+          style="padding-left: 1rem;"
+        >
+          <img
+            class="site-logo-mobile-left"
+            src="http://verumvest.com/wp-content/uploads/2019/07/vv_logo_w.png"
+            alt="Verumvest"
+          />
+        </a>
+        <span class="icon-menu-bar">
+          <span
+            class="mobile-menu-tag"
+            style="padding: 0 0.3rem;"
+            (click)="enableList = !enableList"
+          >
+            <i class="fa fa-bars"></i>
+          </span>
+        </span>
       </div>
+      <ul *ngIf="enableList" class="list-group hamberger-menu-list">
+        <li class="list-group-item">
+          <a href="https://verumvest.com/">HOME</a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://verumvest.com/index.php/services/">SERVICES</a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://verumvest.com/index.php/wissen-2/">WISSEN</a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://renditerechner.verumvest.com/#/calculator"
+            >RENDITERECHNER</a
+          >
+        </li>
+        <li class="list-group-item">
+          <a href="https://verumvest.com/index.php/blogs/">BLOG</a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://verumvest.com/index.php/about-us/">UNTERNEHMEN</a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://verumvest.com/index.php/contact/">KONTAKT</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
