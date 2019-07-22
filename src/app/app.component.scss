@@ -5,7 +5,7 @@
 }
 .site-logo-mobile-left {
   height: 43px;
-  margin-left: 20px
+  margin-left: 20px;
 }
 .fa {
   margin-right: 0%;
@@ -123,7 +123,6 @@
     background-image: url(https://verumvest.com/wp-content/uploads/2018/03/1.png);
     padding-bottom: 9%;
     margin-top: -3px;
-
   }
   .desktop-header {
     display: none;
@@ -133,12 +132,17 @@
   }
 
   .hamberger-menu-list {
+    position: absolute;
+    z-index: 1;
+    right: 2rem;
+    width: calc(100vh - 3rem);
     li {
       background-color: #28395e;
       border-bottom: 2px solid white;
       a {
         color: #fff;
         display: block;
+        z-index: 1;
         font-family: lora;
         font-size: 14px;
         font-weight: 400;
@@ -177,7 +181,6 @@ p {
   font-family: montesserat;
 }
 
-
 .footer-row {
   background-color: #29395d;
   padding: 5% 10% 10% 5%;
@@ -187,7 +190,7 @@ p {
 .copyright-text {
   background-color: #29395d;
 }
-.footer-title{
+.footer-title {
   color: #fff;
   font-family: lora;
   font-size: 22px;
@@ -196,10 +199,10 @@ p {
 }
 
 .text-widget {
-  text-align: justify
+  text-align: justify;
 }
 
-.text-widget-p{
+.text-widget-p {
   width: 67%;
   margin-left: 35%;
 }
@@ -212,7 +215,8 @@ p {
   width: 75px;
 }
 
-img, .img {
+img,
+.img {
   max-width: 100%;
   height: auto;
 }
@@ -227,7 +231,6 @@ img, .img {
 }
 
 .single-footer ul li a {
-  
   text-decoration: none;
   transition: all 0.5s ease 0s;
 }
@@ -265,7 +268,7 @@ img, .img {
   padding-left: 5%;
 }
 
-.copyright__inner{
+.copyright__inner {
   border-top: 1px solid #485776;
   display: flex;
   height: 50px;
