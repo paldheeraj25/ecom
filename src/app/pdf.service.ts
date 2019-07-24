@@ -10,7 +10,7 @@ export class PdfService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public pdfUrl: string = "http://api.verumvest.com/pdf/82/create";//"https://verumvest-api.guwa-design.com/pdf/123/create";
+  public pdfUrl: string = "https://api.verumvest.com/pdf/";//"http://api.verumvest.com/pdf/82/create";//"https://verumvest-api.guwa-design.com/pdf/123/create";
   private nLtter: string = "https://api.newsletter2go.com/oauth/v2/token";
   private nLettterSend: string = "https://api.newsletter2go.com/newsletters/wuazzq83/sendtest";
   private recipientUrl: string = "https://api.newsletter2go.com/recipients";
@@ -336,14 +336,14 @@ export class PdfService {
       // creating recipient
       let recipientObject = {
         "list_id": "5ghti2nb",
-        "email": email,
-        "phone": "+49123456789",
-        "gender": "m",
-        "first_name": "Dheeraj",
-        "last_name": "Pal",
+        "email": email.email,
+        "phone": email.teleNumber,
+        "gender": email.gender,
+        "first_name": email.firstName,
+        "last_name": email.lastName,
         "is_unsubscribed": false,
         "is_blacklisted": false,
-        "pdf_link": "this is yes link"
+        "pdf_link": email.pdf_link
       }
       // saving the recipient
 
@@ -393,7 +393,7 @@ export class PdfService {
     this.pdfObject.userAge.value = user.age;
     this.pdfObject.children.value = user.children;
     //this.pdfObject.gender.value = user.gender;
-    //this.pdfObject.house_count.value = user.realEstateExp;
+    this.pdfObject.house_count.value = parseInt(user.realEstateExp);
 
 
 
@@ -429,9 +429,11 @@ export class PdfService {
 
     console.log("pdf service " + equity);
     console.log(this.pdfObject);
-    this.httpClient.post(this.pdfUrl, { key: "Xgz3oNOYLkfHUs1sDxtpcqRhiVfKWOOqTd1MUZe", data: this.pdfObject }).subscribe((res) => {
+    this.httpClient.post(this.pdfUrl + (Math.floor(Math.random() * (100000)) + 1) + "/create", { key: "Xgz3oNOYLkfHUs1sDxtpcqRhiVfKWOOqTd1MUZe", data: this.pdfObject }).subscribe((res) => {
       console.log(res);
-      this.newsletter(user.email);
+      user.pdf_link = res;
+      console.log(user);
+      this.newsletter(user);
     });
   }
 

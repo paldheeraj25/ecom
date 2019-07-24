@@ -174,7 +174,7 @@ li {
 }
 
 .landing-page::placeholder {
-  color: #66615b;
+  color: #28395e;
   font-style: italic;
 }
 
@@ -278,6 +278,7 @@ li {
 .heading {
   font-weight: bold;
   font-family: montserrat, sans-serif;
+  color: #28395e;
 }
 .image-40-per {
   width: 40%;
@@ -436,7 +437,7 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   z-index: -100;
-  padding: 0.8em 0 0.8em 0;
+  padding: 0.3em 0 0.8em 0;
 }
 input[type="range"]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -607,19 +608,23 @@ input[type="range"]::-ms-fill-upper {
 
 // Placeholder styles
 ::-webkit-input-placeholder {
-  color: #66615b;
+  color: #28395e;
 }
 ::-moz-placeholder {
-  color: #66615b;
+  color: #28395e;
 }
 :-ms-input-placeholder {
-  color: #66615b;
+  color: #28395e;
 }
 :-moz-placeholder {
-  color: #66615b;
+  color: #28395e;
 }
 
 // arrows
 .fa-chevron-left {
   font-size: 1.5em;
+}
+
+.default-site-color {
+  color: #28395e;
 }

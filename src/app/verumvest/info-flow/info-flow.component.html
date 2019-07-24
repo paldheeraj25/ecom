@@ -69,11 +69,11 @@
                 <label for="single">Single</label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="inRelation" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="inRelation" />
+                <input type="radio" id="inRelation" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="Beziehung" />
                 <label for="inRelation">Beziehung</label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="married" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="married" />
+                <input type="radio" id="married" name="maritalStatus" [(ngModel)]="formData.maritalStatus" value="Verheiratet" />
                 <label for="married">Verheiratet</label>
               </span>
             </div>
@@ -105,11 +105,11 @@
                 <label for="noChild">0 </label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="lessChildren" name="children" [(ngModel)]="formData.children" value="1-3" />
+                <input type="radio" id="lessChildren" name="children" [(ngModel)]="formData.children" value="1-2" />
                 <label for="lessChildren">1 - 2</label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="moreChildren" name="children" [(ngModel)]="formData.children" value="4+" />
+                <input type="radio" id="moreChildren" name="children" [(ngModel)]="formData.children" value="2+" />
                 <label for="moreChildren">2+</label>
               </span>
             </div>
@@ -121,7 +121,7 @@
                 Immobilienerfahrung
               </p>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="noExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="Nein" />
+                <input type="radio" id="noExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="0" />
                 <label for="noExp">0</label>
               </span>
               <span class="radio-inline col-md-12">
@@ -129,7 +129,7 @@
                 <label for="lessExp">1 - 2</label>
               </span>
               <span class="radio-inline col-md-12">
-                <input type="radio" id="moreExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="3-4" />
+                <input type="radio" id="moreExp" name="realEstateExp" [(ngModel)]="formData.realEstateExp" value="2+" />
                 <label for="moreExp">2+</label>
               </span>
             </div>
@@ -174,7 +174,7 @@
     </div>
     <div class="step-3 step" *ngIf="stepNumber == 3">
 
-      <p class="form-title">Finanzielle Angaben</p>
+      <p class="form-title default-site-color">Finanzielle Angaben</p>
 
       <!-- <div class="row">
         <p class="form-group-title col-md-12">
@@ -194,7 +194,7 @@
       </div> -->
 
       <div class="row">
-        <p class="form-group-title col-md-12">
+        <p class="form-group-title col-md-12 default-site-color">
           Gewünschter Vermögenszuwachs nach 10 Jahren
         </p>
         <div class="input-group col-md-3 mb-5 p-0 pl-1">
@@ -213,7 +213,7 @@
       </div>
 
       <div class="row mb-4">
-        <p class="form-group-title col-md-12">
+        <p class="form-group-title col-md-12 default-site-color">
           Potentieller Investmentbetrag
         </p>
         <div class="input-group col-md-3 mb-5 p-0 pl-1">

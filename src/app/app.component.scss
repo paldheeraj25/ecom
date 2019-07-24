@@ -34,7 +34,7 @@
   padding-top: 1%;
 }
 .desktop-header {
-  background-image: url(https://verumvest.com/wp-content/uploads/2018/03/1.png);
+  background-image: url(https://verumvest.com/wp-content/uploads/2019/07/vv_banner_normal_0.jpg);
   padding-bottom: 10%;
 }
 
@@ -178,13 +178,17 @@ a.breadcrumb1 {
 p {
   font-size: 12px;
   margin-bottom: 5px;
-  font-family: montesserat;
+  //font-family: montesserat;
 }
 
 .footer-row {
   background-color: #29395d;
   padding: 5% 10% 10% 5%;
   color: #ffffff;
+}
+
+.contact-area{
+  padding-left: 15%;
 }
 
 .copyright-text {
@@ -203,8 +207,9 @@ p {
 }
 
 .text-widget-p {
-  width: 67%;
-  margin-left: 35%;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .single-footer ul {
@@ -249,23 +254,23 @@ img,
   margin-top: 0;
 }
 .blog-area {
-  padding-left: 8%;
+  padding-left: 15%;
 }
 
 .footer-link {
   font-size: 14px;
   margin-bottom: 5px;
-  font-family: montesserat;
-  color: #fff;
+  font-weight: 400;
+  color: #ffffff;
   margin-bottom: 4px;
 }
 
 .link-li {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .footer-link-section {
-  padding-left: 5%;
+  padding-left: 15%;
 }
 
 .copyright__inner {
