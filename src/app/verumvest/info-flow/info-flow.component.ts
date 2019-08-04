@@ -297,6 +297,7 @@ export class InfoFlowComponent implements OnInit {
   }
 
   goToStep(step: number) {
+
     this.stepNumber = step;
     this.prepareGraph();
   }

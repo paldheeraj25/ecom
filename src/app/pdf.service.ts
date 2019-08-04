@@ -12,7 +12,7 @@ export class PdfService {
 
   public pdfUrl: string = "https://api.verumvest.com/pdf/";//"http://api.verumvest.com/pdf/82/create";//"https://verumvest-api.guwa-design.com/pdf/123/create";
   private nLtter: string = "https://api.newsletter2go.com/oauth/v2/token";
-  private nLettterSend: string = "https://api.newsletter2go.com/newsletters/wuazzq83/sendtest";
+  private nLettterSend: string = "https://api.newsletter2go.com/newsletters/fanydazr/send";//"https://api.newsletter2go.com/newsletters/wuazzq83/sendtest";
   private recipientUrl: string = "https://api.newsletter2go.com/recipients";
   private newsTk: string;
 
@@ -311,7 +311,7 @@ export class PdfService {
     }
 
     /* interchanged */
-    this.pdfObject.tilgung_3.value = immo;
+    this.pdfObject.tilgung_3.value = this.pdfObject.diagram_immo.value;
     console.log(immo);
 
   }
@@ -350,10 +350,11 @@ export class PdfService {
       this.httpClient.post(this.recipientUrl, recipientObject, optionsemail).subscribe((resSave) => {
         console.log(resSave);
         let nletterEmailBody = {
+          //"scheduled": "2019-07-27T16:58:12+0200",
           "contexts": [
             {
               "recipient": {
-                "email": email
+                "email": email.email
               }
             }
           ]
@@ -397,27 +398,9 @@ export class PdfService {
 
 
 
-    // fulfilling the pdfObject
-    // this.pdfObject1.equity = this.pdfObject.equity;
-    // this.pdfObject1.aufwandsrechner = this.pdfObject.aufwandsrechner;
-    // this.pdfObject1.ausgaben_1 = this.pdfObject.ausgaben_1;
-    // this.pdfObject1.ausgaben_2 = this.pdfObject.ausgaben_2;
-    // this.pdfObject1.wie_wohnflache = this.pdfObject.wie_wohnflache;
-    // this.pdfObject1.wohnflache = this.pdfObject.wohnflache;
-    // this.pdfObject1.equity = this.pdfObject1.equity
-    // this.pdfObject1.finanzierung = this.pdfObject.finanzierung;
-    // this.pdfObject1.er_neb = this.pdfObject.er_neb;
-    // this.pdfObject1.ka_moglich = this.pdfObject.ka_moglich;
-    // this.pdfObject1.finanz_1 = this.pdfObject.finanz_1;
-    // this.pdfObject1.finanz_2 = this.pdfObject.finanz_2;
-    // this.pdfObject1.tilgung_1 = this.pdfObject.tilgung_1;
-    // this.pdfObject1.tilgung_2 = this.pdfObject.tilgung_2;
-    // this.pdfObject1.tilgung_3 = this.pdfObject.tilgung_3;
-    // this.pdfObject1.investition = this.pdfObject.investition;
-    // this.pdfObject1.einnahmen = this.pdfObject.einnahmen;
     this.pdfObject.risk.value = user.riskTaker;
     this.pdfObject.inv_ang_neto.value = equity;//"3rd screen 1st field";
-    this.pdfObject.inv_ang_inve.value = user.desiredProperty;// "3rd screen third field";
+    this.pdfObject.inv_ang_inve.value = equity;// "3rd screen third field";
     this.pdfObject.inv_ang_wuns.value = user.desiredProperty;//"3rd screen first field";
     this.pdfObject.diagram_tl.value = user.desiredProperty; // third screen
     this.pdfObject.equity.value = equity;
