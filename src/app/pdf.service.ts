@@ -13,7 +13,8 @@ export class PdfService {
   public pdfUrl: string = "https://api.verumvest.com/pdf/";//"http://api.verumvest.com/pdf/82/create";//"https://verumvest-api.guwa-design.com/pdf/123/create";
   private nLtter: string = "https://api.newsletter2go.com/oauth/v2/token";
   private nLettterSend: string = "https://api.newsletter2go.com/newsletters/fanydazr/send";//"https://api.newsletter2go.com/newsletters/wuazzq83/sendtest";
-  private recipientUrl: string = "https://api.newsletter2go.com/recipients";
+  //private recipientUrl: string = "https://api.newsletter2go.com/recipients";
+  private recipientUrl: string = "https://api.newsletter2go.com/forms/submit/pqi6gjx3-nwf8ppsn-16c5";
   private newsTk: string;
 
   public assetAccumulation: number;
@@ -334,16 +335,26 @@ export class PdfService {
       let optionsemail = { headers: httpHeadersEmail };
       console.log(email);
       // creating recipient
+      // let recipientObject = {
+      //   "list_id": "5ghti2nb",
+      //   "email": email.email,
+      //   "phone": email.teleNumber,
+      //   "gender": email.gender,
+      //   "first_name": email.firstName,
+      //   "last_name": email.lastName,
+      //   "is_unsubscribed": false,
+      //   "is_blacklisted": false,
+      //   "pdf_link": email.pdf_link
+      // }
       let recipientObject = {
-        "list_id": "5ghti2nb",
-        "email": email.email,
-        "phone": email.teleNumber,
-        "gender": email.gender,
-        "first_name": email.firstName,
-        "last_name": email.lastName,
-        "is_unsubscribed": false,
-        "is_blacklisted": false,
-        "pdf_link": email.pdf_link
+        "recipient": {
+          "email": email.email,
+          "first_name": email.firstName,
+          "last_name": email.lastName,
+          "gender": email.gender,
+          "phone": email.teleNumber,
+          "pdf_link": email.pdf_link
+        }
       }
       // saving the recipient
 
@@ -360,9 +371,9 @@ export class PdfService {
           ]
         }
         // send email
-        this.httpClient.post(this.nLettterSend, nletterEmailBody, optionsemail).subscribe((resEmail) => {
-          console.log(resEmail);
-        });
+        // this.httpClient.post(this.nLettterSend, nletterEmailBody, optionsemail).subscribe((resEmail) => {
+        //   console.log(resEmail);
+        // });
       });
       // this.newsTk = res['access_token'];
       // let auth = "Bearer " + this.newsTk;
